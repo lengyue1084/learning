@@ -27,4 +27,4 @@ cd you_project
 添加到缓存区
 git add 
 提交文件
-git commit
+git commit git.text -m "本次提交说明内容"
