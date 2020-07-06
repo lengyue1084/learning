@@ -1,0 +1,30 @@
+
+git
+
+配置以及修改user信息
+
+git config --global user.name 'you_name'
+git config --global user.email 'you_email@qq.com'
+
+现有设备中的所有配置
+git config --list
+
+现有设备中的所有配置
+git config --list --local/--global/--system  优先级为 >
+
+
+把已有项目纳入git管理
+cd project
+git init
+
+新建项目
+新建文件夹 www
+cd www
+git init you_project
+cd you_project
+
+添加文件需要两步
+添加到缓存区
+git add 
+提交文件
+git commit
