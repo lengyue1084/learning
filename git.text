@@ -34,3 +34,27 @@ git status 列出仓库的状态，未管理的文件
 git add -u 对所有修改的文件做添加到暂存区
 git status 会列出所有状态的文件
 git commit -m"修改git.text文件"
+
+git 修改文件名
+mv index.js index.ts
+git add index.ts
+git rm index.js
+git git status
+git reset --hard  清除暂存区里面的数据，不会破坏版本历史
+
+git修改文件名
+git mv index.js index.ts
+git status
+git commit -m "重名名index.js为index.ts"
+
+
+git log --oneline  简洁的查看
+git log -n2 --oneline  查看最近的两个版本
+
+git commit -am"编辑git.text文件"  工作区的文件直接创建到版本库
+
+git branch -v 查看分支信息
+git branch -al 查看所有分支信息
+
+git checkout -b temp  b42031bbd85950 基于主分支创建的分支
+
