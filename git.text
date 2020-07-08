@@ -31,3 +31,6 @@ git commit git.text -m "本次提交说明内容"
 
 git status 列出仓库的状态，未管理的文件
 
+git add -u 对所有修改的文件做添加到暂存区
+git status 会列出所有状态的文件
+git commit -m"修改git.text文件"
