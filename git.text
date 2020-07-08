@@ -51,3 +51,4 @@ git commit -m "重名名index.js为index.ts"
 git log --oneline  简洁的查看
 git log -n2 --oneline  查看最近的两个版本
 
+git commit -am"编辑git.text文件"  工作区的文件直接创建到版本库
