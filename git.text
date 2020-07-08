@@ -25,6 +25,9 @@ cd you_project
 
 添加文件需要两步
 添加到缓存区
-git add 
+git add css/ index.js
 提交文件
 git commit git.text -m "本次提交说明内容"
+
+git status 列出仓库的状态，未管理的文件
+
