@@ -57,4 +57,13 @@ git branch -v 查看分支信息
 git branch -al 查看所有分支信息
 
 git checkout -b temp  b42031bbd85950 基于主分支创建的分支
+git commit -am"在子分支编辑git.text文件"
+git log 查看当前分支的历史
+git log --oneline 查看当前分支的历史
+git log --all 查看所有分支的版本历史
+git log --all --oneline 查看所有分支的版本历史
+git log --all --graph 查看所有分支的版本历史 图形化展示
+git log --all -n4 --graph 查看所有分支的版本历史 图形化展
+gitk  图形化的工具
 
+git checkout master 切换分支到master上面
