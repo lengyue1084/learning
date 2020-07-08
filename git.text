@@ -45,7 +45,9 @@ git reset --hard  清除暂存区里面的数据，不会破坏版本历史
 git修改文件名
 git mv index.js index.ts
 git status
+git commit -m "重名名index.js为index.ts"
 
 
-
+git log --oneline  简洁的查看
+git log -n2 --oneline  查看最近的两个版本
 
