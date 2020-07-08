@@ -1,0 +1,912 @@
+<!--
+ * @Author: WQ
+ * @Date: 2020-02-25
+ * @LastEditors: WQ
+ * @LastEditTime:  2020-02-25
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no,email=no,adress=no" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="applicable-device" content="pc" />
+    <meta name="keywords" content="心愿教育，教育" />
+    <meta name="description" itemprop="description" content="打造老师在线上课教学、学生及时互动学习的课堂，学习成就梦想！" />
+    <title>心愿教育</title>
+    <link rel="stylesheet" href='./css/normalize.css' />
+    <link rel="stylesheet" href='./css/common.css' />
+    <link rel="stylesheet" href='./css/jiuyue.css' />
+    <link rel='stylesheet' href='./font-awesome-4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='./dist/swiper/css/swiper.min.css' />
+    <script src="./dist/swiper/js/swiper.min.js"></script>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+<div style="height:24px;width:100%;">
+  <p style="line-height:24px;position:fixed;top:0;width:100%;text-align:center;min-width: 900px;background-color:#F6F6CC;color:#333;z-index:901;">
+        当前的浏览器版本过低，部分功能可能会受影响，请尽快升级哦（推荐下载
+        <a href="http://www.firefox.com.cn//" target="blank" title="火狐浏览器">火狐浏览器</a>
+        或
+        <a href="https://www.google.cn/intl/zh-CN/chrome/" target="blank" title="谷歌浏览器">谷歌浏览器</a>
+        ），或联系QQ95695864获得帮助
+  </p>
+</div>
+<![endif]-->
+    <div class="box">
+
+
+        <!-- header start -->
+        <div class="header">
+            <div class="m-index-top-nav">
+                <div class="header-content">
+                    <div class="top-header">
+                        <a href="/" class="logo" hidefocus="true">
+                            <img class="f-fl img" src="./images/logo.png" alt="心愿教育" width="188" height="55">
+                        </a>
+
+                        <div class="search-box">
+                            <div class="search-left">
+                                <span class="search-left-box">
+                                    <span class="selected-type">课程</span>
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                </span>
+
+                            </div>
+                            <div class="search-center">
+                                <input type="text" maxlength="30" placeholder="行家专业亲授，直击就业痛点">
+                            </div>
+                            <div class="search-right">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                <span class="search-right-text">搜索</span>
+                            </div>
+
+                        </div>
+                        <div class="user-info-box">
+                            <div class="user-login">
+                                <div class="fr">
+                                    <div class="user-image">
+                                        <img class="user-image" src="./images/small.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="fr">
+                                    <a href="">登陆</a>/<a href="">注册</a>
+                                </div>
+                                <i class="line fr" aria-hidden="true"></i>
+                                <i class="fa  fa-cart-plus fa-lg item fr " aria-hidden="true"></i>
+                                <i class=" fa fa-bell-o fa-lg item fr " aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-box pr ">
+                        <div class="main-nav-box pr fl">
+                            <div class="nav-list-left fl">
+                                <a class="nav-item nav-item-active fl">首页</a>
+                                <div class="nav-item fl nav-tem-all">全部课程
+                                    <div class="nav-menu-box">
+                                        <div class="m-mu-item">
+                                            <a class="m-mu-td" href="javascript:;">全部课程</a>
+                                            <ul class="m-mu-lst">
+                                                <li><a href="list.html" target="_blank">同步K12</a></li>
+                                                <li><a href="#" target="_blank">AI搜题</a></li>
+                                                <li><a href="#" target="_blank">最新课程</a></li>
+                                                <li><a href="#" target="_blank">温馨家庭</a></li>
+                                                <li><a href="#" target="_blank">状元少年</a></li>
+                                                <li><a href="#" target="_blank">财富人生</a></li>
+                                                <li><a href="#" target="_blank">名家讲坛</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nav-item fl">幸福商城</div>
+                                <div class="nav-item fl">K12</div>
+                                <div class="nav-item fl">AI搜题</div>
+
+                            </div>
+                            <div class="nav-list-right fr">
+                                <div class="nav-item fr pr">
+                                    <i class="fa fa-gift color1" aria-hidden="true"></i>
+                                    <span>关注福利</span>
+                                    <div class="nav-app-tips">
+                                        <!-- <div class="fa fa-caret-up fa-lg arrr" aria-hidden="true"></div> -->
+                                        <div class="app-tips-box">
+                                            <div class="ux-focus-code-show-tit">
+                                                关注幸福课栈公众号
+                                            </div>
+                                            <div class="ux-focus-code-show-des">
+                                                -领取课程免费福利，超值学习资料-
+                                            </div>
+                                            <img src="http://s.stu.126.net/res/images/qrcode/nav_qrcode.png" alt="">
+                                        </div>
+                                        <div class="ux-focus-code-show-triangle">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nav-item fr">
+                                    <i class="fa fa-download color1" aria-hidden="true"></i>
+                                    <span>扫码下载</span>
+                                    <div class="nav-app-tips">
+                                        <!-- <div class="fa fa-caret-up fa-lg arrr" aria-hidden="true"></div> -->
+                                        <div class="app-tips-box">
+                                            <div class="ux-focus-code-show-tit">
+                                                扫码下载幸福课栈app
+                                            </div>
+                                            <div class="ux-focus-code-show-des">
+                                                -领取课程免费福利，超值学习资料-
+                                            </div>
+                                            <img src="http://s.stu.126.net/res/images/qrcode/nav_qrcode.png" alt="">
+                                        </div>
+                                        <div class="ux-focus-code-show-triangle">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header end -->
+        <!-- banner start -->
+        <div class="m-slide-container">
+            <div class="swiper-container" style="text-align: center;">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" data-color="#4390EE">
+                        <a href="#" target="_blank">
+                            <img class="banner-img" src="./images/banner01.jpg" alt="轮播一">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" target="_blank">
+                            <img class="banner-img" src="./images/banner02.jpg" alt="轮播一">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="swiper-button-prev swiper_btn swiper-button-white" style="margin-left: 20px;opacity:0.3;">
+                </div>
+                <div class="swiper-button-next swiper_btn swiper-button-white" style="margin-right: 20px;opacity:0.3;">
+                </div>
+            </div>
+        </div>
+        <!-- banner end -->
+        <!-- des start -->
+        <div class="bg">
+            <div class="course-system-box">
+                <div class="course-system-box">
+                    <div class="course-system-title">
+                        <h2 class="title dib">系统化学习路径</h2>
+                        <span class="sub-title dib">幸福课栈六大课程体系，让学习有章有序</span>
+                    </div>
+                    <div class="course-system-wrap">
+                        <a class="course-system-wrap-item dib" href="">
+                            <img src="./images/01.png" alt="">
+                        </a>
+                        <a class="course-system-wrap-item dib" href="">
+                            <img src="./images/01.png" alt="">
+                        </a>
+                        <a class="course-system-wrap-item dib" href="">
+                            <img src="./images/01.png" alt="">
+                        </a>
+                        <a class="course-system-wrap-item dib" href="">
+                            <img src="./images/01.png" alt="">
+                        </a>
+                        <a class="course-system-wrap-item dib" href="">
+                            <img src="./images/01.png" alt="">
+                        </a>
+                        <a class="course-system-wrap-item dib" href="">
+                            <img src="./images/01.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- des end -->
+        <!-- lecturer start -->
+        <div class="bg">
+            <div class="course-system-box">
+                <div class="course-system-box">
+                    <div class="course-system-title">
+                        <h2 class="title dib">心愿讲师团队</h2>
+                        <span class="sub-title dib">数十名优秀金牌讲师，带您走进知识的殿堂。</span>
+                        <a class="list-more" href="#" target="_blank" data-log-act="click">
+                            <span>更多</span>
+                            <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="course-list-box">
+                        <div class="course-list-item shadow1">
+                            <div class="course-list-left-head">
+                                <img class="course-list-left-head-img" src="./images/03.jpg" alt="">
+                            </div>
+                            <div class="course-right-title">【幸福课栈】金牌讲师</div>
+                            <div class="course-right-sub-title">三毛 心愿金牌讲师</div>
+                        </div>
+                        <div class="course-list-item shadow1">
+                            <div class="course-list-left-head">
+                                <img class="course-list-left-head-img" src="./images/03.jpg" alt="">
+                            </div>
+                            <div class="course-right-title">【幸福课栈】金牌讲师</div>
+                            <div class="course-right-sub-title">三毛 心愿金牌讲师</div>
+                        </div>
+                        <div class="course-list-item shadow1">
+                            <div class="course-list-left-head">
+                                <img class="course-list-left-head-img" src="./images/03.jpg" alt="">
+                            </div>
+                            <div class="course-right-title">【幸福课栈】金牌讲师</div>
+                            <div class="course-right-sub-title">三毛 心愿金牌讲师</div>
+                        </div>
+                        <div class="course-list-item shadow1">
+                            <div class="course-list-left-head">
+                                <img class="course-list-left-head-img" src="./images/03.jpg" alt="">
+                            </div>
+                            <div class="course-right-title">【幸福课栈】金牌讲师</div>
+                            <div class="course-right-sub-title">三毛 心愿金牌讲师</div>
+                        </div>
+                        <div class="course-list-item shadow1">
+                            <div class="course-list-left-head">
+                                <img class="course-list-left-head-img" src="./images/03.jpg" alt="">
+                            </div>
+                            <div class="course-right-title">【幸福课栈】金牌讲师</div>
+                            <div class="course-right-sub-title">三毛 心愿金牌讲师</div>
+                        </div>
+                        <div class="course-list-item shadow1">
+                            <div class="course-list-left-head">
+                                <img class="course-list-left-head-img" src="./images/03.jpg" alt="">
+                            </div>
+                            <div class="course-right-title">【幸福课栈】金牌讲师</div>
+                            <div class="course-right-sub-title">三毛 心愿金牌讲师</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- course end -->
+        <!-- course start -->
+        <div class="bg">
+            <div class="course-system-box">
+                <div class="course-system-box">
+                    <div class="course-system-title">
+                        <h2 class="title dib">免费分享</h2>
+                        <span class="sub-title dib"></span>
+                        <a class="list-more" href="#" target="_blank" data-log-act="click">
+                            <span>更多</span>
+                            <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="course-list-box">
+
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- course end -->
+        <!-- course start -->
+        <div class="bg">
+            <div class="course-system-box">
+                <div class="course-system-box">
+                    <div class="course-system-title">
+                        <h2 class="title dib">精品课程</h2>
+                        <span class="sub-title dib"></span>
+                        <a class="list-more" href="#" target="_blank" data-log-act="click">
+                            <span>更多</span>
+                            <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="course-list-box">
+
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- course end -->
+        <!-- course start -->
+        <div class="bg">
+            <div class="course-system-box">
+                <div class="course-system-box">
+                    <div class="course-system-title">
+                        <h2 class="title dib">名家课程</h2>
+                        <span class="sub-title dib"></span>
+                        <a class="list-more" href="#" target="_blank" data-log-act="click">
+                            <span>更多</span>
+                            <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="course-list-box">
+
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-list-item2 shadow1">
+                            <a href="#" class="course-list-item2-box ">
+                                <div class="course-list-item2-img">
+                                    <img src="./images/04.png" alt="">
+                                </div>
+                                <div class="">
+                                    <div class="item2-title-box" title="">
+                                        <h3 class="">大学物理—电磁学</span>
+                                    </div>
+                                    <div class="item2-title-box-content">
+                                        <p>超易懂、超专业、超系统、超方便</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- course end -->
+        <!-- hot-tags start -->
+        <div class="bg">
+            <section class="tags-list-seo">
+                <div class="tags-box">
+                    <div class="tc">
+                        <h1>热门关键词</h1>
+                    </div>
+                    <div class="tab">
+                        <div class="tab-bar">
+                            <div class="tab-bar-item active">热点搜索</div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-content-item" style="display: block;">
+                                <a href="#" target="_blank">K12</a>
+                                <a href="#" target="_blank">人教版</a>
+                                <a href="#" target="_blank">学习机</a>
+                                <a href="#" target="_blank">语文</a>
+                                <a href="#" target="_blank">初中</a>
+                                <a href="#" target="_blank">一年级数学</a>
+                                <a href="#" target="_blank">K12</a>
+                                <a href="#" target="_blank">人教版</a>
+                                <a href="#" target="_blank">学习机</a>
+                                <a href="#" target="_blank">语文</a>
+                                <a href="#" target="_blank">初中</a>
+                                <a href="#" target="_blank">一年级数学</a>
+                                <a href="#" target="_blank">K12</a>
+                                <a href="#" target="_blank">人教版</a>
+                                <a href="#" target="_blank">学习机</a>
+                                <a href="#" target="_blank">语文</a>
+                                <a href="#" target="_blank">初中</a>
+                                <a href="#" target="_blank">一年级数学</a>
+                                <a href="#" target="_blank">K12</a>
+                                <a href="#" target="_blank">人教版</a>
+                                <a href="#" target="_blank">学习机</a>
+                                <a href="#" target="_blank">语文</a>
+                                <a href="#" target="_blank">初中</a>
+                                <a href="#" target="_blank">一年级数学</a>
+                                <a href="#" target="_blank">K12</a>
+                                <a href="#" target="_blank">人教版</a>
+                                <a href="#" target="_blank">学习机</a>
+                                <a href="#" target="_blank">语文</a>
+                                <a href="#" target="_blank">初中</a>
+                                <a href="#" target="_blank">一年级数学</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- hot-tags end -->
+        <!-- footer start -->
+        <div class="footer bg2">
+            <section class="bg2">
+                <div class="links-box">
+                    <h3 class="links-title">合作链接</h3>
+                    <ul class="links-list">
+                        <li> <a class="link-links" href="#" title="心愿教育" target="_blank">心愿教育</a></li>
+                        <li> <a class="link-links" href="#" title="幸福课栈" target="_blank">幸福课栈</a></li>
+                        <li> <a class="link-links" href="#" title="心愿教育" target="_blank">心愿教育</a></li>
+                        <li> <a class="link-links" href="#" title="幸福课栈" target="_blank">幸福课栈</a></li>
+                        <li> <a class="link-links" href="#" title="心愿教育" target="_blank">心愿教育</a></li>
+                        <li> <a class="link-links" href="#" title="幸福课栈" target="_blank">幸福课栈</a></li>
+                        <li> <a class="link-links" href="#" title="心愿教育" target="_blank">心愿教育</a></li>
+                        <li> <a class="link-links" href="#" title="幸福课栈" target="_blank">幸福课栈</a></li>
+                        <li> <a class="link-links" href="#" title="心愿教育" target="_blank">心愿教育</a></li>
+                        <li> <a class="link-links" href="#" title="幸福课栈" target="_blank">幸福课栈</a></li>
+                        <li> <a class="link-links" href="#" title="心愿教育" target="_blank">心愿教育</a></li>
+                        <li> <a class="link-links" href="#" title="幸福课栈" target="_blank">幸福课栈</a></li>
+                        <li> <a class="link-links" href="#" title="心愿教育" target="_blank">心愿教育</a></li>
+                        <li> <a class="link-links" href="#" title="幸福课栈" target="_blank">幸福课栈</a></li>
+                        <li> <a class="link-links" href="#" title="心愿教育" target="_blank">心愿教育</a></li>
+                        <li> <a class="link-links" href="#" title="幸福课栈" target="_blank">幸福课栈</a></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="bg2 footer-box">
+                <p>Copyright © 2020 xinyuan. All Rights Reserved.</p>
+                <p>心愿教育科技有限公司 版权所有 | <a href="#" target="_blank" rel="nofollow">©2019安徽合肥心愿教育科技有限公司 皖ICP备18002163号-1</a> | <a href="#" target="_blank" rel="nofollow">幸福课栈服务协议</a> | <a href="#" target="_blank">问题反馈</a> |
+                    <a href="#" target="_blank">帮助</a></p>
+            </section>
+        </div>
+        <!-- footer end -->
+    </div>
+</body>
+<script>
+    try {
+        window.GLOBAL_DATA = {
+            isServer: true,
+            cateId: 2037,
+            liveCourse: {
+                "tasks": [{}]
+            },
+            courseCenter: [],
+            seriesCourse: [],
+            agencyInfo: {
+                "isShow": 0,
+                "name": ""
+            },
+            _ext: {}
+        };
+    } catch (e) {
+        window.GLOBAL_DATA = {
+            isServer: true,
+            cateId: 2037,
+            liveCourse: {},
+            courseCenter: [],
+            seriesCourse: [],
+            agencyInfo: {}
+        };
+    }
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: true, //可选选项，自动滑动
+        loop: true,
+        paginationClickable: true,
+        navigation: {
+            nextEl: ' .swiper-button-next ',
+            prevEl: ' .swiper-button-prev ',
+        },
+        autoplay: {
+            delay: 3000,
+        },
+        pagination: {
+            el: ' .swiper-pagination ',
+
+        }
+    });
+</script>
+
+</html>
