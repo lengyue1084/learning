@@ -34,3 +34,18 @@ git status 列出仓库的状态，未管理的文件
 git add -u 对所有修改的文件做添加到暂存区
 git status 会列出所有状态的文件
 git commit -m"修改git.text文件"
+
+git 修改文件名
+mv index.js index.ts
+git add index.ts
+git rm index.js
+git git status
+git reset --hard  清除暂存区里面的数据，不会破坏版本历史
+
+git修改文件名
+git mv index.js index.ts
+git status
+
+
+
+
