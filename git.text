@@ -50,12 +50,15 @@ git commit -m "重名名index.js为index.ts"
 
 git log --oneline  简洁的查看
 git log -n2 --oneline  查看最近的两个版本
+git log --all --oneline 查看所有分支
+$ git log --all --oneline --graph 图表方式查看所有分支
+
 
 git commit -am"编辑git.text文件"  工作区的文件直接创建到版本库
 
 .get目录的讲解
 .get/HEAD 指向当前的分支  编辑改文件类似于git checkout master 切换分支的作用
-HEAD 引用指向refs refs里面包括了 （tags 里程碑标记主要标记位置  heads  分支  独立的空间，比如两个可以独立工作，然后合并到一个系统）
+HEAD 引用指向refs refs里面包括了（tags 里程碑标记主要标记位置  heads  分支  独立的空间，比如两个可以独立工作，然后合并到一个系统）
 
 git checkout master 切换到主分支
 
