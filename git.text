@@ -158,6 +158,10 @@ git remote add githubgit git@github.com:lengyue1084/git_learning.git 添加远�
 
 git push remote githubgit --all
 
+git pull 远端拉下来并且执行合并
 
+git fetch githubgit master
+
+gitk --all
 
 
