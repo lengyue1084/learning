@@ -197,7 +197,8 @@ git merger --allow-unrelated-histories githubgit/master 允许合并两个不相
 git push githubgit master 把本地master push 到远端githubgit上
 gitk --all
 
-
+git commit -am"添加内容"
+git push githubgit master
 
 
 
