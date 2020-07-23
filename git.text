@@ -50,6 +50,7 @@ git commit -m "重名名index.js为index.ts"
 
 git log --oneline  简洁的查看
 git log -n2 --oneline  查看最近的两个版本
+<<<<<<< HEAD
 git log --all --oneline 查看所有分支
 $ git log --all --oneline --graph 图表方式查看所有分支
 
@@ -150,6 +151,20 @@ gitk --all
 git push github master
 
 
+git commit -am"编辑git.text文件"  工作区的文件直接创建到版本库
+git branch -v 查看分支信息
+git branch -al 查看所有分支信息
+git checkout -b temp  b42031bbd85950 基于主分支创建的分支
+git commit -am"在子分支编辑git.text文件"
+git log 查看当前分支的历史
+git log --oneline 查看当前分支的历史
+git log --all 查看所有分支的版本历史
+git log --all --oneline 查看所有分支的版本历史
+git log --all --graph 查看所有分支的版本历史 图形化展示
+git log --all -n4 --graph 查看所有分支的版本历史 图形化展
+gitk  图形化的工具
+
+git checkout master 切换分支到master上面
 
 $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"   创建ssh秘钥，默认即可
 
@@ -165,5 +180,9 @@ git fetch githubgit master
 gitk --all
 
 git checkout master 切换主分支
+
+
+
+
 
 
