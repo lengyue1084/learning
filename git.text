@@ -67,3 +67,97 @@ cat ./.git/config  编辑改文件类似命令git config命令设置的作用
 
 git cat-file -t xxx 查看xxx的类型
 git cat-file -p xxx 查看xxx的内容
+
+git branch -av 查看所有分支
+git checkout master 切换分支到master
+
+git checkout -b fix_text fix_xxx 切换分支到fix_text
+
+git branch -D xxx  删除分支xxx
+git branch -av
+
+git commit --amend 修改当前分支最近的commit的message
+git log -l
+
+git branch -av
+git rebase -i 合并多个commite记录
+git log --graph
+
+git rebase -i  xxxx xxxx 合并多个不连续的commit
+
+git diff --cached 暂存区与HEAD的差距
+git commit -m"确认没问题提交"
+
+git diff 工作区与暂存区的差异
+git diff -- index.html  style.cxx 查看index.html style.cxx 差异
+
+git status
+git reset HEAD 暂存区恢复和HEAD一样（指向当前分支最新的commit）
+
+
+git checkout -- index.html 工作区的文件恢复到暂存区
+
+git reset HEAD -- style.css 取消部分暂存区文件的更改
+
+git reset --head xxxx 消除最近几次的commit提交（工作、暂存区、HEAD恢复到某次提交）
+
+git diff temp master查看两个分支中的差异
+git diff temp master -- index.html 查看两个分支中index.html的差异
+
+删除文件的方法一
+rm index.html 
+git rm index.html
+git status 
+
+git reset --hard HEAD
+git status
+git rm index.html  删除文件
+
+git status
+git stash 
+git stash list 
+git stash apply 之前存放的内容放到工作区 
+git reset --hard HEAD
+
+vi .gitignore 添加不受git控制的文件
+
+git clone --bare /user/xxx 无进度条
+git clone --bare file:///user/xxx  有进度条
+
+git remote -v 查看所有远端
+git remote add zhineng file:///user/xxx/zhineng.git 本地同步到远端
+git push --set-upstream zhineng siyecao
+
+ssh-keygen -t rsa -b 4096 -c "11@qq.com"
+
+
+git remote -v 查看所有远程仓库配置
+
+git remote add github git@github.com:git2000/git_learning.git 新增一个远端的站点
+git remote -v
+
+git push github --all
+先拉后推
+gitk -all
+git pull (先拉、合并，两步合并了)
+git fetch github master
+git branch -v
+git branch -va 远端的也会列出
+git checkout master
+git merge github/master 
+git merge --allow-unrelated-histories github/master
+gitk --all
+git push github master
+
+
+
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"   创建ssh秘钥，默认即可
+
+git remote add githubgit git@github.com:lengyue1084/git_learning.git 添加远端仓库
+
+
+git push remote githubgit --all
+
+
+
+
