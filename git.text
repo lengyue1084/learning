@@ -181,6 +181,23 @@ gitk --all
 
 git checkout master 切换主分支
 
+手动合并冲突
+git branch -v 查看本地有多少分支
+git branch -va 列出所有本地与远端的分支
+
+git checkout master 切换到本地master
+
+git merge githubgit/master 合并本地与远端master 首次合并没有父子关系会出错
+
+git merge -h 查看与历史相关的命令
+
+git merger --allow-unrelated-histories githubgit/master 允许合并两个不相干的分支 弹出框默认:wq即可
+
+
+git push githubgit master 把本地master push 到远端githubgit上
+gitk --all
+
+
 
 
 
