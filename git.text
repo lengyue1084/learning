@@ -164,4 +164,6 @@ git fetch githubgit master
 
 gitk --all
 
+git checkout master 切换主分支
+
 
