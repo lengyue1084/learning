@@ -200,6 +200,9 @@ gitk --all
 git commit -am"添加内容"
 git push githubgit master
 
+git commit -am"删除文件index.ts"
+git push githubgit master
+
 
 
 
