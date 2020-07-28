@@ -1,0 +1,132 @@
+/*********** header start **********/
+
+.header {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0.4rem;
+}
+
+.header-logo {
+    height: 1.2rem;
+    line-height: 0.9rem;
+    color: #222222;
+    font-size: 0.34rem;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-logo img {
+    width: 6rem;
+    height: 1.4rem;
+}
+
+.header-nav-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header-nav-btn .nav-btn {
+    display: flex;
+    flex: 1;
+}
+
+.header-search {
+    display: flex;
+    background: #eeeeee;
+    height: 1rem;
+    border-radius: 40px;
+    align-items: center;
+    padding: 0rem 0rem 0rem 0.2rem;
+    margin: 0.2rem 0rem;
+}
+
+.header-search-input {
+    flex: 1;
+}
+
+.header-search-btn {
+    height: 100%;
+    width: 1.5rem;
+    display: flex;
+    justify-content: center;
+    cursor: pointer !important;
+    background: #dd0050;
+    color: #ffffff;
+    border-radius: 40px;
+}
+
+
+/*********** header end **********/
+
+
+/*********** menu start **********/
+
+.menu {
+    position: fixed;
+    right: -6rem;
+    height: 100%;
+    width: 6rem;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 100;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.menu .display-table {
+    width: 100%;
+    height: 100%;
+    display: table;
+    position: relative;
+}
+
+.menu-close {
+    position: absolute;
+    top: 0;
+    right: 0rem;
+    margin: 0.2rem;
+    z-index: 1;
+    -moz-background-size: 0.6rem;
+    background-size: 0.6rem;
+}
+
+.menu .display-cell {
+    display: table-cell;
+    width: 100%;
+}
+
+.menu ul {
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.menu li {
+    padding: 0.2rem 0rem;
+}
+
+.menu li.active a {
+    color: #57a3f2;
+}
+
+.menu li a {
+    display: block;
+    line-height: 2;
+    font-size: 0.4rem;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+
+/*********** menu end **********/
