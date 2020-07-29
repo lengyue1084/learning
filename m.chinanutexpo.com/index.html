@@ -18,6 +18,12 @@
     <link href="./css/common.css" rel="stylesheet">
     <link href="./css/m-jiuyue.css" rel="stylesheet">
     <link rel='stylesheet' href='./font-awesome-4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='./dist/swiper/css/swiper.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='./dist/swiper/css/swiper.min.css' type='text/css' media='all' />
+    <script src="./js/jquery.min.js"></script>
+    <link rel='stylesheet' href='./dist/swiper/css/swiper.min.css' />
+    <script src="./dist/swiper/js/swiper.min.js"></script>
+    <link rel='stylesheet' href='./font-awesome-4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
     <!-- css end-->
 </head>
 
@@ -30,7 +36,7 @@
                 <img src="./images/logo.jpg">
             </a>
             <div class="header-nav-btn">
-                <i class=" nav-btn fa fa-bars fa-2x" aria-hidden="true"></i>
+                <i class=" nav-btn fa fa-bars fa-2x" aria-hidden="true" onclick="menu('open')"></i>
             </div>
         </div>
         <!--tp_p1-->
@@ -45,15 +51,20 @@
         </form>
     </header>
     <!-- nav-box end -->
-    <!-- menu start -->
 
-    <div class="menu" style="right: 0px;">
+    <!-- menu start -->
+    <div class="top-menu">
         <div class="display-table">
-            <i class="fa fa-times menu-close fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-times top-menu-close fa-2x" onclick="menu('close')" aria-hidden="true"></i>
             <div class="display-cell">
                 <ul>
-                    <li class="active">
-                        <a href="#">首页</a>
+                    <li>
+                        <a class="active" href="#">首页</a>
+                        <div class="menu-sub">
+                            <a href="">子分类</a>
+                            <a class="active" href="">子分类</a>
+                            <a href="">子分类</a>
+                        </div>
                     </li>
                     <li>
                         <a href="#">连接客户</a>
@@ -80,12 +91,458 @@
             </div>
         </div>
     </div>
-    <!-- menu start -->
+    <!-- menu end -->
     <!-- banner start -->
     <div class="banner-box">
-        
+        <div class="swiper-container" style="text-align: center;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" data-color="#4390EE">
+                    <a href="#" target="_blank">
+                        <img class="banner-img" src="./images/banner01.jpg" alt="轮播一">
+                    </a>
+                </div>
+                <div class="swiper-slide" data-color="red">
+                    <a href="#" target="_blank">
+                        <img class="banner-img" src="./images/banner02.jpg" alt="轮播一">
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- banner end -->
+    <!-- top-nav-btn-box start -->
+    <div class="top-nav-btn-box">
+        <a href="">
+            <span> 线上展会报名</span>
+            <div class="nav-icon-start">
+                <img src="./images/icon-index-nav.png">
+            </div>
+        </a>
+        <a href="">
+            <span>线下展会报名</span>
+            <div class="nav-icon-start">
+                <img src="./images/icon-index-nav.png">
+            </div>
+        </a>
+    </div>
+    <!-- top-nav-btn-box end -->
+    <!-- top-desc start -->
+    <div class="top-desc-box">
+        <h3>2020"第十四届中国坚果炒货食品、原料配料、设备包装展览会 2020"暨中外坚果炒货食品大型采供洽谈会</h3>
+        <span>2020年9月18-20日|中国：合肥滨湖会展中心</span>
+    </div>
+    <!-- top-desc end -->
+
+    <!-- top-activity-nav start -->
+    <div class="top-activity-nav ">
+        <div class="item">
+            <h3>直播活动</h3>
+            <a href="">进入活动</a>
+            <img src="./images/top-nav01.png" alt="">
+        </div>
+        <div class="item">
+            <h3>直播活动</h3>
+            <a href="">进入活动</a>
+            <img src="./images/top-nav02.png" alt="">
+        </div>
+        <div class="item">
+            <h3>直播活动</h3>
+            <a href="">进入活动</a>
+            <img src="./images/top-nav03.png" alt="">
+        </div>
+    </div>
+    <!-- top-activity-nav  end -->
+    <!-- top-nav-list start -->
+    <div class="top-nav-list">
+        <a class="item">
+            <img src="./images/index01.png" alt="">
+        </a>
+        <a class="item">
+            <img src="./images/index02.png" alt="">
+        </a>
+        <a class="item">
+            <img src="./images/index03.png" alt="">
+        </a>
+        <a class="item">
+            <img src="./images/index04.png" alt="">
+        </a>
+        <a class="item">
+            <img src="./images/index05.png" alt="">
+        </a>
+        <a class="item">
+            <img src="./images/index06.png" alt="">
+        </a>
+        <a class="item">
+            <img src="./images/index07.png" alt="">
+        </a>
+    </div>
+    <!-- top-nav-list  end -->
+    <!-- 供求  start -->
+    <div class="bg-box">
+        <h2>供求平台</h2>
+        <div class="content">
+            <div class="title-box">
+                <img src="./images/m-suppley-title01.png" alt="">
+            </div>
+            <div class="content-list">
+                <div class="content-list-item">
+                    <img src="./images/goods01.png" alt="">
+                    <div class="item-center">
+                        <h2>产品标题</h2>
+                        <p>产品描述</p>
+                    </div>
+                    <a class="item-btn" href="">询价</a>
+                </div>
+            </div>
+            <div class="content-list">
+                <div class="content-list-item">
+                    <img src="./images/goods01.png" alt="">
+                    <div class="item-center">
+                        <h2>产品标题</h2>
+                        <p>产品描述</p>
+                    </div>
+                    <a class="item-btn" href="">询价</a>
+                </div>
+            </div>
+            <div class="content-list">
+                <div class="content-list-item">
+                    <img src="./images/goods01.png" alt="">
+                    <div class="item-center">
+                        <h2>产品标题</h2>
+                        <p>产品描述</p>
+                    </div>
+                    <a class="item-btn" href="">询价</a>
+                </div>
+            </div>
+            <div class="content-list">
+                <div class="content-list-item">
+                    <img src="./images/goods01.png" alt="">
+                    <div class="item-center">
+                        <h2>产品标题</h2>
+                        <p>产品描述</p>
+                    </div>
+                    <a class="item-btn" href="">询价</a>
+                </div>
+            </div>
+            <div class="content-list">
+                <div class="content-list-item">
+                    <img src="./images/goods01.png" alt="">
+                    <div class="item-center">
+                        <h2>产品标题</h2>
+                        <p>产品描述</p>
+                    </div>
+                    <a class="item-btn" href="">询价</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 供求  end -->
+    <!-- 需求  start -->
+    <div class="bg-box">
+        <div class="content">
+            <div class="title-box">
+                <img src="./images/m-suppley-title02.png" alt="">
+            </div>
+            <div class="content-list">
+                <div class="content-list-item">
+                    <img src="./images/goods01.png" alt="">
+                    <div class="item-center">
+                        <h2>产品标题</h2>
+                        <p>产品描述</p>
+                    </div>
+                    <a class="item-btn" href="">询价</a>
+                </div>
+            </div>
+            <div class="content-list">
+                <div class="content-list-item">
+                    <img src="./images/goods01.png" alt="">
+                    <div class="item-center">
+                        <h2>产品标题</h2>
+                        <p>产品描述</p>
+                    </div>
+                    <a class="item-btn" href="">询价</a>
+                </div>
+            </div>
+            <div class="content-list">
+                <div class="content-list-item">
+                    <img src="./images/goods01.png" alt="">
+                    <div class="item-center">
+                        <h2>产品标题</h2>
+                        <p>产品描述</p>
+                    </div>
+                    <a class="item-btn" href="">询价</a>
+                </div>
+            </div>
+            <div class="content-list">
+                <div class="content-list-item">
+                    <img src="./images/goods01.png" alt="">
+                    <div class="item-center">
+                        <h2>产品标题</h2>
+                        <p>产品描述</p>
+                    </div>
+                    <a class="item-btn" href="">询价</a>
+                </div>
+            </div>
+            <div class="content-list">
+                <div class="content-list-item">
+                    <img src="./images/goods01.png" alt="">
+                    <div class="item-center">
+                        <h2>产品标题</h2>
+                        <p>产品描述</p>
+                    </div>
+                    <a class="item-btn" href="">询价</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 需求  end -->
+    <!-- 杂志下载  start -->
+    <div class="bg-box" style="padding: 0.2rem;">
+        <h2>杂志下载</h2>
+        <div class="download-content">
+            <div class="download-content-left-box">
+                <p>中国坚果炒货杂志2020版九月 总xxx期 第几期</p>
+
+            </div>
+            <div class="download-content-right-box">
+                <img src="./images/download01.png" alt="">
+                <div class="">请点击下载提取码：sxsw</div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- 杂志下载  end -->
+    <!-- 在线视频  start -->
+    <div class="bg-box" style="padding: 0.2rem;">
+        <video class="download-video" src="https://www.w3school.com.cn/i/movie.ogg" controls="controls">
+            your browser does not support the video tag
+        </video>
+    </div>
+    <!-- 在线视频  end -->
+    <!-- 展商推荐  start -->
+    <div class="bg02-box">
+        <div class="trader-content">
+            <div class="trader-content-title">
+                <img src="./images/trader-title01.png" alt="">
+            </div>
+            <div class="trader-content-box">
+                <div class="trader-content-item">
+                    <img src="./images/goods01.png" alt="">
+                    <p class="trader-content-box-title">展商名字</p>
+                </div>
+                <div class="trader-content-item">
+                    <img src="./images/goods01.png" alt="">
+                    <p class="trader-content-box-title">展商名字</p>
+                </div>
+                <div class="trader-content-item">
+                    <img src="./images/goods01.png" alt="">
+                    <p class="trader-content-box-title">展商名字</p>
+                </div>
+                <div class="trader-content-item">
+                    <img src="./images/goods01.png" alt="">
+                    <p class="trader-content-box-title">展商名字</p>
+                </div>
+                <div class="trader-content-item">
+                    <img src="./images/goods01.png" alt="">
+                    <p class="trader-content-box-title">展商名字</p>
+                </div>
+                <div class="trader-content-item">
+                    <img src="./images/goods01.png" alt="">
+                    <p class="trader-content-box-title">展商名字</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-box">
+            <a class="active" href="">1</a>
+            <a href="">1</a>
+            <a href="">1</a>
+            <a href="">>></a>
+        </div>
+    </div>
+    <!-- 展商推荐  end -->
+    <!-- 人气爆款  start -->
+    <div class="bg02-box">
+        <div class="trader-content">
+            <div class="trader-content-title">
+                <img src="./images/trader-title02.png" alt="">
+            </div>
+            <div class="trader-content-box">
+                <div class="trader-content-item">
+                    <img src="./images/goods01.png" alt="">
+                    <p class="trader-content-box-title">展商名字</p>
+                </div>
+                <div class="trader-content-item">
+                    <img src="./images/goods01.png" alt="">
+                    <p class="trader-content-box-title">展商名字</p>
+                </div>
+                <div class="trader-content-item">
+                    <img src="./images/goods01.png" alt="">
+                    <p class="trader-content-box-title">展商名字</p>
+                </div>
+                <div class="trader-content-item">
+                    <img src="./images/goods01.png" alt="">
+                    <p class="trader-content-box-title">展商名字</p>
+                </div>
+                <div class="trader-content-item">
+                    <img src="./images/goods01.png" alt="">
+                    <p class="trader-content-box-title">展商名字</p>
+                </div>
+                <div class="trader-content-item">
+                    <img src="./images/goods01.png" alt="">
+                    <p class="trader-content-box-title">展商名字</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-box">
+            <a class="active" href="">1</a>
+            <a href="">1</a>
+            <a href="">1</a>
+            <a href="">>></a>
+        </div>
+    </div>
+    <!-- 人气爆款  end -->
+    <!-- footer start -->
+    <div class="footer-box">
+        <div class="footer-logo-box">
+            <div class="footer-logo-left">
+                <img src="./images/footer-01.png" alt="">
+            </div>
+            <div class="footer-logo-right">
+                <img src="./images/qr01.png" alt="">
+                <img src="./images/qr01.png" alt="">
+            </div>
+        </div>
+        <div class="footer-second-box">
+            <h2>联系方式</h2>
+            <p>电话：010-888888</p>
+            <div class="footer-second-two-box">
+                <span>邮箱：110@qq.com</span>
+                <span>邮编：888888</span>
+            </div>
+            <p>地址：北京上海南京北京上海南京北京上海南京北京上海南京</p>
+        </div>
+        <div class="links-box">
+            <h2>友情链接</h2>
+            <div class="links-box-content">
+                <div class="links-box-item">
+                    <a href="">国家市场监督管理总局</a>
+                    <a href="">国家市场监督管理总局</a>
+                    <a href="">国家市场监督管理总局</a>
+                    <a href="">国家市场监督管理总局</a>
+                    <a href="">国家市场监督管理总局</a>
+                </div>
+                <div class="links-box-item">
+                    <a href="">国家市场监督管理总局</a>
+                    <a href="">国家市场监督管理总局</a>
+                    <a href="">国家市场监督管理总局</a>
+                    <a href="">国家市场监督管理总局</a>
+                    <a href="">国家市场监督管理总局</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer end -->
+    <!---右侧固定导航栏 start-->
+    <div class="nav-fixed-right">
+
+        <a href="#" class="menu-box">
+            <div class="menu">
+                <span class="fa fa-cart-plus"></span>
+                <p>市场信息</p>
+            </div>
+            <div class="child">
+                <span class="fa fa-cart-plus" aria-hidden="true"></span>
+                <div class="right">
+                    <p>市场信息</p>
+                </div>
+            </div>
+        </a>
+        <a class="menu-box" href="#">
+            <div class="menu">
+                <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+                <p>发布信息</p>
+            </div>
+            <div class="child">
+                <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+                <div class="right">
+                    <p>发布信息</p>
+                </div>
+            </div>
+        </a>
+        <a class="menu-box" href="#">
+            <div class="menu">
+                <span class="fa fa-qq" aria-hidden="true"></span>
+                <p>联系客服</p>
+            </div>
+            <div class="child">
+                <span class="fa fa-qq" aria-hidden="true"></span>
+                <div class="right">
+
+                    <p>QQ：3307181902</p>
+                </div>
+            </div>
+        </a>
+        <a class="menu-box" href="#">
+            <div class="menu">
+                <span class="fa fa-video-camera" aria-hidden="true"></span>
+                <p>看直播</p>
+            </div>
+            <div class="child">
+                <span class="fa fa-video-camera" aria-hidden="true"></span>
+                <div class="right">
+                    <p>看直播</p>
+                </div>
+            </div>
+        </a>
+        <a class="menu-box" href="#">
+            <div class="menu">
+                <span class="fa fa-video-camera" aria-hidden="true"></span>
+                <p>二维码</p>
+            </div>
+            <div class="child-qr">
+                <div class="right">
+                    <img src="./images/goods01.png" alt="">
+                </div>
+            </div>
+        </a>
+    </div>
+    <!---右侧固定导航栏 end-->
+    <!--返回顶部 start-->
+    <div class="back-to-top" onclick="handleScrollTop()">
+        <a>
+            <span class="fa fa-arrow-up"></span>
+        </a>
+    </div>
+    <!--返回顶部 end-->
 </body>
+<script>
+    function handleScrollTop() {
+        console.log(111)
+        window.scrollTo(0, 0)
+        console.log(222)
+    }
+
+    function menu(type) {
+        if (type == 'open') {
+            $(".top-menu").css("display", "block")
+        } else {
+            $(".top-menu").css("display", "none")
+        }
+    }
+
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: true, //可选选项，自动滑动
+        loop: true,
+        paginationClickable: true,
+        autoplay: {
+            delay: 3000,
+        },
+        pagination: {
+            el: ' .swiper-pagination ',
+
+        }
+    });
+</script>
 
 </html>
