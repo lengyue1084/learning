@@ -203,6 +203,9 @@ git push githubgit master
 git commit -am"删除文件index.ts"
 git push githubgit master
 
+//另一个账号如果想推倒远端需要添加远端仓库
+git remote add githubgit git@github.com:lengyue1084/git_learning.git
+
 
 
 
