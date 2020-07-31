@@ -115,7 +115,7 @@ git status
 git rm index.html  删除文件
 
 git status
-git stash 
+git stash save "20200731 modify git.txt"
 git stash list 
 git stash apply 之前存放的内容放到工作区 
 git reset --hard HEAD
