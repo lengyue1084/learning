@@ -1,0 +1,15 @@
+//安装指定的版本
+npm install --save  react-router@xxx.xx.xx
+//删除模块 -g全局   
+//会自动删除package.json的依赖
+npm uninstall 模块     
+npm uninstall 模块 -g
+ 
+//启动项目
+npm run serve 
+ 
+//打包项目
+npm run build
+ 
+//启动vue-cli面板
+//vue ui
