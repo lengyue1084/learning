@@ -206,6 +206,53 @@ git push githubgit master
 //另一个账号如果想推倒远端需要添加远端仓库
 git remote add githubgit git@github.com:lengyue1084/git_learning.git
 
+//把项目clone到本地的git_learning_02文件夹，默认为git_learning的文件夹
+git clone git@github.com:lengyue1084/git_learning.git git_learning_02 
+
+clear 清屏
+git config --add --local user.name "git02"
+git config --add --local user.emal "git02@163.com"
+git config --local -l 查看本地仓库的信息
+
+vi .git/config 可以直接修改用户信息
+git branch -av
+
+//依远端add_git_commands分支检出并创建本地分支
+git checkout -b feature/add_git_commands origin/feature/add_git_commands
+git branch -v
+
+vi readme
+git add -u
+git status
+git commit -m'Add commands description in readme'
+git push ///此时可以省略
+
+cd git_learning
+git config --local -l
+git branch -av
+git fetch githubgit  会拉区新建分支add_git_commands
+git branch -av
+git checkout -b feature/add_git_commands github/feature/add_git_commands //第一个本地分支名 第二个远端分支名
+git branch -av
+vi index.html
+git add -u
+git commit -m"修改inex.html"
+
+//第二个用户此时在修改文件
+vi readem.md
+git commit -am "fix readme"
+git push
+git status
+git rm xxx
+
+//第一个用户再push
+git push githubgit 此时会报错
+
+git fetch githubgit 拉区远端分支
+git branch -av
+git merge githubgit/feature/add_git_commands 本地跟远端年合并 此时远端已经修改一个，本地修改一个 此时修改文件不同 合并顺利
+git push githubgit 此时会顺利进行
+
 
 
 
