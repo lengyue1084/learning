@@ -1,7 +1,7 @@
 
-git
+git命令联系
 
-配置以及修改user信息
+配置以及修改全局user信息
 
 git config --global user.name 'you_name'
 git config --global user.email 'you_email@qq.com'
@@ -253,7 +253,83 @@ git branch -av
 git merge githubgit/feature/add_git_commands 本地跟远端年合并 此时远端已经修改一个，本地修改一个 此时修改文件不同 合并顺利
 git push githubgit 此时会顺利进行
 
+//不同人修改了同一个文件的不同区域
+git pull githubgit 修改本地之前最好先执行pull 
+git branch -av
+git fetch
+git branch -av
+git merge githubgti 或者 git merge 71abe04
+弹出merge messge 可以:wq默认设置
+git push githubgit
+git branch -av
+ls -al
+cat git.txt 
+gtik -al
+
+//不同人修改了同一个文件的相同区域
+git pull githubgit
+修改文件
+git commit -ma"修改第一行"
+git push githubgit 会感知与远端的不同  修改同一块地方，晚提交的人会遇到这个问题
+git merge githubgit 会提示问题
+git pull 远端与本地merge  会显示冲突问题  
+vi git.txt
+修改不同人内容，此时需要人工介入，git无法决定
+git status 查看是否有没有合并的问题
+如果已经merge完了执行
+git commit -am"resolved conflict by hand with 4 git commands" 本地生成了一个新的commit
+git stauts
+git push githubgit
+
+同时更改了文件名和文件内容如何处理
+git pull 更新本地版本
+git mv index.html index.htm
+git status
+git commit -am"修改index后缀"
+git push githubgit
+第二个同学 基于index.html 修改了内容
+git push githubgit 会弹出消息弹框 :wq默认即可 合把index.html修改index.htm，文件名字修改了
+ls -al 文件名字已经修改成了index.htm git会智能处理
 
 
+多人修改同一个文件的文件名为不同的文件名
+git pull
+git mv index.htm index1.htm
+git commit -am"修改文件名字index1.htm"
+git push githubgit
+第二个人
+git pull
+git mv index.htm index2.htm
+git commit -am"修改文件名字index2.htm"
+git push githubgit 会报错
+git pull
+ls -al 会出现index1.htm index2.htm
+diff index1.htm index2.htm 内容一样只是名字不同
+git status 显示修改名字信息  需要两个人协商文件名，git 不做处理，需要人工介入
+git rm index.htm
+git add index1.htm 
+git status
+git rm index2.htm
+git status
+ls -al
+git commit -am"已经处理完文件名冲突，decide to mv index.htm to index1.htm"
+gitk -al
+
+慎用命令
+checkout reset
+
+git push -h 看push相关参数
+
+强制禁止 
+git push -f 禁用  
+
+git log --online 
+git reset --hard 934ac 本地重置到934ac分支
+git push -f origin feature/add_git_commands 强制更新远端分支，会去除很多已经变成的commit记录
+
+禁止想集成分支执行变更历史的操作 不要更改历史的commit message
+公众的分支历史禁止变更 因为其他人可能已经基于统一的commit做了工作导致提交失败
+在集成分支只能向前进
+不要修改合成分支的提价历史即不要rebase“变基”合成分支
 
 
