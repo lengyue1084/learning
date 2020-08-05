@@ -130,9 +130,8 @@ a {
 }
 
 .top-menu .menu-sub {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: none;
+    text-align: center;
 }
 
 .top-menu .menu-sub a {

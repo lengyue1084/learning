@@ -57,9 +57,9 @@
         <div class="display-table">
             <i class="fa fa-times top-menu-close fa-2x" onclick="menu('close')" aria-hidden="true"></i>
             <div class="display-cell">
-                <ul>
+                <ul id="top-menu">
                     <li>
-                        <a class="active" href="#">首页</a>
+                        <a class="active" href="javascript:void(0);">首页</a>
                         <div class="menu-sub">
                             <a href="">子分类</a>
                             <a class="active" href="">子分类</a>
@@ -68,6 +68,11 @@
                     </li>
                     <li>
                         <a href="#">连接客户</a>
+                        <div class="menu-sub">
+                            <a href="">子分类</a>
+                            <a class="active" href="">子分类</a>
+                            <a href="">子分类</a>
+                        </div>
                     </li>
                     <li>
                         <a href="#">连接企业</a>
@@ -91,6 +96,17 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $("#top-menu li").bind("click", function(obj) {
+            var o = $(this).children(".menu-sub");
+            if (o.is(":visible")) {
+                o.hide();
+            } else {
+                o.show();
+            }
+        })
+    </script>
     <!-- menu end -->
     <!-- banner start -->
     <div class="banner-box">
