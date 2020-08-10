@@ -1,0 +1,122 @@
+<!--
+ * @Author: WQ
+ * @Date: 2020-07-16
+ * @LastEditors: WQ
+ * @LastEditTime:  2020-07-16
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no,email=no,adress=no" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="applicable-device" content="pc" />
+    <meta name="keywords" content="中国坚果炒货展会网，中国坚果" />
+    <meta name="description" itemprop="description" content="中国坚果炒货展会网平台！" />
+    <title>首页</title>
+    <link rel="stylesheet" href='./css/normalize.css' />
+    <link rel="stylesheet" href='./css/common.css' />
+    <link rel="stylesheet" href='./css/jiuyue.css' />
+    <link rel='stylesheet' href='./font-awesome-4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='./dist/swiper/css/swiper.min.css' />
+    <script src="./dist/swiper/js/swiper.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+ <div style="height:24px;width:100%;">
+   <p style="line-height:24px;position:fixed;top:0;width:100%;text-align:center;min-width: 900px;background-color:#F6F6CC;color:#333;z-index:901;">
+         当前的浏览器版本过低，部分功能可能会受影响，请尽快升级哦（推荐下载
+         <a href="http://www.firefox.com.cn//" target="blank" title="火狐浏览器">火狐浏览器</a>
+         或
+         <a href="https://www.google.cn/intl/zh-CN/chrome/" target="blank" title="谷歌浏览器">谷歌浏览器</a>
+         ），或联系QQ95695864获得帮助
+   </p>
+ </div>
+ <![endif]-->
+
+    <!-- header start -->
+    <div class="header_main">
+        <div class="header_main_top">
+            <a href="#">
+                <img src="./images/logo.gif" height="75">
+            </a>
+            <span>欢迎登录</span>
+            <em><i>服务热线: </i>xxxxxxxxx</em>
+        </div>
+        <!--header_main_top-->
+    </div>
+    <!-- header end -->
+
+    <!-- content start -->
+    <div class="clearfix main_register_m">
+        <div class="forget_main_top">
+            <form action="#" method="post">
+                <dl>
+                    <dd>
+                        <span>输入手机号：</span>
+                        <input name="mobileNo" type="text" placeholder="输入手机号" class="name_text">
+                    </dd>
+                    <dd>
+                        <span>图片验证码：</span>
+                        <input name="captcha" id="captcha" type="text" placeholder="请输入验证码" class="name_text1 name_text_out">
+                        <a href="javascript:void(0);" class="lgin_txt_yj">
+                            <img src="./images/captcha.jpg" style="width:119px;height:38px;">
+                        </a>
+                    </dd>
+                    <dd>
+                        <span>短信验证码：</span>
+                        <div class="utr_p4" style="margin-left: 5px;">
+                            <span>&nbsp;</span>
+                            <input name="smsCode" type="text" id="smsCode" value="" placeholder="请输入验证码" class="tex_txt3">
+                        </div>
+                        <!--utr_p4-->
+                        <a href="javascript:void(0)" class="yzm_pl_l" style="float: left;">获取验证码</a>
+
+                    </dd>
+                    <dd>
+                        <span>&nbsp;</span>
+                        <input type="submit" value="提交信息" class="name_text3">
+                    </dd>
+                    <dd>
+                    </dd>
+                </dl>
+            </form>
+        </div>
+        <!--regist_main_top-->
+    </div>
+    <!-- content start -->
+    <!-- footer -->
+    <div class="login-footer">
+        <p class="about">
+            <a target="_blank" href="#" rel="nofollow">关于我们</a><em>|</em>
+            <a target="_blank" href="#" rel="nofollow">关于我们</a><em>|</em>
+            <a target="_blank" href="#" rel="nofollow">关于我们</a><em>|</em>
+            <a target="_blank" href="#" rel="nofollow">关于我们</a><em>|</em>
+            <a target="_blank" href="#" rel="nofollow">关于我们</a><em>|</em>
+            <a target="_blank" href="#" rel="nofollow">关于我们</a><em>|</em>
+        </p>
+        <p>版权所有 ©2020 xxxxx公司 ICP备xxxxxxx号</p>
+    </div>
+    <!-- footer -->
+</body>
+<script>
+    $(".wx_dl").bind("click", function() {
+        $(".ght_p1,.login_top_nav").hide();
+        $(".ght_p2,.login_top_nav_p").show();
+    })
+
+    $(".sj_yz_fh").bind("click", function() {
+        $(".ght_p1,.login_top_nav").show();
+        $(".ght_p2,.login_top_nav_p").hide();
+    })
+</script>
+
+</html>
