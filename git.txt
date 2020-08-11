@@ -333,3 +333,9 @@ git push -f origin feature/add_git_commands 强制更新远端分支，会去除
 在集成分支只能向前进
 不要修改合成分支的提价历史即不要rebase“变基”合成分支
 
+远程仓库改了名字
+修改远程仓库地址
+git remote set-url githubgit git@github.com:lengyue1084/learning.git
+或者先删除再添加
+git remote rm origin
+git remote add origin githubgit git@github.com:lengyue1084/learning.git
