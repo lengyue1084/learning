@@ -788,7 +788,7 @@ a {
     margin: 0.2rem 1rem;
 }
 
-.login-box input {
+.login-box .login-input {
     border: 1px solid #eeeeee;
     flex: 1;
     height: 1rem;
@@ -811,6 +811,71 @@ a {
     position: absolute;
     font-size: 18px;
     color: #eeeeee;
+}
+
+.login-box .login-box01 .login-verify {
+    display: flex;
+    margin: 0.2rem 0rem;
+}
+
+.login-box .login-box01 .login-verify img {
+    height: 1rem;
+    width: 2rem;
+    margin-left: 5px;
+}
+
+.login-box .login-box01 .yzm-pl-l {
+    display: flex;
+    height: 1rem;
+    background: #cccccc;
+    align-items: center;
+    justify-content: center;
+    padding: 0rem 0.2rem;
+}
+
+.login-box .login-remember-box {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.2rem 0rem;
+    align-items: center;
+}
+
+.login-box .login-remember-box .login-remember-left {
+    display: flex;
+    align-items: center;
+}
+
+.login-box .login-remember-box .vvh-pd {
+    margin-right: 3px;
+    float: left;
+    display: block;
+    /* width: 20px;
+    height: 20px; */
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+}
+
+.login-box .login-btn {
+    background: #e30b69;
+    width: 294px;
+    height: 42px;
+    border: 0px;
+    cursor: pointer !important;
+    color: #fff;
+    font-size: 16px;
+}
+
+.login-box .reg-box {
+    margin: 0.2rem 0rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.login-box .register-input {
+    border: 1px solid #eeeeee;
+    flex: 1;
+    height: 1rem;
+    padding: 0rem 0.2rem;
 }
 
 
