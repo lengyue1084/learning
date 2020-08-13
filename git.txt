@@ -339,3 +339,9 @@ git remote set-url githubgit git@github.com:lengyue1084/learning.git
 或者先删除再添加
 git remote rm origin
 git remote add origin githubgit git@github.com:lengyue1084/learning.git
+
+
+//查看git日志
+git log --shortstat
+//会展示
+2 files changed, 3 insertions(+), 11 deletions(-)
