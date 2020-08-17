@@ -883,3 +883,276 @@ a {
 
 
 /****************************************************************************************/
+
+
+/****************************************************************************************/
+
+
+/******展商 start ************/
+
+.supplier-top-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.supplier-top-box img {
+    width: 100%;
+    height: auto;
+}
+
+.supplier-top-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.supplier-top-title-content {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.supplier-top-title-content img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+.supplier-top-title-content-content {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+.supplier-top-title-content-content h3 {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.supplier-top-title-btn-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.supplier-top-title-btn-box a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: #e30b69;
+    color: #ffffff;
+    border-radius: 40px;
+    width: 60px;
+    margin: 0px 5px;
+}
+
+.supplier-message-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.supplier-message-box .supplier-message-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 10px;
+    border-bottom: 2px solid #e30b69;
+}
+
+.supplier-message-box .supplier-message-title h2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.supplier-message-box .supplier-message-content {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    justify-content: space-between;
+}
+
+.supplier-message-box .supplier-message-content-item {
+    display: flex;
+    flex-direction: row;
+    width: 48%;
+    background: #eeeeee;
+    height: 60px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.supplier-message-box .supplier-message-content-item-img {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e30b69;
+}
+
+.supplier-message-box .supplier-message-content-item-img img {
+    width: 40px;
+    height: 40px;
+}
+
+.supplier-message-content-item-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px;
+}
+
+.supplier-message-content-item-content h3 {
+    color: #888888;
+}
+
+.supplier-introduce {
+    padding: 10px;
+}
+
+.supplier-introduce .supplier-introduce-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 10px;
+    border-bottom: 2px solid #e30b69;
+}
+
+.supplier-introduce .supplier-introduce-title h2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.supplier-introduce-detail {
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.supplier-introduce-detail-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.supplier-introduce-detail-btn span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 10px;
+    width: 80px;
+    border: 1px solid #e30b69;
+    color: #e30b69;
+    padding: 10px;
+    border-radius: 40px;
+}
+
+.supplier-introduce-video {
+    display: flex;
+    margin: 10px 0px;
+}
+
+.supplier-introduce-video video {
+    width: 100%;
+    height: auto;
+}
+
+.supplier-product {
+    display: flex;
+    flex-direction: column;
+}
+
+.supplier-product .supplier-product-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 10px;
+    border-bottom: 2px solid #e30b69;
+    flex: 1;
+}
+
+.supplier-product .supplier-product-title h2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.supplier-product-content {
+    display: flex;
+    margin: 10px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.supplier-product-content .supplier-product-content-item {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+    width: 45%;
+}
+
+.supplier-product-content-item-content {
+    padding: 10px;
+}
+
+.supplier-product-content-item-content h2 {
+    color: #888888;
+}
+
+.supplier-product-content-item-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.supplier-product-content-item-btn a {
+    border-radius: 40px;
+    padding: 5px;
+    width: 60px;
+    background: #e30b69;
+    color: #ffffff;
+    text-align: center;
+}
+
+.supplier-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.supplier-page a {
+    border-radius: 40px;
+    padding: 5px;
+    width: 60px;
+    background: #b9b9b9;
+    color: #ffffff;
+    text-align: center;
+    margin: 0px 10px;
+}
+
+.supplier-page a.supplier-page-active {
+    background: #e30b69;
+    color: #ffffff;
+}
+
+
+/******展商 end ************/
+
+
+/****************************************************************************************/

@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>首页</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width,user-scalable=no initial-scale=1, shrink-to-fit=no"> -->
+    <meta name="viewport" content="width=device-width,user-scalable=no,viewport-fit=contain,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <script src="./js/flexible.js"></script>
+    <!-- css start-->
+    <link href="./css/normalize.min.css" rel="stylesheet">
+    <link href="./css/reset.css" rel="stylesheet">
+    <link href="./css/common.css" rel="stylesheet">
+    <link href="./css/m-jiuyue.css" rel="stylesheet">
+    <link rel='stylesheet' href='./font-awesome-4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='./dist/swiper/css/swiper.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='./dist/swiper/css/swiper.min.css' type='text/css' media='all' />
+    <script src="./js/jquery.min.js"></script>
+    <link rel='stylesheet' href='./dist/swiper/css/swiper.min.css' />
+    <script src="./dist/swiper/js/swiper.min.js"></script>
+    <link rel='stylesheet' href='./font-awesome-4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+    <!-- css end-->
+</head>
+
+<body>
+    <!-- nav-box start -->
+
+    <header class="header">
+        <div class="header-logo">
+            <a href="#">
+                <img src="./images/logo.jpg">
+            </a>
+            <div class="header-nav-btn">
+                <i class=" nav-btn fa fa-bars fa-2x" aria-hidden="true" onclick="menu('open')"></i>
+            </div>
+        </div>
+        <!--tp_p1-->
+        <form action="#">
+            <div class="header-search">
+                <i class="fa fa-search"></i>
+                <input name="keywords" class="header-search-input" type="text" value="" placeholder="可按展商名称、展品、展位号等搜索">
+                <input name="" type="submit" class="header-search-btn" value="搜索">
+                <!--  <button class="p_se_r">搜索</button>-->
+            </div>
+            <!--tp_search-->
+        </form>
+    </header>
+    <!-- nav-box end -->
+
+    <!-- menu start -->
+    <div class="top-menu">
+        <div class="display-table">
+            <i class="fa fa-times top-menu-close fa-2x" onclick="menu('close')" aria-hidden="true"></i>
+            <div class="display-cell">
+                <ul id="top-menu">
+                    <li>
+                        <a class="active" href="javascript:void(0);">首页</a>
+                        <div class="menu-sub">
+                            <a href="">子分类</a>
+                            <a class="active" href="">子分类</a>
+                            <a href="">子分类</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">连接客户</a>
+                        <div class="menu-sub">
+                            <a href="">子分类</a>
+                            <a class="active" href="">子分类</a>
+                            <a href="">子分类</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">连接企业</a>
+                    </li>
+                    <li>
+                        <a href="#">连接客户</a>
+                    </li>
+                    <li>
+                        <a href="#">连接企业</a>
+                    </li>
+                    <li>
+                        <a href="#">连接客户</a>
+                    </li>
+                    <li>
+                        <a href="#">连接企业钱包</a>
+                    </li>
+                    <li>
+                        <a href="#">连接企业</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#top-menu li").bind("click", function(obj) {
+            var o = $(this).children(".menu-sub");
+            if (o.is(":visible")) {
+                o.hide();
+            } else {
+                o.show();
+            }
+        })
+    </script>
+    <!-- menu end -->
+    <!-- start -->
+    <div class="supplier-top-box">
+        <img src="./images/supplier-top-01.jpg" alt="">
+
+    </div>
+    <!-- end -->
+    <!-- start -->
+    <div class="supplier-top-title">
+        <div class="supplier-top-title-content">
+            <img src="./images/supplier-title-01.jpg" alt="">
+            <div class="supplier-top-title-content-content">
+                <h3>花果山水帘洞有限公司公司</h3>
+                <div>联系人：孙经理</div>
+                <div>联系电话：18888888</div>
+                <div>感谢您的厚爱与关注！请留下您的联系方式，我们会尽快与您联系！</div>
+            </div>
+        </div>
+        <div class="supplier-top-title-btn-box">
+            <a href="#">我要留言</a>
+            <a href="#">我要分享</a>
+        </div>
+
+    </div>
+    <!-- end -->
+
+    <!-- start -->
+    <div class="supplier-message-box">
+        <div class="supplier-message-title">
+            <h2>展商信息</h2>
+        </div>
+        <div class="supplier-message-content">
+            <div class="supplier-message-content-item">
+                <div class="supplier-message-content-item-img ">
+                    <img src="./images/supplier-message-01.png" alt="">
+                </div>
+                <div class="supplier-message-content-item-content">
+                    <h3>展会号</h3>
+                    <p>展会号</p>
+                </div>
+            </div>
+            <div class="supplier-message-content-item">
+                <div class="supplier-message-content-item-img ">
+                    <img src="./images/supplier-message-02.png" alt="">
+                </div>
+                <div class="supplier-message-content-item-content">
+                    <h3>展会号</h3>
+                    <p>展会号</p>
+                </div>
+            </div>
+        </div>
+        <div class="supplier-message-content">
+            <div class="supplier-message-content-item">
+                <div class="supplier-message-content-item-img ">
+                    <img src="./images/supplier-message-03.png" alt="">
+                </div>
+                <div class="supplier-message-content-item-content">
+                    <h3>展会号</h3>
+                    <p>展会号</p>
+                </div>
+            </div>
+            <div class="supplier-message-content-item">
+                <div class="supplier-message-content-item-img ">
+                    <img src="./images/supplier-message-04.png" alt="">
+                </div>
+                <div class="supplier-message-content-item-content">
+                    <h3>展会号</h3>
+                    <p>展会号</p>
+                </div>
+            </div>
+        </div>
+        <div class="supplier-message-content">
+            <div class="supplier-message-content-item">
+                <div class="supplier-message-content-item-img ">
+                    <img src="./images/supplier-message-05.png" alt="">
+                </div>
+                <div class="supplier-message-content-item-content">
+                    <h3>展会号</h3>
+                    <p>展会号</p>
+                </div>
+            </div>
+            <div class="supplier-message-content-item">
+                <div class="supplier-message-content-item-img ">
+                    <img src="./images/supplier-message-05.png" alt="">
+                </div>
+                <div class="supplier-message-content-item-content">
+                    <h3>展会号</h3>
+                    <p>展会号</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- end -->
+    <!-- start -->
+    <div class="supplier-introduce">
+        <div class="supplier-introduce-title">
+            <h2>企业介绍</h2>
+        </div>
+        <div class="supplier-introduce-detail">
+            花果山水帘洞介绍花果山水帘洞介绍花果山水帘洞介绍花果山水帘洞介绍花果山水帘洞介绍花果山水帘洞介绍花果山水帘洞介绍花果山水帘洞介绍花果山水帘洞介绍花果山水帘洞介绍花果山水帘洞介绍帘洞介绍花果山水帘洞介绍花果山水帘洞介绍花果山水帘洞介绍花果山水帘洞介绍
+        </div>
+        <div class="supplier-introduce-detail-btn">
+            <span onclick="displayAll()">显示全部<i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
+        </div>
+        <div class="supplier-introduce-video">
+            <video src="https://www.w3school.com.cn/i/movie.ogg" controls="controls">
+                your browser does not support the video tag
+            </video>
+        </div>
+
+    </div>
+    <!-- end -->
+    <script>
+        function displayAll() {
+            $(".supplier-introduce-detail").css("height", "auto")
+        }
+    </script>
+    <!-- start -->
+    <div class="supplier-product">
+        <div class="supplier-product-title">
+            <h2>企业产品</h2>
+        </div>
+        <div class="supplier-product-content">
+            <div class="supplier-product-content-item">
+                <img src="./images/supplier-product-01.jpg" alt="">
+                <div class="supplier-product-content-item-content">
+                    <h2>产品名称</h2>
+                    <div>尺寸：124314</div>
+                    <div>型号：124314</div>
+                </div>
+                <div class="supplier-product-content-item-btn">
+                    <a href="#">查看详情</a>
+                </div>
+            </div>
+            <div class="supplier-product-content-item">
+                <img src="./images/supplier-product-01.jpg" alt="">
+                <div class="supplier-product-content-item-content">
+                    <h2>产品名称</h2>
+                    <div>尺寸：124314</div>
+                    <div>型号：124314</div>
+                </div>
+                <div class="supplier-product-content-item-btn">
+                    <a href="#">查看详情</a>
+                </div>
+            </div>
+            <div class="supplier-product-content-item">
+                <img src="./images/supplier-product-01.jpg" alt="">
+                <div class="supplier-product-content-item-content">
+                    <h2>产品名称</h2>
+                    <div>尺寸：124314</div>
+                    <div>型号：124314</div>
+                </div>
+                <div class="supplier-product-content-item-btn">
+                    <a href="#">查看详情</a>
+                </div>
+            </div>
+            <div class="supplier-product-content-item">
+                <img src="./images/supplier-product-01.jpg" alt="">
+                <div class="supplier-product-content-item-content">
+                    <h2>产品名称</h2>
+                    <div>尺寸：124314</div>
+                    <div>型号：124314</div>
+                </div>
+                <div class="supplier-product-content-item-btn">
+                    <a href="#">查看详情</a>
+                </div>
+            </div>
+            <div class="supplier-product-content-item">
+                <img src="./images/supplier-product-01.jpg" alt="">
+                <div class="supplier-product-content-item-content">
+                    <h2>产品名称</h2>
+                    <div>尺寸：124314</div>
+                    <div>型号：124314</div>
+                </div>
+                <div class="supplier-product-content-item-btn">
+                    <a href="#">查看详情</a>
+                </div>
+            </div>
+            <div class="supplier-product-content-item">
+                <img src="./images/supplier-product-01.jpg" alt="">
+                <div class="supplier-product-content-item-content">
+                    <h2>产品名称</h2>
+                    <div>尺寸：124314</div>
+                    <div>型号：124314</div>
+                </div>
+                <div class="supplier-product-content-item-btn">
+                    <a href="#">查看详情</a>
+                </div>
+            </div>
+        </div>
+        <div class="supplier-page">
+            <a href="#">上一页</a>
+            <a href="#" class="supplier-page-active">下一页</a>
+        </div>
+
+    </div>
+    <!-- end -->
+    <!-- footer start -->
+    <div class=" footer-box ">
+        <div class="footer-logo-box ">
+            <div class="footer-logo-left ">
+                <img src="./images/footer-01.png " alt=" ">
+            </div>
+            <div class="footer-logo-right ">
+                <img src="./images/qr01.png " alt=" ">
+                <img src="./images/qr01.png " alt=" ">
+            </div>
+        </div>
+        <div class="footer-second-box ">
+            <h2>联系方式</h2>
+            <p>电话：010-888888</p>
+            <div class="footer-second-two-box ">
+                <span>邮箱：110@qq.com</span>
+                <span>邮编：888888</span>
+            </div>
+            <p>地址：北京上海南京北京上海南京北京上海南京北京上海南京</p>
+        </div>
+        <div class="links-box ">
+            <h2>友情链接</h2>
+            <div class="links-box-content ">
+                <div class="links-box-item ">
+                    <a href=" ">国家市场监督管理总局</a>
+                    <a href=" ">国家市场监督管理总局</a>
+                    <a href=" ">国家市场监督管理总局</a>
+                    <a href=" ">国家市场监督管理总局</a>
+                    <a href=" ">国家市场监督管理总局</a>
+                </div>
+                <div class="links-box-item ">
+                    <a href=" ">国家市场监督管理总局</a>
+                    <a href=" ">国家市场监督管理总局</a>
+                    <a href=" ">国家市场监督管理总局</a>
+                    <a href=" ">国家市场监督管理总局</a>
+                    <a href=" ">国家市场监督管理总局</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer end -->
+    <!---右侧固定导航栏 start-->
+    <div class="nav-fixed-right ">
+
+        <a href="# " class="menu-box ">
+            <div class="menu ">
+                <span class="fa fa-cart-plus "></span>
+                <p>市场信息</p>
+            </div>
+            <div class="child ">
+                <span class="fa fa-cart-plus " aria-hidden="true "></span>
+                <div class="right ">
+                    <p>市场信息</p>
+                </div>
+            </div>
+        </a>
+        <a class="menu-box " href="# ">
+            <div class="menu ">
+                <span class="fa fa-pencil-square-o " aria-hidden="true "></span>
+                <p>发布信息</p>
+            </div>
+            <div class="child ">
+                <span class="fa fa-pencil-square-o " aria-hidden="true "></span>
+                <div class="right ">
+                    <p>发布信息</p>
+                </div>
+            </div>
+        </a>
+        <a class="menu-box " href="# ">
+            <div class="menu ">
+                <span class="fa fa-qq " aria-hidden="true "></span>
+                <p>联系客服</p>
+            </div>
+            <div class="child ">
+                <span class="fa fa-qq " aria-hidden="true "></span>
+                <div class="right ">
+
+                    <p>QQ：3307181902</p>
+                </div>
+            </div>
+        </a>
+        <a class="menu-box " href="# ">
+            <div class="menu ">
+                <span class="fa fa-video-camera " aria-hidden="true "></span>
+                <p>看直播</p>
+            </div>
+            <div class="child ">
+                <span class="fa fa-video-camera " aria-hidden="true "></span>
+                <div class="right ">
+                    <p>看直播</p>
+                </div>
+            </div>
+        </a>
+        <a class="menu-box " href="# ">
+            <div class="menu ">
+                <span class="fa fa-video-camera " aria-hidden="true "></span>
+                <p>二维码</p>
+            </div>
+            <div class="child-qr ">
+                <div class="right ">
+                    <img src="./images/goods01.png " alt=" ">
+                </div>
+            </div>
+        </a>
+    </div>
+    <!---右侧固定导航栏 end-->
+    <!--返回顶部 start-->
+    <div class="back-to-top " onclick="handleScrollTop() ">
+        <a>
+            <span class="fa fa-arrow-up "></span>
+        </a>
+    </div>
+    <!--返回顶部 end-->
+</body>
+<script>
+    function handleScrollTop() {
+        console.log(111)
+        window.scrollTo(0, 0)
+        console.log(222)
+    }
+
+    function menu(type) {
+        if (type == 'open') {
+            $(".top-menu ").css("display ", "block ")
+        } else {
+            $(".top-menu ").css("display ", "none ")
+        }
+    }
+
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: true, //可选选项，自动滑动
+        loop: true,
+        paginationClickable: true,
+        autoplay: {
+            delay: 3000,
+        },
+        pagination: {
+            el: ' .swiper-pagination ',
+
+        }
+    });
+</script>
+
+</html>

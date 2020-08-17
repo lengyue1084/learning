@@ -873,7 +873,7 @@ li {
     background: #2380e6 url(../images/login_bg.jpg) center bottom no-repeat;
     min-height: 476px;
     height: 600px;
-    background-size:100% 100%; 
+    background-size: 100% 100%;
 }
 
 .main-centerr {
@@ -1332,6 +1332,197 @@ li {
 
 
 /******找回密码页 end ************/
+
+
+/*************************************************************************************/
+
+
+/*************************************************************************************/
+
+
+/******展商页 start ************/
+
+.supplier-bg-center {
+    text-align: center;
+}
+
+.supplier-bg img {
+    margin: 0 auto;
+}
+
+.supplier-bg {
+    background: #ffffff;
+}
+
+.supplier-top {
+    width: 100%;
+    height: auto;
+    padding: 20px 0px;
+}
+
+.supplier-top .supplier-top-left {
+    text-align: center;
+    height: 100%;
+    width: 300px;
+    height: auto;
+    text-align: left;
+}
+
+.supplier-top .supplier-top-left img {
+    text-align: center;
+    width: 300px;
+    height: 100%;
+}
+
+.supplier-top .supplier-top-right {
+    text-align: left;
+    width: 860px;
+    height: auto;
+    padding: 0px 20px;
+}
+
+.m-10 {
+    margin: 10px;
+}
+
+.supplier-top-right-desc {
+    margin: 5px 0px;
+    font-weight: bold;
+}
+
+.supplier-top-right-btn-box {
+    text-align: center;
+}
+
+.supplier-top-right-btn {
+    height: 20px;
+    width: 200px;
+    text-align: center;
+    font-size: 16px;
+    background: #e30b69;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 40px;
+    display: inline-block;
+    margin: 20px;
+}
+
+.supplier-message-title {
+    border-bottom: 2px solid #e30b69;
+}
+
+.supplier-message-title h2 {
+    margin: 10px 0px;
+}
+
+.supplier-message-content {
+    padding: 20px 0px;
+}
+
+.supplier-message-item {
+    width: 380px;
+    background: #eeeeee;
+    height: 80px;
+    margin: 0px 20px 20px 0px;
+}
+
+.supplier-message-item-left {
+    width: 80px;
+    height: 80px;
+    background: #e30b69;
+}
+
+.supplier-message-item-left img {
+    width: 40px;
+    height: 40px;
+    margin: 20px;
+}
+
+.supplier-message-item-right {
+    width: 280px;
+    padding: 0px 10px;
+}
+
+.supplier-message-item-right-title {
+    margin: 5px 0px;
+    color: #888888;
+}
+
+.supplier-introduce {
+    height: 400px;
+    width: 100%;
+}
+
+.supplier-introduce-left {
+    width: 50%;
+    height: 100%;
+}
+
+.supplier-introduce-right {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+
+.supplier-introduce-video {
+    width: 500px;
+    height: auto;
+}
+
+.supplier-product-box {
+    width: 100%;
+}
+
+.supplier-product-box .supplier-product-title {
+    border-bottom: 2px solid #e30b69;
+}
+
+.supplier-product-title h2 {
+    margin: 10px 0px;
+}
+
+.supplier-product-content {
+    width: 100%;
+}
+
+.supplier-product-content .supplier-product-item {
+    width: 358px;
+    text-align: left;
+    margin: 20px;
+    border: 1px solid #eeeeee;
+}
+
+.supplier-product-content .supplier-product-item img {
+    width: 100%;
+    margin: auto;
+}
+
+.supplier-product-content .supplier-product-item img {
+    width: 100%;
+    margin: auto;
+}
+
+.supplier-product-content .supplier-product-item .supplier-product-item-content {
+    padding: 10px 20px;
+}
+
+.supplier-product-content .supplier-product-item .supplier-product-item-link {
+    margin: auto;
+    text-align: center;
+    height: 50px;
+}
+
+.supplier-product-content .supplier-product-item .supplier-product-item-link a {
+    height: 20px;
+    width: 50px;
+    border-radius: 40px;
+    background: #e30b69;
+    color: #ffffff;
+    padding: 10px;
+}
+
+
+/******展商页 end ************/
 
 
 /*************************************************************************************/
