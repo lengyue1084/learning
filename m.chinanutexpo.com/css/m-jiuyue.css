@@ -1095,15 +1095,15 @@ a {
 .supplier-product-content {
     display: flex;
     margin: 10px;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
 .supplier-product-content .supplier-product-content-item {
     display: flex;
     flex-direction: column;
-    margin: 10px 0px;
-    width: 45%;
+    margin: 10px 0.2rem;
+    width: calc(100vw - 2.85rem * 2);
 }
 
 .supplier-product-content-item-content {
