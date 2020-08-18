@@ -1526,3 +1526,123 @@ li {
 
 
 /*************************************************************************************/
+
+
+/*************************************************************************************/
+
+
+/****** 供需平台 start ************/
+
+.information-top-op-box {
+    height: 90px;
+    line-height: 90px;
+    float: right;
+    width: 400px;
+}
+
+.information-top-op-box a {
+    height: 10px;
+    border: 1px solid #e30b69;
+    padding: 5px 10px;
+    margin: 0px 10px;
+    border-radius: 40px;
+    background: #f5f5f5;
+}
+
+.information-top-img-box {
+    width: 100%;
+    text-align: center;
+}
+
+.information-top-img-box img {
+    margin: 0px auto;
+}
+
+.information-tabs-box {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+
+.information-tabs-box .information-tab {
+    height: 100%;
+    background: #e2e2e2;
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.information-tabs-box a.information-tab-active {
+    background: #e30b69;
+    color: #ffffff;
+}
+
+.information-category-box {
+    margin: 10px 0px;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.information-category-box .information-category-item {
+    margin: 0px 5px;
+    font-size: 14px;
+}
+
+.information-content-box {}
+
+.information-content-box .information-content-item {
+    margin: 10px 0px;
+    height: 100px;
+    clear: both;
+}
+
+.information-content-box .information-content-item img {
+    width: 100px;
+    height: 100px;
+}
+
+.information-content-box .information-content-item-center {
+    width: 980px;
+    padding: 0px 10px;
+    height: 100px;
+}
+
+.information-content-box .information-content-item-right {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+
+.information-content-box .information-content-item-right a {
+    background: #e30b69;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: #ffffff;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 35px;
+}
+
+.information-content-item-center h3 {
+    color: #e30b69;
+}
+
+.information-content-item-center h3 {
+    color: #e30b69;
+}
+
+.information-content-item-center .information-content-item-center-time {
+    color: #888888;
+    font-size: 12px;
+}
+
+
+/****** 供需平台 end ************/
+
+
+/*************************************************************************************/
