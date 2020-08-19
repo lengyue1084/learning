@@ -1645,3 +1645,176 @@ li {
 
 
 /*************************************************************************************/
+
+
+/*************************************************************************************/
+
+
+/****** 供需详情页 start ************/
+
+.detail-center-box {
+    width: 1200px;
+    margin: 0px auto;
+    padding: 1px 0px;
+}
+
+.detail-center-box .detail-top {
+    height: 120px;
+    margin: 5px auto;
+    background: #ffffff;
+    padding: 10px;
+}
+
+.detail-center-box .detail-top .detail-top-title {
+    display: inline-block;
+    margin: 5px 0px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    color: #e30b69;
+}
+
+.detail-center-box .detail-top .detail-top-user-box {
+    background: #ffffff;
+    margin-top: 10px;
+}
+
+.detail-center-box .detail-top .detail-top-user-box .detail-top-user-avatar {
+    width: 80px;
+    height: 80px;
+}
+
+.detail-center-box .detail-top .detail-top-user-box .detail-top-user-avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.detail-center-box .detail-top .detail-top-user-box .detail-top-user-nickname {
+    height: 80px;
+    line-height: 80px;
+    padding: 0px 10px;
+}
+
+.detail-center-box .detail-top .detail-top-user-box .detail-top-user-add-time {
+    height: 80px;
+    line-height: 80px;
+    color: #888888;
+    font-size: 13px;
+}
+
+.detail-center-box .detail-content {
+    min-height: 120px;
+    margin: 5px auto;
+    background: #ffffff;
+    padding: 10px;
+    clear: both;
+}
+
+.detail-content-thumb-box {
+    margin: 10px 0px;
+    height: 250px;
+    text-align: center;
+}
+
+.detail-content-thumb-box .detail-content-thumb-item {
+    width: 25%;
+    float: left;
+}
+
+.detail-content-thumb-box .detail-content-thumb-item img {
+    width: 250px;
+    height: 250px;
+}
+
+.detail-center-box .detail-comment {
+    background: #eeeeee;
+}
+
+.detail-center-box .detail-comment .detail-comment-item {
+    margin: 1px auto;
+    background: #ffffff;
+    padding: 15px;
+}
+
+.detail-center-box .detail-comment .detail-comment-item .detail-comment-item-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e30b69;
+    border-left: 4px solid #e30b69;
+    padding: 0px 5px;
+}
+
+.detail-center-box .detail-comment .detail-comment-item .detail-comment-item-user {
+    height: 50px;
+    margin: 5px 0px;
+}
+
+.detail-center-box .detail-comment .detail-comment-item .detail-comment-item-user img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.detail-center-box .detail-comment .detail-comment-item .detail-comment-item-user span {
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.detail-center-box .detail-comment .detail-comment-item .detail-comment-item-content {
+    margin: 5px 0px 5px 50px;
+}
+
+.detail-center-box .detail-comment .detail-comment-item .detail-comment-item-time {
+    margin-left: 50px;
+    color: #888888;
+    font-size: 12px;
+}
+
+.detail-center-box .detail-comment .detail-comment-item .detail-comment-item-reply-box {
+    margin-left: 50px;
+    color: #888888;
+    font-size: 14px;
+}
+
+.detail-center-box .detail-comment .detail-comment-item .detail-comment-item-reply-box .detail-comment-item-reply-nickname {
+    color: #1c56a7;
+    font-weight: bold;
+}
+
+.detail-comment-op-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.detail-comment-op-content {
+    margin: 5px auto;
+}
+
+.detail-comment-op-content textarea {
+    width: calc(100% - 10px * 2);
+    border: 1px solid #eeeeee;
+    padding: 10px;
+}
+
+.detail-comment-item-btn {
+    height: 50px;
+    text-align: center;
+}
+
+.detail-comment-item-btn input {
+    background: #e30b69;
+    color: #ffffff;
+    padding: 10px;
+    width: 100px;
+}
+
+
+/****** 供需详情页 end ************/
+
+
+/*************************************************************************************/
