@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>求购信息</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width,user-scalable=no initial-scale=1, shrink-to-fit=no"> -->
+    <meta name="viewport" content="width=device-width,user-scalable=no,viewport-fit=contain,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <script src="./js/flexible.js"></script>
+    <!-- css start-->
+    <link href="./css/normalize.min.css" rel="stylesheet">
+    <link href="./css/reset.css" rel="stylesheet">
+    <link href="./css/common.css" rel="stylesheet">
+    <link href="./css/m-jiuyue.css" rel="stylesheet">
+    <link rel='stylesheet' href='./font-awesome-4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='./dist/swiper/css/swiper.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='./dist/swiper/css/swiper.min.css' type='text/css' media='all' />
+    <script src="./js/jquery.min.js"></script>
+    <link rel='stylesheet' href='./dist/swiper/css/swiper.min.css' />
+    <script src="./dist/swiper/js/swiper.min.js"></script>
+    <link rel='stylesheet' href='./font-awesome-4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+    <!-- css end-->
+</head>
+
+<body>
+    <!-- nav-box start -->
+
+    <header class="header">
+        <div class="header-logo">
+            <a href="#">
+                <img src="./images/logo.jpg">
+            </a>
+            <div class="header-nav-btn">
+                <i class=" nav-btn fa fa-bars fa-2x" aria-hidden="true" onclick="menu('open')"></i>
+            </div>
+        </div>
+        <!--tp_p1-->
+        <!-- <form action="#">
+            <div class="header-search">
+                <i class="fa fa-search"></i>
+                <input name="keywords" class="header-search-input" type="text" value="" placeholder="可按展商名称、展品、展位号等搜索">
+                <input name="" type="submit" class="header-search-btn" value="搜索">
+            </div>
+        </form> -->
+    </header>
+    <!-- nav-box end -->
+
+    <!-- menu start -->
+    <div class="top-menu">
+        <div class="display-table">
+            <i class="fa fa-times top-menu-close fa-2x" onclick="menu('close')" aria-hidden="true"></i>
+            <div class="display-cell">
+                <ul id="top-menu">
+                    <li>
+                        <a class="active" href="javascript:void(0);">首页</a>
+                        <div class="menu-sub">
+                            <a href="">子分类</a>
+                            <a class="active" href="">子分类</a>
+                            <a href="">子分类</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">连接客户</a>
+                        <div class="menu-sub">
+                            <a href="">子分类</a>
+                            <a class="active" href="">子分类</a>
+                            <a href="">子分类</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">连接企业</a>
+                    </li>
+                    <li>
+                        <a href="#">连接客户</a>
+                    </li>
+                    <li>
+                        <a href="#">连接企业</a>
+                    </li>
+                    <li>
+                        <a href="#">连接客户</a>
+                    </li>
+                    <li>
+                        <a href="#">连接企业钱包</a>
+                    </li>
+                    <li>
+                        <a href="#">连接企业</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#top-menu li").bind("click", function(obj) {
+            var o = $(this).children(".menu-sub");
+            if (o.is(":visible")) {
+                o.hide();
+            } else {
+                o.show();
+            }
+        })
+    </script>
+    <!-- menu end -->
+
+    <!-- top-nav-btn-box start -->
+    <div class="information-nav-btn-box">
+        <a href="">
+            <span>发布供应</span>
+            <div class="information-nav-icon-start">
+                <img src="./images/icon-information-nav.png">
+            </div>
+        </a>
+        <a href="">
+            <span>发布需求</span>
+            <div class="information-nav-icon-start">
+                <img src="./images/icon-information-nav.png">
+            </div>
+        </a>
+    </div>
+    <!-- top-nav-btn-box end -->
+
+    <!-- start -->
+    <div class="information-top-ads">
+        <img src="./images/goods01.png" alt="">
+    </div>
+    <!-- end -->
+    <!-- start -->
+    <div class="information-top-tabs">
+        <a href="./information_supply.html">供应信息</a>
+        <a class="information-top-tabs-active" href="./information_purchase.html">求购信息</a>
+    </div>
+    <!-- end -->
+    <!-- start -->
+    <div class="information-top-category">
+        <a href="#" class="information-top-category-item">类别：</a>
+        <a href="#" class="information-top-category-item">食品成品</a>
+        <a href="#" class="information-top-category-item">仙桃</a>
+        <a href="#" class="information-top-category-item">金箍棒</a>
+    </div>
+    <!-- end -->
+    <!-- start -->
+    <div class="information-goods-content">
+        <div class="information-goods-content-item">
+            <img src="./images/goods01.png" alt="">
+            <div class="information-goods-content-item-content">
+                <div class="information-goods-item-content-title">求购花果山有仙桃</div>
+                <div>求购花果山有仙桃</div>
+                <div class="information-goods-item-content-time">发布日期：2020-08-21</div>
+            </div>
+            <a class="information-goods-content-item-right" href="#">查看</a>
+        </div>
+        <div class="information-goods-content-item">
+            <img src="./images/goods01.png" alt="">
+            <div class="information-goods-content-item-content">
+                <div class="information-goods-item-content-title">求购花果山有仙桃</div>
+                <div>求购花果山有仙桃</div>
+                <div class="information-goods-item-content-time">发布日期：2020-08-21</div>
+            </div>
+            <a class="information-goods-content-item-right" href="#">查看</a>
+        </div>
+        <div class="information-goods-content-item">
+            <img src="./images/goods01.png" alt="">
+            <div class="information-goods-content-item-content">
+                <div class="information-goods-item-content-title">求购花果山有仙桃</div>
+                <div>求购花果山有仙桃</div>
+                <div class="information-goods-item-content-time">发布日期：2020-08-21</div>
+            </div>
+            <a class="information-goods-content-item-right" href="#">查看</a>
+        </div>
+        <div class="information-page-box">
+            <a href="#">上一页</a>
+            <a class="information-page-active" href="#">下一页</a>
+        </div>
+    </div>
+    <!-- end -->
+    <!-- footer start -->
+    <div class="footer-box">
+        <div class="footer-logo-box">
+            <div class="footer-logo-left">
+                <img src="./images/footer-01.png" alt="">
+            </div>
+            <div class="footer-logo-right">
+                <img src="./images/qr01.png" alt="">
+                <img src="./images/qr01.png" alt="">
+            </div>
+        </div>
+        <div class="footer-second-box">
+            <h2>联系方式</h2>
+            <p>电话：010-888888</p>
+            <div class="footer-second-two-box">
+                <span>邮箱：110@qq.com</span>
+                <span>邮编：888888</span>
+            </div>
+            <p>地址：北京上海南京北京上海南京北京上海南京北京上海南京</p>
+        </div>
+        <div class="links-box">
+            <h2>友情链接</h2>
+            <div class="links-box-content">
+                <div class="links-box-item">
+                    <a href="">国家市场监督管理总局</a>
+                    <a href="">国家市场监督管理总局</a>
+                    <a href="">国家市场监督管理总局</a>
+                    <a href="">国家市场监督管理总局</a>
+                    <a href="">国家市场监督管理总局</a>
+                </div>
+                <div class="links-box-item">
+                    <a href="">国家市场监督管理总局</a>
+                    <a href="">国家市场监督管理总局</a>
+                    <a href="">国家市场监督管理总局</a>
+                    <a href="">国家市场监督管理总局</a>
+                    <a href="">国家市场监督管理总局</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer end -->
+    <!---右侧固定导航栏 start-->
+    <div class="nav-fixed-right">
+
+        <a href="#" class="menu-box">
+            <div class="menu">
+                <span class="fa fa-cart-plus"></span>
+                <p>市场信息</p>
+            </div>
+            <div class="child">
+                <span class="fa fa-cart-plus" aria-hidden="true"></span>
+                <div class="right">
+                    <p>市场信息</p>
+                </div>
+            </div>
+        </a>
+        <a class="menu-box" href="#">
+            <div class="menu">
+                <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+                <p>发布信息</p>
+            </div>
+            <div class="child">
+                <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+                <div class="right">
+                    <p>发布信息</p>
+                </div>
+            </div>
+        </a>
+        <a class="menu-box" href="#">
+            <div class="menu">
+                <span class="fa fa-qq" aria-hidden="true"></span>
+                <p>联系客服</p>
+            </div>
+            <div class="child">
+                <span class="fa fa-qq" aria-hidden="true"></span>
+                <div class="right">
+
+                    <p>QQ：3307181902</p>
+                </div>
+            </div>
+        </a>
+        <a class="menu-box" href="#">
+            <div class="menu">
+                <span class="fa fa-video-camera" aria-hidden="true"></span>
+                <p>看直播</p>
+            </div>
+            <div class="child">
+                <span class="fa fa-video-camera" aria-hidden="true"></span>
+                <div class="right">
+                    <p>看直播</p>
+                </div>
+            </div>
+        </a>
+        <a class="menu-box" href="#">
+            <div class="menu">
+                <span class="fa fa-video-camera" aria-hidden="true"></span>
+                <p>二维码</p>
+            </div>
+            <div class="child-qr">
+                <div class="right">
+                    <img src="./images/goods01.png" alt="">
+                </div>
+            </div>
+        </a>
+    </div>
+    <!---右侧固定导航栏 end-->
+    <!--返回顶部 start-->
+    <div class="back-to-top" onclick="handleScrollTop()">
+        <a>
+            <span class="fa fa-arrow-up"></span>
+        </a>
+    </div>
+    <!--返回顶部 end-->
+</body>
+<script>
+    function handleScrollTop() {
+        console.log(111)
+        window.scrollTo(0, 0)
+        console.log(222)
+    }
+
+    function menu(type) {
+        if (type == 'open') {
+            $(".top-menu").css("display", "block")
+        } else {
+            $(".top-menu").css("display", "none")
+        }
+    }
+
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: true, //可选选项，自动滑动
+        loop: true,
+        paginationClickable: true,
+        autoplay: {
+            delay: 3000,
+        },
+        pagination: {
+            el: ' .swiper-pagination ',
+
+        }
+    });
+</script>
+
+</html>
