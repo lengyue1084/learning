@@ -1818,3 +1818,124 @@ li {
 
 
 /*************************************************************************************/
+
+
+/*************************************************************************************/
+
+
+/****** 搜索列表 start ************/
+
+.search-nav {
+    height: 50px;
+    border: 1px dashed #e5e5e5;
+    width: 1198px;
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.search-nav .search-desc {
+    float: left;
+    display: block;
+    width: 80px;
+    text-align: center;
+    background: #f5f5f5;
+    color: #999;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    display: block;
+    height: 100%;
+    line-height: 50px;
+}
+
+.search-nav-box {
+    padding-right: 20px;
+    display: block;
+    float: left;
+    height: 100%;
+    width: 1078px;
+    overflow: hidden;
+    background: #fff;
+    height: 50px;
+}
+
+.search-nav-box a {
+    display: block;
+    float: left;
+    margin-right: 30px;
+    color: #333333;
+    font-family: "微软雅黑";
+    padding: 0px 10px;
+    margin-bottom: 5px;
+    height: 44px;
+    line-height: 48px;
+    margin: 2px;
+}
+
+.search-nav-box a.search-nav-item-active {
+    border-bottom: 2px solid #e30b69;
+    color: #e30b69;
+}
+
+.search-goods-list {
+    margin: 0px auto;
+    overflow: hidden;
+}
+
+.search-goods-list .search-goods-item {
+    float: left;
+    margin-top: 20px;
+    width: 238px;
+    height: 365px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    margin-right: 19px;
+    padding: 20px 20px 15px;
+}
+
+.search-goods-list .search-goods-item img {
+    width: 100%;
+    height: 230px;
+    margin-bottom: 10px;
+}
+
+.search-goods-list .search-goods-item .search-goods-item-title {
+    display: block;
+    color: #333;
+    font-size: 13px;
+    line-height: 25px;
+    height: 25px;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.search-goods-list .search-goods-item .search-goods-item-desc {
+    display: block;
+    color: #888888;
+    font-size: 13px;
+    height: 45px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.search-goods-list .search-goods-item .search-goods-item-btn-box {
+    width: 100%;
+    padding: 5px 0px;
+}
+
+.search-goods-list .search-goods-item .search-goods-item-btn-box a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #e30b69;
+    color: #ffffff;
+    border-radius: 40px;
+}
+
+
+/****** 搜索列表 end ************/
+
+
+/*************************************************************************************/

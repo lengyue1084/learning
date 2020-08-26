@@ -1494,3 +1494,92 @@ a {
 
 
 /****************************************************************************************/
+
+
+/****************************************************************************************/
+
+
+/******搜索列表 start ************/
+
+.search-goods-nav-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-goods-nav-box a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    height: 1rem;
+    margin: 0.2rem;
+}
+
+.search-goods-nav-box a.search-goods-nav-active {
+    border-bottom: 0.06rem solid #e30b69;
+    color: #e30b69;
+}
+
+.search-goods-list {
+    padding: 0px .20rem .3rem;
+}
+
+.search-goods-list .search-goods-item {
+    width: calc(50% - 0.2rem * 2);
+    float: left;
+    margin-top: .23rem;
+    margin: 0.2rem;
+}
+
+.search-goods-list .search-goods-item img {
+    width: 100%;
+}
+
+.search-goods-list .search-goods-item .search-goods-item-title {
+    display: block;
+    color: #333;
+    font-size: 14px;
+    margin-top: .15rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.search-goods-list .search-goods-item .search-goods-item-desc {
+    display: block;
+    color: #888;
+    font-size: 14px;
+    margin-top: .15rem;
+    height: 40px;
+}
+
+.search-goods-list .search-goods-item .search-goods-item-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+}
+
+.search-goods-list .search-goods-item .search-goods-item-btn a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e30b69;
+    color: #ffffff;
+    flex: 1;
+    height: 0.8rem;
+    border-radius: 40px;
+}
+
+
+/******搜索列表 end ************/
+
+
+/****************************************************************************************/

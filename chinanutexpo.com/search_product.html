@@ -1,0 +1,389 @@
+<!--
+ * @Author: WQ
+ * @Date: 2020-07-16
+ * @LastEditors: WQ
+ * @LastEditTime:  2020-07-16
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no,email=no,adress=no" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="applicable-device" content="pc" />
+    <meta name="keywords" content="中国坚果炒货展会网，中国坚果" />
+    <meta name="description" itemprop="description" content="中国坚果炒货展会网平台！" />
+    <title>搜索列表</title>
+    <link rel="stylesheet" href='./css/normalize.css' />
+    <link rel="stylesheet" href='./css/common.css' />
+    <link rel="stylesheet" href='./css/jiuyue.css' />
+    <link rel='stylesheet' href='./font-awesome-4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='./dist/swiper/css/swiper.min.css' />
+    <script src="./dist/swiper/js/swiper.min.js"></script>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+<div style="height:24px;width:100%;">
+  <p style="line-height:24px;position:fixed;top:0;width:100%;text-align:center;min-width: 900px;background-color:#F6F6CC;color:#333;z-index:901;">
+        当前的浏览器版本过低，部分功能可能会受影响，请尽快升级哦（推荐下载
+        <a href="http://www.firefox.com.cn//" target="blank" title="火狐浏览器">火狐浏览器</a>
+        或
+        <a href="https://www.google.cn/intl/zh-CN/chrome/" target="blank" title="谷歌浏览器">谷歌浏览器</a>
+        ），或联系QQ95695864获得帮助
+  </p>
+</div>
+<![endif]-->
+
+    <!-- header start -->
+    <div class="header-box">
+        <div class="fl">
+            <a href="/"><img src="./images/zc_logo.jpg"></a>
+        </div>
+        <!--header-search-->
+        <div class="header-search-box">
+            <div>
+                <span class="header-search-left">快速查找：</span>
+                <div class="search-content-box">
+                    <form onsubmit="return dosearch(this)">
+                        <div class="select-key">
+                            <input name="keys" type="text" id="_keys" class="txt-search" placeholder="请输入搜索">
+                        </div>
+                        <!--select-key-->
+                        <input name="" type="submit" class="search-btn" value="搜索">
+                    </form>
+
+                </div>
+                <div class="hot-search-box">
+
+                    <div class="key-hot">
+                        <span>热门关键词：</span>
+                        <a href="#" target="_blank">雷司令</a>
+                        <a href="#" target="_blank">雷司令</a>
+                        <a href="#" target="_blank">雷司令</a>
+                        <a href="#" target="_blank">雷司令</a>
+                        <a href="#" target="_blank">雷司令</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--header-search-->
+        <!--header-nav-->
+        <div class="header-nav">
+            <dl>
+                <dd class="nav-link active">
+                    <a href="/">首页</a>
+                </dd>
+                <dd class="nav-link">
+                    <a href="#">关于展会</a>
+                    <div class="nav-sub">
+                        <div class="sub-box">
+                            <a href="">展会日常</a>
+                            <a href="">展会组织</a>
+                            <a href="">我的展会</a>
+                            <a href="">展会日常</a>
+                            <a href="">展会组织</a>
+                            <a href="">我的展会</a>
+                        </div>
+                    </div>
+                </dd>
+                <dd class="nav-link">
+                    <a href="#"> 在线展会</a>
+                    <div class="nav-sub">
+                        <div class="sub-box">
+                            <a href="">展会日常</a>
+                            <a href="">展会组织</a>
+                            <a href="">我的展会</a>
+                        </div>
+                    </div>
+                </dd>
+                <dd class="nav-link">
+                    <a href="#" target="_blank"> 展会资讯</a>
+                    <div class="nav-sub">
+                        <div class="sub-box">
+                            <a href="">展会资讯</a>
+                            <a href="">展会资讯</a>
+                            <a href="">展会资讯展会资讯</a>
+                        </div>
+                    </div>
+                </dd>
+                <dd class="nav-link">
+                    <a href="#" target="_blank">登陆</a>
+                </dd>
+                <dd class="nav-link">
+                    <a href="#" target="_blank">英文</a>
+                </dd>
+            </dl>
+        </div>
+        <!--header-nav-->
+    </div>
+    <!-- header end -->
+    <div class="bg">
+        <div class="w1200">
+            <div class="search-nav">
+                <span class="search-desc">类别：</span>
+                <div class="search-nav-box">
+                    <a href="./search_product.html" class="search-nav-item-active">产品</a>
+                    <a href="./search_supplier.html">供应商</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg1">
+        <div class="w1200">
+            <div class="search-goods-list">
+                <div class="search-goods-item">
+                    <img src="./images/goods01.png" alt="">
+                    <a class="search-goods-item-title">齐天大圣的仙桃</a>
+                    <a class="search-goods-item-desc">齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃sfasf齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃sfasf</a>
+                    <div class="search-goods-item-btn-box">
+                        <a href="#">查看详情</a>
+                    </div>
+                </div>
+                <div class="search-goods-item">
+                    <img src="./images/goods01.png" alt="">
+                    <a class="search-goods-item-title">齐天大圣的仙桃</a>
+                    <a class="search-goods-item-desc">齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃sfasf齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃sfasf</a>
+                    <div class="search-goods-item-btn-box">
+                        <a href="#">查看详情</a>
+                    </div>
+                </div>
+                <div class="search-goods-item">
+                    <img src="./images/goods01.png" alt="">
+                    <a class="search-goods-item-title">齐天大圣的仙桃</a>
+                    <a class="search-goods-item-desc">齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃sfasf齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃sfasf</a>
+                    <div class="search-goods-item-btn-box">
+                        <a href="#">查看详情</a>
+                    </div>
+                </div>
+                <div class="search-goods-item">
+                    <img src="./images/goods01.png" alt="">
+                    <a class="search-goods-item-title">齐天大圣的仙桃</a>
+                    <a class="search-goods-item-desc">齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃sfasf齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃sfasf</a>
+                    <div class="search-goods-item-btn-box">
+                        <a href="#">查看详情</a>
+                    </div>
+                </div>
+                <div class="search-goods-item">
+                    <img src="./images/goods01.png" alt="">
+                    <a class="search-goods-item-title">齐天大圣的仙桃</a>
+                    <a class="search-goods-item-desc">齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃sfasf齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃sfasf</a>
+                    <div class="search-goods-item-btn-box">
+                        <a href="#">查看详情</a>
+                    </div>
+                </div>
+                <div class="search-goods-item">
+                    <img src="./images/goods01.png" alt="">
+                    <a class="search-goods-item-title">齐天大圣的仙桃</a>
+                    <a class="search-goods-item-desc">齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃sfasf齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃sfasf</a>
+                    <div class="search-goods-item-btn-box">
+                        <a href="#">查看详情</a>
+                    </div>
+                </div>
+                <div class="search-goods-item">
+                    <img src="./images/goods01.png" alt="">
+                    <a class="search-goods-item-title">齐天大圣的仙桃</a>
+                    <a class="search-goods-item-desc">齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃sfasf齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃sfasf</a>
+                    <div class="search-goods-item-btn-box">
+                        <a href="#">查看详情</a>
+                    </div>
+                </div>
+                <div class="search-goods-item">
+                    <img src="./images/goods01.png" alt="">
+                    <a class="search-goods-item-title">齐天大圣的仙桃</a>
+                    <a class="search-goods-item-desc">齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃sfasf齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃sfasf</a>
+                    <div class="search-goods-item-btn-box">
+                        <a href="#">查看详情</a>
+                    </div>
+                </div>
+                <div class="search-goods-item">
+                    <img src="./images/goods01.png" alt="">
+                    <a class="search-goods-item-title">齐天大圣的仙桃</a>
+                    <a class="search-goods-item-desc">齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃sfasf齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃齐天大圣的仙桃sfasf</a>
+                    <div class="search-goods-item-btn-box">
+                        <a href="#">查看详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer start -->
+    <div class="footer-box bg">
+        <div class="w1200">
+            <div class="footer-left fl">
+                <img src="./images/footer-01.png" alt="">
+            </div>
+            <div class="footer-center fl">
+                <div class="footer-center-left fl">
+                    <div>联系方式</div>
+                    <div>电话：010-666666</div>
+                    <div>邮箱：110@qq.com</div>
+                    <div>地址：北京上海</div>
+                    <div>邮编：100073</div>
+                </div>
+                <div class="footer-center-left fr">
+                    <div>友情链接</div>
+                    <div>
+                        <a href="#">国家市场监督管理总局</a>
+                    </div>
+                    <div>
+                        <a href="#">国家市场监督管理总局</a>
+                    </div>
+                    <div>
+                        <a href="#">国家市场监督管理总局</a>
+                    </div>
+                    <div>
+                        <a href="#">国家市场监督管理总局</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-right fr">
+                <div class="footer-righ-title">社交媒体</div>
+                <div>
+                    <img src="./images/qr01.png" alt="">
+                    <img src="./images/qr01.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer end -->
+    <!---右侧固定导航栏 start-->
+    <div class="nav-fixed-right">
+        <a href="#" class="menu-box">
+            <div class="menu">
+                <span class="fa fa-bell-o" aria-hidden="true"></span>
+                <p>参展展会</p>
+            </div>
+            <div class="child">
+                <span class="fa fa-bell-o" aria-hidden="true">
+                </span>
+                <div class="right">
+                    <p>参展展会</p>
+                </div>
+            </div>
+        </a>
+        <a href="#" class="menu-box">
+            <div class="menu">
+                <span class="fa fa-cart-plus" aria-hidden="true"></span>
+                <p>市场信息</p>
+            </div>
+            <div class="child">
+                <span class="fa fa-cart-plus" aria-hidden="true"></span>
+                <div class="right">
+                    <p>市场信息</p>
+                </div>
+            </div>
+        </a>
+        <a class="menu-box" href="#">
+            <div class="menu">
+                <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+                <p>发布信息</p>
+            </div>
+            <div class="child">
+                <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+                <div class="right">
+                    <p>发布信息</p>
+                </div>
+            </div>
+        </a>
+        <a class="menu-box" href="#">
+            <div class="menu">
+                <span class="fa fa-qq" aria-hidden="true"></span>
+                <p>联系客服</p>
+            </div>
+            <div class="child">
+                <span class="fa fa-qq" aria-hidden="true"></span>
+                <div class="right">
+
+                    <p>QQ：3307181902</p>
+                </div>
+            </div>
+        </a>
+        <a class="menu-box" href="#">
+            <div class="menu">
+                <span class="fa fa-video-camera" aria-hidden="true"></span>
+                <p>看直播</p>
+            </div>
+            <div class="child">
+                <span class="fa fa-video-camera" aria-hidden="true"></span>
+                <div class="right">
+                    <p>看直播</p>
+                </div>
+            </div>
+        </a>
+        <a class="menu-box" href="#">
+            <div class="menu">
+                <span class="fa fa-video-camera" aria-hidden="true"></span>
+                <p>二维码</p>
+            </div>
+            <div class="child-qr">
+                <div class="right">
+                    <img src="./images/goods01.png" alt="">
+                </div>
+            </div>
+        </a>
+    </div>
+    <!---右侧固定导航栏 end-->
+    <!--返回顶部 start-->
+    <div class="back-to-top" onclick="handleScrollTop()">
+        <a href="javascript:void;">
+            <span class="fa fa-arrow-up"></span>
+        </a>
+    </div>
+    <!--返回顶部 end-->
+</body>
+<script>
+    function handleScrollTop() {
+        window.touchmove(0, 0);
+    }
+    try {
+        window.GLOBAL_DATA = {
+            isServer: true,
+            cateId: 2037,
+            liveCourse: {
+                "tasks": [{}]
+            },
+            courseCenter: [],
+            seriesCourse: [],
+            agencyInfo: {
+                "isShow": 0,
+                "name": ""
+            },
+            _ext: {}
+        };
+    } catch (e) {
+        window.GLOBAL_DATA = {
+            isServer: true,
+            cateId: 2037,
+            liveCourse: {},
+            courseCenter: [],
+            seriesCourse: [],
+            agencyInfo: {}
+        };
+    }
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: true, //可选选项，自动滑动
+        loop: true,
+        paginationClickable: true,
+        navigation: {
+            nextEl: ' .swiper-button-next ',
+            prevEl: ' .swiper-button-prev ',
+        },
+        autoplay: {
+            delay: 3000,
+        },
+        pagination: {
+            el: ' .swiper-pagination ',
+
+        }
+    });
+</script>
+
+</html>
