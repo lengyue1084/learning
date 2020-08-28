@@ -996,7 +996,7 @@ li {
     border: 0px;
     height: 36px;
     line-height: 36px;
-    color: #bbbbbb;
+    color: #000000;
     font-size: 14px;
     border: 0px;
     width: 254px;
@@ -1032,7 +1032,7 @@ li {
 .tex-txt2 {
     height: 36px;
     line-height: 36px;
-    color: #bbbbbb;
+    color: #000000;
     font-size: 14px;
     border: 0px;
     width: 149px;
@@ -1168,7 +1168,7 @@ li {
     line-height: 36px;
     border: 0px;
     float: left;
-    color: #bbbbbb;
+    color: #000000;
     font-size: 14px;
 }
 
