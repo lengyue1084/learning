@@ -1,0 +1,105 @@
+$(function () {
+
+    initExhibitionAreaDataOnHeader();
+    initEventsListDataOnHeader();
+    initSearch();
+});
+
+function initExhibitionAreaDataOnHeader() {
+
+    $.post(ctx + '/sys/exhibitionArea/api/front/exhibitionArea/init',
+
+        function (data) {
+
+            //如果是登录未超时
+            if (data && data.resultCode === "0") {
+
+                var eaData = data.data;
+                var eaData9 = eaData.exhibitionAreaListLimit9;
+
+                $('#exhibitionAreaOnHeader').html('');
+                var liHtml9 = '<li><a href="' + ctx + '/sys/onlineEvents/front/onlineEvents/page">概括</a></li>';
+                eaData9.map(function (value, index) {
+                    liHtml9 += '<li><a href="' + ctx + '/sys/onlineEvents/front/onlineEvents/detail?id=' + value.id + '">' + value.theme + '</a></li>';
+                });
+
+                $('#exhibitionAreaOnHeader').html(liHtml9);
+
+                //显示信息
+            } else if (data && data.resultCode !== "0") {
+                //隐藏弹框
+                alertZ(data.resultMessage);
+            }
+
+        }, 'json');
+
+
+}
+
+function initEventsListDataOnHeader() {
+
+    $.post(ctx + '/sys/events/api/front/eventsList/init',
+
+        function (R) {
+
+            //如果是登录未超时
+            if (R && R.resultCode === "0") {
+
+                var eaData = R.data;
+                var eaData6 = eaData.eventsListLimit6;
+
+                $('#eventsListOnHeader').html('');
+                var liHtml6 = '<li><a href="' + ctx + '/sys/events/front/events/page">活动资讯列表</a></li>';
+                eaData6.map(function (value, index) {
+                    liHtml6 += '<li><a href="' + ctx + '/sys/events/front/events/detail?newsId=' + value.newsId + '">' + value.newsTitle + '</a></li>';
+
+                });
+
+
+                $('#eventsListOnHeader').html(liHtml6);
+
+                //显示信息
+            } else if (R && R.resultCode !== "0") {
+                //隐藏弹框
+                alertZ(R.resultMessage);
+            }
+
+        }, 'json');
+
+
+}
+
+
+function initSearch() {
+    $('#searchInputH5,#searchInput').bind('keydown', keyDown);
+
+}
+
+//执行键盘按键命令
+function keyDown(e) {
+    var $this = $(this);
+    var keycode = 0;
+    //IE浏览器
+    if (CheckBrowserIsIE()) {
+        keycode = event.keyCode;
+    } else {
+        //火狐浏览器
+        keycode = e.which;
+    }
+    if (keycode === 13) { //回车键是13
+        if ($this.val() !== '') {
+            // console.info('不为空,提交');
+
+            $(this).parent().submit();
+           // var url = ctx + '/sys/search/api/front/search/page?search=' + $this.val() + '&searchType=' + searchType;
+           // window.location.href=url;
+
+
+        } else {
+            // console.info('为空,不提交');
+            return false;
+        }
+
+
+    }
+}

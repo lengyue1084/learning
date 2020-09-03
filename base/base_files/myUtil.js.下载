@@ -1,0 +1,2167 @@
+/**
+ * *******************************************常用的公共方法***************************************
+ */
+
+
+
+
+
+$(function(){
+    var element = $("div[textarea-div]");
+    var temp =  element.text().replace(/\n/g,'<br/>');
+    element.html(temp);
+});
+
+function initMedia(typeId, limit, callback,direction) {
+    if(!direction){
+        direction=''
+    }
+    $.post(ctx + '/sys/media/api/front/media/load?typeId=' + typeId + '&limit=' + limit+'&direction='+direction,
+
+        function (R) {
+            //如果是登录未超时
+            if (R && R.resultCode === "0") {
+
+                var eList = R.data;
+
+
+                callback(eList);
+
+                //显示信息
+            } else if (R && R.resultCode !== "0") {
+                //隐藏弹框
+                alertZ(R.resultMessage);
+            }
+
+        }, 'json');
+}
+
+function showLaguage(value, row, index) {
+
+    if (value === 'EN') {
+        value = '英文';
+    } else if (value === 'CN') {
+        value = '中文';
+    }
+
+
+    return value;
+}
+
+function isPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ["Android", "iPhone",
+        "SymbianOS", "Windows Phone",
+        "iPad", "iPod"];
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}
+
+function initAllExhibitorList() {
+
+    $.post(ctx + '/sys/manager/api/front/exhibitor/all',
+
+        function (data) {
+            //如果是登录未超时
+            if (data && data.resultCode === "0") {
+
+
+                var eaData = data.data;
+
+
+                $('#exhibitorAllList').html('');
+                var children = '';
+                eaData.map(function (value, index) {
+
+
+                    if (value.companyLogo) {//只要上传logo,才会显示
+                        children += '<div class="box">\n' +
+                            '                        <a href="javascript:void(0);" class="imghover">\n' +
+                            '                            <img src="' + ctx + value.companyLogo.imgUrl + '" alt="' + value.enpName + '">\n' +
+                            '                        </a>\n' +
+                            '                    </div>';
+                    }
+
+
+                });
+
+                $('#exhibitorAllList').html(children);
+
+
+                $('#Marquee_x').jcMarquee({'marquee': 'x', 'speed': 10});
+
+                //显示信息
+            }
+
+        }, 'json');
+
+}
+
+
+function goIn() {
+    var $this = $(this);
+    if (authcCheckAndDone(true)) {
+        $this.attr('href', ctx + '/sys/userProfile/front/front_authc_json/profile/page');
+    }
+}
+
+function initComponent() {
+
+    //初始化删除图片按钮
+    $("#newsDelImgBtn").off('click').on("click", newsDelImg);
+
+
+}
+
+function newsDelImg() {
+
+
+    $('#oldNewsImg').hide();
+    $('#oldNewsImg').removeAttr('src');
+    $('#oldNewsImg').attr('haveOldValue', 'false'); //添加隐藏字段用于判断
+    $('#newsDelImgBtn').hide();
+    $('.ace-file-input').show();
+
+}
+
+
+//生成并渲染出验证码图形
+function draw(show_num, id, width, height) {
+    var canvas_width = $('#' + id).width();
+    var canvas_height = $('#' + id).height();
+
+
+    if (width) {
+        canvas_width = width;
+
+    }
+    if (height) {
+        canvas_height = height;
+
+    }
+    console.info(id);
+    console.info(canvas_width);
+    console.info(canvas_height);
+    var canvas = document.getElementById(id);//获取到canvas的对象，演员
+    var context = canvas.getContext("2d");//获取到canvas画图的环境，演员表演的舞台
+    canvas.width = canvas_width;
+    canvas.height = canvas_height;
+    var sCode = "a,b,c,d,e,f,g,h,i,j,k,m,n,p,q,r,s,t,u,v,w,x,y,z,A,B,C,E,F,G,H,J,K,L,M,N,P,Q,R,S,T,W,X,Y,Z,1,2,3,4,5,6,7,8,9,0";
+    var aCode = sCode.split(",");
+    var aLength = aCode.length;//获取到数组的长度
+    for (var i = 0; i < 4; i++) { //这里的for循环可以控制验证码位数（如果想显示6位数，4改成6即可）
+        var j = Math.floor(Math.random() * aLength);//获取到随机的索引值
+        // var deg = Math.random() * 30 * Math.PI / 180;//产生0~30之间的随机弧度
+        var deg = Math.random() - 0.5; //产生一个随机弧度
+        var txt = aCode[j];//得到随机的一个内容
+        show_num[i] = txt.toLowerCase();
+        var x = 10 + i * 20;//文字在canvas上的x坐标
+        var y = 20 + Math.random() * 8;//文字在canvas上的y坐标
+        context.font = "bold 23px 微软雅黑";
+        context.translate(x, y);
+        context.rotate(deg);
+        context.fillStyle = randomColor();
+        context.fillText(txt, 0, 0);
+        context.rotate(-deg);
+        context.translate(-x, -y);
+    }
+    for (var i = 0; i <= 5; i++) { //验证码上显示线条
+        context.strokeStyle = randomColor();
+        context.beginPath();
+        context.moveTo(Math.random() * canvas_width, Math.random() * canvas_height);
+        context.lineTo(Math.random() * canvas_width, Math.random() * canvas_height);
+        context.stroke();
+    }
+    for (var i = 0; i <= 30; i++) { //验证码上显示小点
+        context.strokeStyle = randomColor();
+        context.beginPath();
+        var x = Math.random() * canvas_width;
+        var y = Math.random() * canvas_height;
+        context.moveTo(x, y);
+        context.lineTo(x + 1, y + 1);
+        context.stroke();
+    }
+}
+
+//得到随机的颜色值
+function randomColor() {
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+    return "rgb(" + r + "," + g + "," + b + ")";
+}
+
+function limitWords(value, limit) {
+
+
+    var len = value.length;
+
+
+    return len >= limit ? value.substr(0, limit) + '...' : value;
+
+
+}
+
+/***向后台发送短信验证码**/
+function sendSMSCodeToBackstage(operate, phone) {
+    $.ajax({
+        url: ctx + '/sys/phone/sendSMSCode?smsType=' + operate + "&mobilePhone=" + phone,
+        type: 'post',
+        dataType: 'json',
+        success: function (data) {
+            var status = {icon: 2};
+            if (data.resultCode == 0) {
+                status = {icon: 1};
+            }
+            layer.msg(data.resultMessage, status);
+        }
+    });
+}
+
+/**
+ * 创建分页栏
+ * @param totalPages
+ * @param limit
+ * @param callBackFun
+ */
+function createPagebar(page, totalPages, limit, callBackFun) {
+    $("div[id^=page-]").Page({
+        page: page,
+        totalPages: totalPages,//分页总数
+        liNums: limit,//分页的数字按钮数(建议取奇数)
+        activeClass: 'activP', //active 类样式定义
+        callBack: function (page) {
+
+            callBackFun(page);
+        }
+    });
+
+}
+
+
+function createPagebar_new(id, page, totalPages, limit, callBackFun, canJump) {
+
+    var canJump = canJump == undefined ? 0 : canJump;
+    new Paging(id, {
+        nowPage: page, // 当前页码
+        pageNum: totalPages, // 总页码
+        buttonNum: limit, //要展示的页码数量
+        canJump: canJump,// 是否能跳转。0=不显示（默认），1=显示
+        showOne: 1,//只有一页时，是否显示。0=不显示,1=显示（默认）
+        callback: function (page) { //回调函数
+
+
+            callBackFun(page);
+
+
+        }
+    })
+
+
+}
+
+
+/**
+ * 设置自定义每页最大条数数据的分页栏
+ * @param url
+ * @param limit
+ * @param param
+ * @param callback
+ */
+function initPagebarWithLimit(url, limit, param, callback) {
+
+    initPagebar(url, {
+        page: 1,
+        limit: limit,
+        paramMap: param
+    }, callback);
+
+}
+
+function initPagebarWithLimitNew(id, url, limit, param, callback, canJump) {
+
+
+    initPagebar_new(id, url, {
+        page: 1,
+        limit: limit,
+        paramMap: param
+    }, callback, canJump);
+
+}
+
+/**
+ * 设置每页5条数据的分页栏
+ * @param url
+ * @param param
+ * @param callback
+ */
+function initDefaultPagebar(url, param, callback) {
+
+
+    initPagebarWithLimit(url, 5, param, callback);
+}
+
+
+function initDefaultPagebarNew(id, url, param, callback) {
+
+
+    console.info('333');
+
+
+    console.info(param);
+    initPagebarWithLimitNew(id, url, 5, param, callback);
+}
+
+
+/**
+ * 初始化pagebar
+ */
+function initPagebar(url, pageParam, callback, canJump) {
+
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        contentType: "application/json;charset=utf-8",
+        data: JSON.stringify(pageParam),
+        dataType: "json",
+        success: function (R) {
+            if (isAuthcTrueForFront(R)) {
+                if (R && R.resultCode === "0") {
+                    var pageData = R.data;
+                    /*处理后端返回的数据*/
+                    callback(pageData);
+                    /*初始化分页栏*/
+
+
+                    createPagebar(pageData.page, pageData.totalPages, pageData.limit, function (thisPageNum) {
+                        var pageParam = {
+                            page: thisPageNum,
+                            limit: pageData.limit,
+                            paramMap: pageData.paramMap
+
+                        };
+                        initPagebar(url, pageParam, callback);
+                    });
+
+                }
+            }
+        }
+    });
+
+
+}
+
+function initPagebar_new(id, url, pageParam, callback, canJump) {
+
+    console.info(pageParam);
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        contentType: "application/json;charset=utf-8",
+        data: JSON.stringify(pageParam),
+        dataType: "json",
+        success: function (R) {
+            if (isAuthcTrueForFront(R)) {
+                if (R && R.resultCode === "0") {
+                    var pageData = R.data;
+                    /*处理后端返回的数据*/
+
+
+                    callback(pageData);
+                    if (pageData.total != 0) {
+
+                        $('#' + id).show();
+
+                        /*初始化分页栏*/
+
+
+                        createPagebar_new(id, pageData.page, pageData.totalPages, pageData.limit, function (thisPageNum) {
+                            var pageParam = {
+                                page: thisPageNum,
+                                limit: pageData.limit,
+                                paramMap: pageData.paramMap
+
+                            };
+
+                            initPagebar(url, pageParam, callback);
+                        }, canJump);
+                    } else {
+
+
+                        $('#' + id).hide();
+
+                    }
+
+
+                }
+            }
+        }
+    });
+
+
+}
+
+
+/***
+ * 我要发布信息
+ * */
+function publishSupplyAndDemand() {
+
+    console.info('publishSupplyAndDemand');
+    var $this = $(this);
+    console.info($this);
+    if (authcCheckAndDone()) {
+        $this.attr('href', ctx + '/sys/userProfile/front/front_authc_json/supplyAndDemand/page');
+    }
+}
+
+
+/**
+ * 初始化 专业技术解答
+ */
+function initContactHTML(id) {
+    var $contactLi = $(id);
+    $contactLi.html('');
+    //默认PC端的调用qq插件
+    var contactHtml = '<a href="tencent://message/?uin=3307181902&Site=http://vps.shuidazhe.com&Menu=yes">专业技术解答</a>';
+    if (!isPC()) {
+        contactHtml = '<a href="mqqwpa://im/chat?chat_type=wpa&uin=3307181902&version=1&src_type=web&web_src=oicqzone.com">专业技术解答</a>';
+    }
+
+    $contactLi.html(contactHtml);
+}
+
+/**
+ * 初始化 联系客服
+ */
+function initContactAHref(id, qq) {
+    var $contactLi = $(id);
+    $contactLi.attr("href", '');
+
+    $contactLi.find('#showQQDiv').html('QQ：' + qq);
+    //默认PC端的调用qq插件
+    var hrefHtml = 'tencent://message/?uin=' + qq + '&Site=http://vps.shuidazhe.com&Menu=yes';
+    if (!isPC()) {
+        hrefHtml = 'mqqwpa://im/chat?chat_type=wpa&uin=' + qq + '&version=1&src_type=web&web_src=oicqzone.com';
+    }
+
+    $contactLi.attr("href", hrefHtml);
+}
+
+/**
+ * 获取checkBox的值
+ * @param name
+ * @returns {Array}
+ */
+function getCheckBoxVal(name) {
+    var obj = document.getElementsByName(name);
+    var values = '';
+    var check_val = [];
+    for (k in obj) {
+        if (obj[k].checked)
+            check_val.push(obj[k].value);
+    }
+    values = check_val.join(",");
+    return values;
+}
+
+/**
+ *单个文件上传
+ * @param id
+ * @param previewFileSrc
+ * @param fileType
+ * @param isImg
+ * @param width
+ * @param uploadSuccessCallback
+ */
+
+
+function initFileUploadWithPK(id, previewFileSrc, fileType, isImg, uploadSuccessCallback, primaryKey, isMultiple) {
+    initFileUpload(id, previewFileSrc, fileType, isImg, undefined, uploadSuccessCallback, primaryKey, isMultiple);
+}
+
+
+function initFileUpload(id, previewFileSrc, fileType, isImg) {
+    initFileUpload(id, previewFileSrc, fileType, isImg, undefined, undefined, undefined, false);
+}
+
+function initFileUpload(id, previewFileSrc, fileType, isImg, width) {
+    initFileUpload(id, previewFileSrc, fileType, isImg, width, undefined, undefined, false);
+}
+
+function initFileUpload(id, previewFileSrc, fileType, isImg, width, uploadSuccessCallback, primaryKey, isMultiple) {
+
+    console.info(id);
+    var isImgResult = isImg === undefined ? true : isImg;
+    var primaryKeyResult = primaryKey === undefined ? '' : primaryKey;
+    var isMultipleResult = isMultiple === undefined ? 'false' : isMultiple;
+
+
+    new DragImgUpload(id, {
+        boxWidth: width === undefined ? "200px" : width,
+        previewImgSrc: previewFileSrc === undefined ? '' : ctx + previewFileSrc,
+        isImg: isImgResult,
+        callback: function (files) {
+            //回调函数，可以传递给后台等等
+            var file = files[0];
+            var formData = new FormData();
+            formData.append("file", file);
+            formData.append("fileType", fileType);
+            formData.append("isImg", isImgResult);
+            formData.append("primaryKey", primaryKeyResult);
+            formData.append("isMultiple", isMultipleResult);
+
+
+            $.ajax({
+                url: ctx + '/sys/profile/front/front_authc_json/file/upload',
+                dataType: 'json',
+                type: 'POST',
+                async: false,
+                data: formData,
+                processData: false, // 使数据不做处理
+                contentType: false, // 不要设置Content-Type请求头
+                success: function (data) {
+
+                    if (isAuthcTrueForFront(data)) {
+                        $.DialogByZ.Autofade({Content: data.resultMessage});
+                        if (uploadSuccessCallback) {
+                            uploadSuccessCallback(data);
+                        }
+
+                    }
+
+                }
+            });
+
+
+        }
+    });
+}
+
+/**
+ * dialogZ的alert
+ * @param msg
+ */
+function alertZ(msg) {
+
+
+    $.DialogByZ.Alert({
+        Title: "提示",
+        Content: msg,
+        BtnL: "确定",
+        FunL: function () {
+            $.DialogByZ.Close();
+        }
+    });
+}
+
+
+/*function confirmZ(msg, btnL, btnR, funL, funR) {
+
+
+    $.DialogByZ.Confirm({
+        Title: "提示",
+        Content: msg,
+        BtnL: btnL,
+        BtnR: btnR,
+        FunL: function () {
+            $.DialogByZ.Close();
+            funL();
+        },
+        FunR: function () {
+            $.DialogByZ.Close();
+            funR();
+        }
+    });
+}*/
+
+
+function postUserProfileRequestNeedDelay(url, forwardUrl, cannelUrl, data) {
+
+    postUserProfileRequestNeedCustom(url, forwardUrl, cannelUrl, data, function (url, forwardUrl, cannelUrl, data) {
+        //登录有效
+        $.DialogByZ.Alert({
+            Title: "提示",
+            Content: data.resultMessage,
+            BtnL: "确定",
+            FunL: function () {
+                $.DialogByZ.Close();
+            }
+        });
+
+        setTimeout(function () {
+            window.location.href = forwardUrl;
+        }, 2000);
+    });
+}
+
+
+/**
+ * 处理个人中心的请求,许多有共同点
+ * @param url
+ * @param forwardUrl
+ * @param data
+ */
+function postUserProfileRequest(url, forwardUrl, cannelUrl, data) {
+
+    postUserProfileRequestNeedCustom(url, forwardUrl, cannelUrl, data, function (url, forwardUrl, cannelUrl, data) {
+        //登录有效
+        $.DialogByZ.Autofade({
+            Content: data.resultMessage
+        });
+
+        window.location.href = forwardUrl;
+
+
+    });
+}
+
+
+function postUserProfileRequestNeedConfirm(url, forwardUrl, cannelUrl, data) {
+
+    postUserProfileRequestNeedCustom(url, forwardUrl, cannelUrl, data, function (url, forwardUrl, cannelUrl, data) {
+        $.DialogByZ.Confirm({
+            Title: "提示",
+            Content: data.resultMessage,
+            BtnL: '继续',
+            BtnR: '去查看',
+            FunL: function () {
+                $.DialogByZ.Close();
+                window.location.href = cannelUrl;
+            },
+            FunR: function () {
+                // 跳转到升级企业账号页面
+
+                window.location.href = forwardUrl;
+            }
+        });
+    });
+}
+
+
+function postUserProfileRequestNeedCustom(url, forwardUrl, cannelUrl, data, callback) {
+
+    $.post(url,
+        data,
+        function (data) {
+            //如果是登录未超时
+            if (data && data.resultCode === "0") {
+                callback(url, forwardUrl, cannelUrl, data);
+
+                //显示信息
+            } else if (data && data.resultCode !== "0") {
+                //隐藏弹框
+
+                $.DialogByZ.Alert({
+                    Title: "提示",
+                    Content: data.resultMessage,
+                    BtnL: "确定",
+                    FunL: function () {
+                        $.DialogByZ.Close();
+                    }
+                });
+
+
+            }
+
+        }, 'json');
+
+}
+
+
+/**
+ * 验证登录并且去做 该方法用户a ,btn 点击提示用
+ * @returns {boolean}
+ */
+function authcCheckAndDone(disableConfirm, sourceAddr, type) {
+
+    console.info(disableConfirm);
+    console.info(sourceAddr);
+    console.info(type);
+    var flag = false;
+    /*同步请求*/
+    $.ajaxSettings.async = false;
+    $.post(ctx + '/front/front_authc_json/authcCheck',
+
+        function (data) {
+
+
+
+            //如果是登录未超时
+            if (data && data.resultCode === "0") {
+                flag = true;
+                //登录有效
+                //显示信息
+            } else if (data && data.resultCode !== "0") {
+                //隐藏弹框
+
+                if (disableConfirm) {
+
+                    var href = ctx + '/front/login/page?sourceAddr=' + sourceAddr;
+
+                    if (type === 'signUp') { //参展,参会报名
+                        href = href + '&type=signUp'
+                    }
+
+                    // 跳转到登录页面
+                    window.location.href = href;
+                } else {
+
+
+                    if ($.DialogByZ) { //如果存在,则调用,否则调用window默认的confirm
+                        $.DialogByZ.Confirm({
+                            Title: "警告",
+                            Content: data.resultMessage,
+                            BtnL: '取消',
+                            BtnR: '去登陆',
+                            FunL: function () {
+                                $.DialogByZ.Close();
+                            },
+                            FunR: function () {
+
+
+                                var href = ctx + '/front/login/page?sourceAddr=' + sourceAddr;
+
+                                if (type === 'signUp') { //参展,参会报名
+                                    href = href + '?type=signUp'
+                                }
+
+
+                                // 跳转到登录页面
+                                window.location.href = href;
+                            }
+                        });
+                    } else {
+
+
+                        var r = confirm(data.resultMessage);
+                        if (r == true) {
+                            var href = ctx + '/front/login/page?sourceAddr=' + sourceAddr;
+
+                            if (type === 'signUp') { //参展,参会报名
+                                href = href + '?type=signUp'
+                            }
+
+
+                            // 跳转到登录页面
+                            window.location.href = href;
+                        }
+
+
+                    }
+
+
+                }
+
+
+            }
+
+        }, 'json');
+
+    $.ajaxSettings.async = false;
+
+    return flag;
+
+}
+
+
+/**
+ * 检测返回的数据是否未授权登录信息,如果是,则提示并且跳转到登录页面
+ *
+ * @param data  {stats:-99 ,message:'XXXXX'}
+ */
+function isAuthcTrue(data) {
+    var flag = true;
+    //如果超时,获取的数据是错误提示数据
+    if (data.stats && data.stats == -99) {
+        $("#dialog-message").html(data.message);
+        $("#dialog-message").dialog({
+            dialogClass: "no-close",
+            title: '错误',
+            resizable: false,
+            modal: true,
+
+            buttons: {
+                '确定': function () {
+                    $(this).dialog('close');
+                    window.location.href = ctx + "/manager/index.shtml";
+                }
+            }
+        }).dialog("open");
+        flag = false;
+    }
+    return flag;
+
+}
+
+
+function isBackendAuthcTrue(data) {
+    var flag = true;
+    //如果超时,获取的数据是错误提示数据
+    if (data.resultCode && data.resultCode == -99) {
+        $("#dialog-message").html(data.resultMessage);
+        $("#dialog-message").dialog({
+            dialogClass: "no-close",
+            title: '错误',
+            resizable: false,
+            modal: true,
+
+            buttons: {
+                '确定': function () {
+                    $(this).dialog('close');
+                    window.location.href = ctx + "/manager/index.shtml";
+                }
+            }
+        }).dialog("open");
+        flag = false;
+    }
+    return flag;
+
+}
+
+/**
+ * 检测返回的数据是否未授权登录信息,如果是,则提示并且跳转到登录页面
+ *
+ * @param R  {stats:-99 ,message:'XXXXX'}
+ */
+function isAuthcTrueForFront(R) {
+    var flag = true;
+    //如果超时,获取的数据是错误提示数据
+    if (R.resultCode && R.resultCode == -99) {
+
+        $.DialogByZ.Alert({
+            Title: "提示",
+            Content: R.resultMessage,
+            BtnL: "确定",
+            FunL: function () {
+                $.DialogByZ.Close();
+                window.location.href = ctx + "/front/login/page";
+            }
+        });
+        flag = false;
+    }
+    return flag;
+
+}
+
+/**
+ * 判断是否在pc断打开网页
+ * @returns {boolean}
+ */
+function isPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ["Android", "iPhone",
+        "SymbianOS", "Windows Phone",
+        "iPad", "iPod"];
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}
+
+
+function uuid() {
+    var s = [];
+    var hexDigits = "0123456789abcdef";
+    for (var i = 0; i < 36; i++) {
+        s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+    }
+    s[14] = "4"; // bits 12-15 of the time_hi_and_version field to 0010
+    s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1); // bits 6-7 of the clock_seq_hi_and_reserved to 01
+    s[8] = s[13] = s[18] = s[23] = "-";
+
+    var uuid = s.join("");
+    return uuid;
+}
+
+
+/**
+ * 初始化日期选择控件
+ * @param id
+ * @param minuteStep
+ * @param showSeconds
+ */
+function initTimePicker(id, minuteStep, showSeconds) {
+    $(id).timepicker({
+        minuteStep: minuteStep,
+        showSeconds: showSeconds,
+        showMeridian: false
+    }).next().on(ace.click_event, function () {
+        $(this).prev().focus();
+    });
+}
+
+/**
+ * 动态加载JS
+ * @param {string} url 脚本地址
+ * @param {function} callback  回调函数
+ */
+function dynamicLoadJs(url, callback) {
+    var head = document.getElementsByTagName('head')[0];
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
+    if (typeof(callback) == 'function') {
+        script.onload = script.onreadystatechange = function () {
+            if (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") {
+                callback();
+                script.onload = script.onreadystatechange = null;
+            }
+        };
+    }
+    head.appendChild(script);
+}
+
+/****操作栏按钮展示*/
+function showDelHtml(value, row, index) {
+
+    var delHTML = '<i class="icon green icon-ok">正常</i>';
+    if (value == true) {
+        delHTML = '<i class="icon red icon-remove">删除</i>';
+    }
+    value = delHTML;
+    return value;
+}
+
+/**
+ * 初始化layer 的弹框
+ * @param content 内容的  如果是HTML 代码 ,直接传入 ,也可以用 jquery选择器 $(id) 等
+ * @param title 标题
+ * @param width 宽度
+ * @param height   高度
+ * @param btn 按钮数组  ['确定添加', '重置信息']
+ * @param open  在layer打开弹框之前,可以调用此方法进行初始化调用
+ * @param close 窗口关闭时回调方法
+ * @param yes   第一个按钮的回调方法
+ * @param no  第二个按钮的回调方法
+ */
+function initThisObjLayerDialog(content, title, width, height, btn, open, close, yes, no) {
+
+    layer.open({
+        type: 1,
+        title: title, //不显示标题
+        content: content, //捕获的元素
+        area: [width, height],
+        maxmin: false, //开启最大化最小化按钮
+        shade: 0.7,
+        btn: btn,
+        zIndex: 1200,
+        yes: function (index) {
+
+            initCallbackFunction(yes, index);
+        },
+        btn2: function (index) {
+
+            initCallbackFunction(no, index);
+            layer.close(index);
+        },
+        success: function (index) {
+
+            var LayuiLayerShadeLenght = $(".layui-layer-shade").length;
+            if (LayuiLayerShadeLenght > 1) {
+                $(".layui-layer-shade").css({"z-index": "9999"});
+            }
+
+            initCallbackFunction(open, index);
+
+        },
+        cancel: function (index) {
+
+            $(".layui-layer-shade").remove();
+            initCallbackFunction(close, index);
+            layer.close(index);
+        }
+    });
+
+
+}
+
+
+function initCallbackFunction(functionName, index) {
+
+    /*if (typeof(functionName) === 'function') {
+        //根据函数名得到函数类型
+        var func = eval(functionName);
+        //创建函数对象，并调用
+        new func();
+    }*/
+
+
+    if ($.isFunction(functionName)) {
+
+        functionName.call(window, index);
+
+    }
+
+}
+
+
+/**
+ * 合并单元格
+ * @param data  原始数据（在服务端完成排序）
+ * @param fieldName 合并属性名称
+ * @param colspan   合并列
+ * @param target    目标表格对象
+ */
+function mergeBSTableCells(data, fieldName, colspan, target) {
+    //声明一个map计算相同属性值在data对象出现的次数和
+    var sortMap = {};
+    for (var i = 0; i < data.length; i++) {
+        for (var prop in data[i]) {
+            if (prop == fieldName) {
+                var key = data[i][prop];
+                if (sortMap.hasOwnProperty(key)) {
+                    sortMap[key] = sortMap[key] * 1 + 1;
+                } else {
+                    sortMap[key] = 1;
+                }
+                break;
+            }
+        }
+    }
+    /* for (var prop in sortMap) {
+         console.log(prop, sortMap[prop]);
+     }*/
+    var index = 0;
+    for (var prop in sortMap) {
+        var count = sortMap[prop] * 1;
+        $(target).bootstrapTable('mergeCells', {index: index, field: fieldName, colspan: colspan, rowspan: count});
+        index += count;
+    }
+}
+
+function openWin(url) {
+    $('body').append($('<a href="' + url + '" target="_blank" id="openWin"></a>'));
+    document.getElementById("openWin").click();//点击事件
+    $('#openWin').remove();
+}
+
+Array.prototype.indexOf = function (val) {
+    for (var i = 0; i < this.length; i++) {
+        if (this[i] == val) return i;
+    }
+    return -1;
+};
+
+Array.prototype.remove = function (val) {
+    var index = this.indexOf(val);
+    if (index > -1) {
+        this.splice(index, 1);
+    }
+};
+
+
+/**
+ *  初始化日期区间插件, id格式为 #id
+ */
+function initDaterangePicker(id, ranges, startDate, endDate, format) {
+
+
+    var option = {
+        startDate: moment().subtract(1, 'days').startOf('day'),
+        endDate: moment().subtract(1, 'days').endOf('day'),
+        //minDate: '01/01/2012',    //最小时间
+        autoUpdateInput: false, //设置 初始化时,不加载默认值
+        maxDate: '2099-01-01', //最大时间
+        dateLimit: {
+            years: 1
+        }, //起止时间的最大间隔
+        showDropdowns: true,
+        showWeekNumbers: false, //是否显示第几周
+        timePicker: true, //是否显示小时和分钟
+        timePickerIncrement: 1, //时间的增量，单位为分钟
+        timePicker24Hour: true, //是否使用24小时制来显示时间
+        timePickerSeconds: false,
+        ranges: {
+            //'最近1小时': [moment().subtract('hours',1), moment()],
+            '今日': [moment().startOf('day'), moment()],
+            // '昨日': [moment().subtract(1, 'days').startOf('day'), moment().subtract(1, 'days').endOf('day')],
+            '3天内': [moment(), moment().add(2, 'days')],
+            '一周内': [moment(), moment().add(6, 'days')],
+            '一月内': [moment(), moment().add('month', 1)]
+            //'去年': [moment().subtract('years', 1), moment()],
+            // '明年': [moment(), moment().add(1, 'years')]
+        },
+        opens: 'right', //日期选择框的弹出位置
+        buttonClasses: ['btn btn-default'],
+        applyClass: 'btn-small btn-primary blue',
+        cancelClass: 'btn-small',
+
+        locale: {
+            format: format || 'YYYY-MM-DD HH:mm:ss', //控件中from和to 显示的日期格式
+            applyLabel: '确定',
+            cancelLabel: '清除',
+            fromLabel: '起始时间',
+            toLabel: '结束时间',
+            customRangeLabel: '自定义',
+            daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+            monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+                '七月', '八月', '九月', '十月', '十一月', '十二月'],
+            firstDay: 1,
+            separator: '至'
+        }
+    };
+    if (startDate && endDate) {
+        option.startDate = startDate;
+        option.endDate = endDate;
+    }
+
+    if (ranges) {
+        option.ranges = ranges;
+    }
+
+    //时间区间选择器
+    $(id).daterangepicker(option);
+
+}
+
+
+function formaterDateStr(id) {
+
+    return $(id).val().replace(/-/g, '#:#').replace('至', '#');
+}
+
+
+/**
+ * 初始化日期插件, id格式为 #id
+ * @param id
+ */
+function initDatepicker(id, show, dataFormat) {
+
+    var option = {
+        dateFormat: 'yy-mm-dd',
+        dayNames: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+        dayNamesShort: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+        dayNamesMin: ['日', '一', '二', '三', '四', '五', '六'],
+        monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+        monthNamesShort: ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'],
+        //  altField: '#datepicker_begin',
+        //  altFormat: 'yy-mm-dd',
+        firstDay: 1,
+        showWeek: true,
+        weekHeader: '周',
+        changeMonth: true,
+        changeYear: true,
+        defaultDate: 0
+
+    };
+
+    $(id).datepicker(option);
+    //默认今天
+    if (show) {
+        var idarr = id.split(',');
+        var today = new Date().Format('yyyy-MM-dd');
+        for (var i = 0; i < idarr.length; i++) {
+            $(idarr[i]).val(today);
+        }
+    }
+
+}
+
+
+/**
+ * 只显示年月
+ */
+function initYearMonthDatepicker(id) {
+    $(id).datepicker({
+        monthNamesShort: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],  // 区域化月名为中文
+        prevText: '上月',         // 前选按钮提示
+        nextText: '下月',         // 后选按钮提示
+        changeYear: true,          // 年下拉菜单
+        changeMonth: true,             // 月下拉菜单
+        showButtonPanel: true,         // 显示按钮面板
+        showMonthAfterYear: true,  // 月份显示在年后面
+        currentText: "本月",         // 当前日期按钮提示文字
+        closeText: "关闭",           // 关闭按钮提示文字
+        dateFormat: "yy-mm",       // 日期格式
+        onClose: function (dateText, inst) {// 关闭事件
+            var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+            var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+            $(this).datepicker('setDate', new Date(year, month, 1));
+        }
+    });
+}
+
+
+function checkFormElement(id, message) {
+    var nameObj = $(id);
+    // console.info(nameObj);
+
+    var result = true;
+
+
+    if (nameObj.length > 1) {
+        nameObj.each(function (index, element) {
+            var nameVal = trimStr($(this).val() === undefined ? '' : $(this).val() + '');
+
+
+            if (nameVal === '' || nameVal.length === 0 || nameVal === null) {
+                showErrorMsgAtBottom((message === undefined ? '' : message) + '不允许为空!');
+                nameObj[index].focus();
+                result = false;
+                return result;
+
+            }
+        });
+
+    } else {
+        var nameVal = trimStr(nameObj.val() === undefined ? '' : nameObj.val() + '');
+
+        if (nameVal.length === 0 || nameVal === 'null') {
+            showErrorMsgAtBottom((message === undefined ? '' : message) + '不允许为空!');
+            nameObj.focus();
+            return false;
+
+        }
+    }
+
+    return result;
+}
+
+
+/**
+ * 初始化选择框
+ * @param url
+ * @param domId
+ * @param idstr
+ * @param namestr
+ */
+
+function initSelect2(url, domId, idstr, namestr, options) {
+    $.ajax({
+        url: url,
+        async: false, //同步加载
+        type: 'POST',
+        dataType: 'json',
+        success: function (data) {
+            if (data) {
+                var _json = data.data ? data.data : data;
+                // console.info(_json);
+                var dom = $(domId);
+                dom.empty();
+                dom.append('<option value="-1">---请选择---</option>');
+                var _length = _json.length;
+                for (var i = 0; i < _length; i++) {
+                    var entity = _json[i];
+                    dom.append('<option value="' + entity[idstr ? idstr : id] + '">&nbsp;&nbsp;&nbsp;&nbsp;' + entity[namestr ? namestr : name] + '</option>');
+                }
+                dom.select2(options);
+            }
+        }
+    });
+
+}
+
+function initSelect2NoDefault(url, domId, idstr, namestr, options) {
+    $.ajax({
+        url: url,
+        async: false, //同步加载
+        type: 'POST',
+        dataType: 'json',
+        success: function (data) {
+            if (data) {
+                var _json = data.data ? data.data : data;
+                // console.info(_json);
+                var dom = $(domId);
+                dom.empty();
+                dom.append('<option value="">---请选择---</option>');
+                var _length = _json.length;
+                for (var i = 0; i < _length; i++) {
+                    var entity = _json[i];
+                    dom.append('<option value="' + entity[idstr ? idstr : id] + '">&nbsp;&nbsp;&nbsp;&nbsp;' + entity[namestr ? namestr : name] + '</option>');
+                }
+                dom.select2(options);
+            }
+        }
+    });
+
+}
+
+/***购买保险**/
+function buyInsurance() {
+    var newTab = window.open('about:blank');
+    $.ajax({
+        url: ctx + '/sys/vehicle/authc_json/buyInsurance.shtml',
+        type: 'post',
+        dataType: 'json',
+        success: function (data) {
+            if (isAuthcTrue(data)) {
+                if (data.resultCode == '0') {
+                    newTab.location.href = data.data;
+                } else {
+                    newTab.close();
+                    showErrorMsgAtBottom(data.resultMessage)
+                }
+
+
+            }
+        }
+    });
+}
+
+function initValidate() {
+
+    /**
+     * 自定义 选择框的 请选择为 -1   ,则认为必须填写
+     */
+//自定义validate验证必须要选择对应省份
+    $.validator.addMethod("mustSelect", function (value, element) {
+        var returnVal = true;
+        if (value == '-1') {
+            returnVal = false;
+            return false;
+        }
+        return returnVal;
+    }, "该字段不能为空");         //验证错误信息
+
+//自定义validate验证输入的数字小数点位数不能大于两位
+    $.validator.addMethod("minNumber", function (value, element) {
+        var returnVal = true;
+        var inputZ = value;
+        var ArrMen = inputZ.split(".");    //截取字符串
+        if (ArrMen.length == 2) {
+            if (ArrMen[1].length > 2) {    //判断小数点后面的字符串长度
+                returnVal = false;
+                return false;
+            }
+            if (ArrMen[0] > 0) {
+                returnVal = false;
+                return false;
+            }
+
+        } else {
+            returnVal = false;
+            return false;
+        }
+        return returnVal;
+    }, "请输入小数，并且小数点最多两位");         //验证错误信息
+// 手机号码验证
+    $.validator.addMethod("isMobile", function (value, element) {
+        var length = value.length;
+        var mobile = /^(13[0-9]{9})|(16[0-9]{9})|(19[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/;
+        return this.optional(element) || (length == 11 && mobile.test(value));
+    }, "请正确填写您的手机号码");
+
+    $.validator.addMethod("isTel", function (value, element) {
+        var length = value.length;
+        var phone = /(^(\d{3,4}-)?\d{6,8}$)|(^(\d{3,4}-)?\d{6,8}(-\d{1,5})?$)|(\d{11})/;
+        return this.optional(element) || (phone.test(value));
+    }, "请填写正确的固定电话");
+
+// 邮箱验证规则
+    $.validator.addMethod("isEmail", function (value, element) {
+        var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+        return this.optional(element) || (reg.test(value));
+    }, "请正确填写您的邮箱");
+
+// 下拉框的验证
+    $.validator.addMethod("isSelect", function (value, element) {
+        return this.optional(element) || (value != -1);
+    }, "请选择");
+}
+
+/**
+ * 解析数组
+ * @param arr  原数组
+ * @param count 被分割的次数,意在通过count * maxlen 可以找到在原数组的数据对应的下标
+ * @param maxlen 目标数组的长度
+ * @param method 回调函数名称
+ * @param param 回调函数的参数,传入js的对象
+ */
+function sliceLimitMaxlen(arr, count, maxlen, method, param) {
+
+    var _arr = [];
+    if (arr.length < maxlen) {
+        _arr = arr;
+        var _p = Array.prototype.slice.call(arguments, 4)[0];
+        // console.info(_arr);
+        //在此执行方法
+        method.call(this, _arr, count, maxlen, _p);
+    } else {
+        _arr = arr.slice(0, maxlen);
+        // console.info(_arr);
+        var _p = Array.prototype.slice.call(arguments, 4)[0];
+        method.call(this, _arr, count, maxlen, _p);
+        count++;
+        //递归分解
+        sliceLimitMaxlen(arr.slice(maxlen), count, maxlen, method, _p);
+    }
+}
+
+
+/**
+ * 设置状态图标
+ * @param value
+ * @param row
+ * @param index
+ * @returns {string}
+ */
+function setStateIcon(value, falseVal, trueVal) {
+    var operatorHtml = '';
+    if (value == 0) {
+        operatorHtml = '<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">' +
+            '<a class="red" title="' + falseVal + '"><i class=" icon-remove bigger-130"></i><input type="hidden" value="' + falseVal + '"/>' + falseVal + '</a></div>';
+    } else {
+        operatorHtml = '<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">' +
+            '<a class="green" title="' + trueVal + '"><i class="icon-ok bigger-130"></i><input type="hidden" value="' + trueVal + '"/>' + trueVal + '</a></div>';
+    }
+    return operatorHtml;
+}
+
+
+/**
+ * 设置状态图标
+ * @param value
+ * @param row
+ * @param index
+ * @returns {string}
+ */
+function setExamineStateIcon(value, defaultVal, falseVal, trueVal) {
+    var operatorHtml = '';
+    if (value == '0') {
+        operatorHtml = '<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">' +
+            '<a class="red" title="' + falseVal + '"><i class=" icon-edit bigger-130"></i><input type="hidden" value="' + falseVal + '"/>' + defaultVal + '</a></div>';
+    } else if (value == '-1') {
+        operatorHtml = '<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">' +
+            '<a class="red" title="' + falseVal + '"><i class=" icon-remove bigger-130"></i><input type="hidden" value="' + falseVal + '"/>' + falseVal + '</a></div>';
+    } else if (value == '1') {
+        operatorHtml = '<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">' +
+            '<a class="green" title="' + trueVal + '"><i class="icon-ok bigger-130"></i><input type="hidden" value="' + trueVal + '"/>' + trueVal + '</a></div>';
+    }
+
+
+    return operatorHtml;
+}
+
+/**
+ * 设置 ace-switch 的值
+ * @param id
+ */
+function setAceSwitch(id) {
+
+    $(id).off('click').on('click', function () {
+
+        if ($(this).is(':checked')) {
+            $(this).val('true');
+        } else {
+            $(this).val('false');
+        }
+
+    });
+
+}
+
+
+/**
+ * 获取防止表单重复的token
+ */
+function getPreventRepetitionToken(formId) {
+
+
+    //验证帐号是否重复
+    $.ajax({
+        url: ctx + '/getPreventRepetitionToken.shtml',
+        dataType: 'json',
+        async: true,
+        type: 'POST',
+        success: function (result) {
+
+            var tokenObj = result.data;
+
+            //创建input标签
+            $(formId + ' input[prToken]').remove(); //删除之前创建的token的隐藏域
+            $(formId).prepend('<input type="hidden" prToken="true" name="' + tokenObj.tokenName + '" value="' + tokenObj.tokenVal + '" />');
+            /*$(formId).prepend('<input type="hidden" prToken="true" name="' + tokenObj.tokenVal + '" value="' + tokenObj.tokenVal + '" />');*/
+
+        }, error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+            if (XMLHttpRequest.status == 404) {
+                showErrorMsgAtBottom('获取异常!');
+            }
+        }
+    });
+
+
+}
+
+
+/**
+ * 取最小值
+ * @param value1
+ * @param value2
+ * @returns {*}
+ */
+function getMinValue(value1, value2) {
+    if (value1 >= value2) {
+        return value2;
+    } else {
+        return value1;
+    }
+}
+
+/**
+ * 判断浏览器类型
+ * @returns {*}
+ */
+
+function myBrowser() {
+    var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+    var isOpera = userAgent.indexOf("Opera") > -1; //判断是否Opera浏览器
+    var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera; //判断是否IE浏览器
+    var isFF = userAgent.indexOf("Firefox") > -1; //判断是否Firefox浏览器
+    var isSafari = userAgent.indexOf("Safari") > -1; //判断是否Safari浏览器
+    if (isIE) {
+        var IE5 = IE55 = IE6 = IE7 = IE8 = false;
+        var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+        reIE.test(userAgent);
+        var fIEVersion = parseFloat(RegExp["$1"]);
+        IE55 = fIEVersion == 5.5;
+        IE6 = fIEVersion == 6.0;
+        IE7 = fIEVersion == 7.0;
+        IE8 = fIEVersion == 8.0;
+        if (IE55) {
+            return "IE55";
+        }
+        if (IE6) {
+            return "IE6";
+        }
+        if (IE7) {
+            return "IE7";
+        }
+        if (IE8) {
+            return "IE8";
+        }
+    }//isIE end
+    if (isFF) {
+        return "FF";
+    }
+    if (isOpera) {
+        return "Opera";
+    }
+}
+
+
+//制保留2位小数，如：2，会在2后面补上00.即2.00
+function toDecimal5(x) {
+    var f = parseFloat(x);
+    if (isNaN(f)) {
+        return false;
+    }
+    var s = f.toString();
+    var rs = s.indexOf('.');
+    if (rs < 0) {
+        rs = s.length;
+        s += '.';
+    }
+    while (s.length <= rs + 5) {
+        s += '0';
+    }
+    return s;
+}
+
+Array.prototype.indexOf = function (val) {
+    for (var i = 0; i < this.length; i++) {
+        if (this[i] == val) return i;
+    }
+    return -1;
+};
+Array.prototype.remove = function (val) {
+    var index = this.indexOf(val);
+    if (index > -1) {
+        this.splice(index, 1);
+    }
+};
+
+
+//*=============================================================
+//*   功能： 修改 window.setInterval ，使之可以传递参数和对象参数
+//*   方法： setInterval (回调函数,时间,参数1,,参数n)  参数可为对象:如数组等
+//*=============================================================
+var __sto = setInterval;
+window.setInterval = function (callback, timeout, param) {
+    var args = Array.prototype.slice.call(arguments, 2);
+    var _cb = function () {
+        callback.apply(null, args);
+    };
+    return __sto(_cb, timeout); //必须返回生成的定时器ID,否则无法获取句柄关闭
+
+};
+
+
+/**(
+ *
+ 检测对象是否是空对象(不包含任何可读属性)。
+ *方法只既检测对象本身的属性，不检测从原型继承的属性。
+ */
+function isObjEmpty(obj) {
+    for (var name
+        in obj) {
+        if (obj.hasOwnProperty(name)) {
+            return false;
+        }
+    }
+    return true;
+};
+
+
+/**
+ * 初始化时间插件, id格式为 #id
+ * @param id
+ */
+function initTimepicker(id, showSeconds, defaultTime) {
+    $(id).timepicker({
+        minuteStep: 1,
+        showSeconds: showSeconds,
+        defaultTime: defaultTime,
+        showMeridian: false
+    }).on(ace.click_event, function () {
+        $(this).focus();
+    });
+}
+
+
+/**
+ * 初始化日期插件, id格式为 #id
+ * @param id
+ */
+function initDatepicker(id) {
+
+    $(id).datepicker({
+        dateFormat: 'yy-mm-dd',
+        dayNames: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+        dayNamesShort: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+        dayNamesMin: ['日', '一', '二', '三', '四', '五', '六'],
+        monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+        monthNamesShort: ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'],
+        //  altField: '#datepicker_begin',
+        //  altFormat: 'yy-mm-dd',
+        firstDay: 1,
+        showWeek: true,
+        weekHeader: '周',
+        changeMonth: true,
+        changeYear: true,
+        defaultDate: 0
+
+    });
+    //默认今天
+    var idarr = id.split(',');
+    var today = new Date().Format('yyyy-MM-dd');
+    for (var i = 0; i < idarr.length; i++) {
+        $(idarr[i]).val(today);
+    }
+
+}
+
+function showSuccessMsg(msg, position) {
+
+
+    showMsg(msg, position, 'success', 3000);
+}
+
+/**
+ * 显示错误信息提醒
+ * @param msg
+ * @param position
+ */
+function showErrorMsg(msg, position) {
+
+
+    showMsg(msg, position, 'danger', 2000);
+}
+
+function showSuccessMsgAtBottom(msg) {
+
+
+    showSuccessMsg(msg, 'bottom');
+}
+
+function showSuccessMsgAtTop(msg) {
+
+
+    showSuccessMsg(msg, 'top');
+}
+
+
+/**
+ * 初始化弹框
+ */
+function initThisObjDialog(dialogId, title, open, close, width) {
+    if (width) {
+        $(dialogId).dialog({
+            autoOpen: false,
+            modal: true,
+            title: title,
+            resizable: false,
+            draggable: true,
+            width: width,
+            open: function () {
+                $('.ui-widget-overlay').css('cssText', 'height:' + ($(window).height()) + 'px').css('cssText', ' background:#000; opacity:0.7 !important');
+                //根据函数名得到函数类型
+                var func = eval(open);
+                //创建函数对象，并调用
+                new func();
+            },
+            close: function () {
+                $('.ui-widget-overlay').css('cssText', 'height:' + ($(window).height()) + 'px').css('cssText', ' background:#000; opacity:0.7 !important;');
+                //根据函数名得到函数类型
+                var func = eval(close);
+                //创建函数对象，并调用
+                new func();
+            }
+        });
+
+    } else {
+
+        $(dialogId).dialog({
+            autoOpen: false,
+            modal: true,
+            title: title,
+            resizable: false,
+            draggable: true,
+            open: function () {
+                $('.ui-widget-overlay').css('cssText', 'height:' + ($(window).height()) + 'px').css('cssText', ' background:#000; opacity:0.7 !important');
+                //根据函数名得到函数类型
+                var func = eval(open);
+                //创建函数对象，并调用
+                new func();
+            },
+            close: function () {
+                $('.ui-widget-overlay').css('cssText', 'height:' + ($(window).height()) + 'px').css('cssText', ' background:#000; opacity:0.7 !important;');
+                //根据函数名得到函数类型
+                var func = eval(close);
+                //创建函数对象，并调用
+                new func();
+            }
+        });
+
+    }
+
+}
+
+
+/**
+ * 显示信息提醒
+ * @param msg
+ * @param position
+ */
+function showMsg(msg, position, type, time) {
+
+
+    qiao.bs.msg({
+        msg: msg,
+        position: position,
+        type: type,
+        time: time
+    });
+}
+
+/**
+ * 显示错误信息提醒_顶部
+ * @param msg
+ * @param position
+ */
+function showErrorMsgAtTop(msg) {
+    showErrorMsg(msg, 'top');
+}
+
+/**
+ * 显示错误信息提醒_底部
+ * @param msg
+ * @param position
+ */
+function showErrorMsgAtBottom(msg) {
+    showErrorMsg(msg, 'bottom');
+}
+
+
+/**
+ * 设置按钮的加载状态
+ * @param btn
+ */
+function setLoadingStatus(btn) {
+    var oldHtml = btn.html();
+    btn.attr('disabled', 'disabled').html(oldHtml + '...');
+    setTimeout(function () {
+        btn.removeAttr('disabled');
+        btn.html(oldHtml);
+    }, 2000);
+
+}
+
+
+/**
+ * 检测提交的表单是否重复
+ *
+ * @param data  {stats:-88 ,message:'XXXXX'}
+ */
+function isNotRepeatSubmit(data) {
+    var flag = true;
+    //如果超时,获取的数据是错误提示数据
+    if (data.stats && data.stats == -88) {
+        showErrorMsgAtBottom(data.message);
+
+        flag = false;
+    }
+    return flag;
+
+}
+
+
+/**
+ * @author 陈振
+ *
+ * @requires jQuery
+ *
+ * 将form表单元素的值序列化成对象
+ *
+ * @returns object
+ */
+function serializeObject(form) {
+    var o = {};
+    $.each(form.serializeArray(), function (index) {
+        if (o[this['name']]) {
+            o[this['name']] = o[this['name']] + "," + this['value'];
+        } else {
+            o[this['name']] = this['value'];
+        }
+    });
+    return o;
+};
+
+
+/**
+ * @author 陈振
+ *
+ * @requires jQuery
+ *
+ * 检查固话和手机号码
+ *
+ * @returns value
+ */
+
+function checkTel(value) {
+    var isPhone = /^([0-9]{3,4}-?)?[0-9]{7,8}(--[0-9]{1,6})?$/;
+    var isMob = /^((\+?86)|(\(\+86\)))?(13[012356789][0-9]{8}|15[012356789][0-9]{8}|18[02356789][0-9]{8}|147[0-9]{8}|1349[0-9]{7})$/;
+    value = value.replace(/(^\s*)|(\s*$)/g, "");
+    if (isMob.test(value) || isPhone.test(value)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function checkPhone(value) {
+    var isMob = /^((\+?86)|(\(\+86\)))?(13[012356789][0-9]{8}|15[012356789][0-9]{8}|18[02356789][0-9]{8}|147[0-9]{8}|1349[0-9]{7})$/;
+    value = value.replace(/(^\s*)|(\s*$)/g, "");
+    if (isMob.test(value)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+/**
+ * @author 孙宇
+ *
+ * 去字符串空格
+ *
+ * @returns
+ */
+
+/*String.prototype.trim = function () {
+ return this.replace(/(^\s*)|(\s*$)/g, '');
+ };
+ String.prototype.ltrim = function () {
+ return this.replace(/(^\s*)/g, '');
+ };
+ String.prototype.rtrim = function () {
+ return this.replace(/(\s*$)/g, '');
+ };*/
+
+function trimStr(str) {
+    return str.replace(/(^\s*)|(\s*$)/g, '');
+}
+
+function ltrimStr(str) {
+    return str.replace(/(^\s*)/g, '');
+}
+
+function rtrimStr(str) {
+    return str.replace(/(\s*$)/g, '');
+}
+
+
+// 对Date的扩展，将 Date 转化为指定格式的String
+// 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符，   
+// 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)   
+// 例子：   
+// (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423   
+// (new Date()).Format("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18   
+Date.prototype.Format = function (fmt) { //author: meizz
+    var o = {
+        "M+": this.getMonth() + 1,                 //月份
+        "d+": this.getDate(),                    //日
+        "h+": this.getHours(),                   //小时
+        "m+": this.getMinutes(),                 //分
+        "s+": this.getSeconds(),                 //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        "S": this.getMilliseconds()             //毫秒
+    };
+    if (/(y+)/.test(fmt))
+        fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt))
+            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+}
+
+/**
+ * 将度数转化为方向
+ * @param direction
+ * @returns {*}
+ */
+function formatDirection(direction) {
+    var result;
+    if (direction == 0) {
+        result = '正北';
+    } else if (direction > 0 && direction < 90) {
+        result = '东北';
+    } else if (direction == 90) {
+        result = '正东';
+    } else if (direction > 90 && direction < 180) {
+        result = '东南';
+    } else if (direction == 180) {
+        result = '正南';
+    } else if (direction > 180 && direction < 270) {
+        result = '西南';
+    } else if (direction == 270) {
+        result = '正西';
+    } else if (direction > 270 && direction < 360) {
+        result = '西北';
+    }
+
+    return result;
+}
+
+
+/**
+ * 检测报警信息
+ * @param mbca
+ */
+function checkMBCA(mbca) {
+
+    var result = false;
+    if (mbca.chaoshu || mbca.dianyuan || mbca.feifadianhuo || mbca.feifaopendao || mbca.jingji || mbca.shache || mbca.zhengdong) {
+        result = true;
+    }
+
+    return result;
+}
+
+/**
+ * 格式化报警信息
+ * @param mbca
+ */
+function formatMBCA(mbca) {
+
+    var result = '';
+    if (mbca.chaoshu) {
+        result = result + '|超速报警';
+    }
+    if (mbca.dianyuan) {
+        result = result + '|主电源掉电';
+    }
+    if (mbca.feifadianhuo) {
+        result = result + '|非法点火';
+    }
+    if (mbca.feifaopendao) {
+        result = result + '|非法开门';
+    }
+    if (mbca.jingji) {
+        result = result + '|紧急报警';
+    }
+    if (mbca.shache) {
+        result = result + '|刹车报警';
+    }
+    if (mbca.zhengdong) {
+        result = result + '|震动报警';
+    }
+    if (mbca.fangchai) {
+        result = result + '|防拆报警';
+    }
+    if (mbca.qianya) {
+        result = result + '|主电源欠压';
+    }
+
+
+    if (result.length == 0) {
+        result = '|无';
+    }
+    return result.substring(1);
+}
+
+/**
+ * 初始化标记的label中的内容
+ * @param vehicleNo
+ * @param speed
+ * @param direct
+ * @returns {*}
+ */
+function initMarkerLabelContent(vehicleNo, speed, direct) {
+
+    var result = vehicleNo;
+    if (speed != undefined) {
+        result += "\t" + formatDirection(direct) + "\t" + speed + "km/h";
+    } else {
+        result += '\t基站定位';
+    }
+    return result;
+
+}
+
+/**
+ * 初始化标记的label中的内容
+ * @param vehicleNo
+ * @param speed
+ * @param direct
+ * @returns {*}
+ */
+function initMarkerLabelContent_(vehicleNo, speed, direct) {
+
+    var result = vehicleNo;
+    if (speed != undefined) {
+        result += "\t" + direct + "\t" + speed + "km/h";
+
+    }
+
+    return result;
+
+}
+
+function formatMBCA_simple(mbca) {
+
+    var result = '';
+    if (mbca.chaoshu) {
+        result = result + '超速&nbsp;';
+    }
+    if (mbca.dianyuan) {
+        result = result + '掉电&nbsp;';
+    }
+    if (mbca.feifadianhuo) {
+        result = result + '非法点火&nbsp;';
+    }
+    if (mbca.feifaopendao) {
+        result = result + '非法开门&nbsp;';
+    }
+    if (mbca.jingji) {
+        result = result + '紧急报警&nbsp;';
+    }
+    if (mbca.shache) {
+        result = result + '刹车报警&nbsp;';
+    }
+    if (mbca.zhengdong) {
+        result = result + '震动&nbsp;';
+    }
+    if (mbca.fangchai) {
+        result = result + '防拆报警&nbsp;';
+    }
+    if (mbca.qianya) {
+        result = result + '欠压&nbsp;';
+    }
+
+
+    if (result.length == 0) {
+        result = '无&nbsp;';
+    }
+    return result;
+}
+
+/**
+ * 格式化状态信息
+ * @param mbcs
+ */
+function formatMBCS(mbcs) {
+
+    var result = '';
+    if (mbcs.car_acc) {
+        result = result + '|ACC开';
+    } else {
+        result = result + "|ACC关"
+    }
+
+    if (mbcs.car_dingwei) {
+        result = result + '|已定位';
+    } else {
+        result = result + "|未定位"
+    }
+
+    if (mbcs.car_elec) {
+        result = result + '|电路断开';
+    } else {
+        result = result + "|电路正常"
+    }
+
+    if (mbcs.car_oid) {
+        result = result + '|油路断开';
+    } else {
+        result = result + "|油路正常"
+    }
+
+    return result.substring(1);
+}
+
+function formatMBCS_ELECAndOIL(mbcs) {
+
+    var result = '';
+
+
+    if (mbcs.car_elec) {
+        result = result + '电路断开&nbsp;';
+    } else {
+        result = result + "电路正常&nbsp;"
+    }
+
+    if (mbcs.car_oid) {
+        result = result + '油路断开&nbsp;';
+    } else {
+        result = result + "油路正常&nbsp;"
+    }
+
+    return result;
+}
+
+function formatMBCS_ACC(mbcs) {
+
+    var result = '';
+    if (mbcs.car_acc) {
+        result = result + 'ACC开&nbsp;';
+    } else {
+        result = result + "ACC关&nbsp;"
+    }
+
+
+    return result;
+}
+
+//判断访问者的浏览器是否是IE
+function CheckBrowserIsIE() {
+    var result = false;
+    var browser = navigator.appName;
+    if (browser == "Microsoft Internet Explorer") {
+        result = true;
+    }
+    return result;
+}

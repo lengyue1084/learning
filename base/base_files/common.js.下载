@@ -1,0 +1,177 @@
+$(function () {
+    $('#headmenu-icon').click(function () {
+        $('#headmenu').addClass('head-menu-h5');
+    })
+    $('.headmenu-close').click(function () {
+        $('#headmenu').removeClass('head-menu-h5');
+    })
+
+    $('.other-pre').click(function () {
+        // 注册成功后
+        $.DialogByZ.Alert({
+            Title: "",
+            Content: "系统建设中...",
+            BtnL: "确定",
+            FunL: function () {
+                $.DialogByZ.Close();
+            }
+        })
+    })
+
+    var winw = $(window).width();
+    if (winw < 750) {
+        $('.menu-child .m').on('click', function () {
+            if ($(this).hasClass('m-on')) {
+                $(this).removeClass('m-on');
+            } else {
+                $('.menu-child .m').removeClass('m-on');
+                $(this).addClass('m-on');
+            }
+        })
+    }
+
+    if ($('.search-continar').length > 0 && winw > 750) {
+        $('.search-continar .menu').hover(function () {
+            $(this).find('.search-child').show();
+        }, function () {
+            $(this).find('.search-child').hide();
+        })
+    }
+    if ($('.search-continar').length > 0 && winw < 750) {
+        $('.search-continar .menu').click(function () {
+            $(this).find('.search-child').is(':hidden') ?
+                $(this).find('.search-child').show() : $(this).find('.search-child').hide();
+        })
+    }
+    if ($('.search-continar').length > 0) {
+        $('.search-continar').on('click', '.search-child li', function () {
+            if ($(this).hasClass('on')) return false;
+            var id = $(this).attr('data-id');
+            var text = $(this).html();
+            $('#searchmenu').html(text);
+            $('#searchval').val(id);
+            $(this).addClass('on').siblings().removeClass('on');
+            $(this).parents('.search-child').hide()
+        })
+    }
+    if ($('#wrapper03').length > 0 && winw < 750) {
+        var index = $('#wrapper03 .on').index();
+        $('#wrapper03').navbarscroll({
+            defaultSelect: index
+        })
+    }
+
+    $("#backToTop").on("click", function () {
+        var _this = $(this);
+        $('html,body').animate({scrollTop: 0}, 500, function () {
+            _this.hide();
+        });
+    });
+
+})
+$(window).on('scroll', function () {
+    var scrollTop = $(window).scrollTop();
+    var winw = $(window).width();
+    if ($(".index-body").length > 0) {
+        var top = $(".index-body .header").offset().top;
+
+        var op = 0.5;
+        if (scrollTop >= 100) {
+            op = 1;
+        } else {
+            op = Number(scrollTop) / 100;
+
+        }
+
+        if (op === 0) {
+            $(".index-body .header").css({ 'background': 'rgba(225, 0, 73, 1)','box-shadow': '0px 4px 10px #dddddd'})
+
+          //  $(".index-body .header").css({ 'background': 'rgba(225, 0, 73, ' + op + ')'})
+        }else{
+            $(".index-body .header").css({ 'background': 'rgba(225, 0, 73, ' + op + ')'})
+        }
+
+    }
+    if ($('#fixed-menu').length > 0 && winw < 750) {
+        var wrapper = $('#fixed-menu').offset().top - 60;
+        if (scrollTop >= wrapper) {
+            $('#fixed-menu').addClass('fixed-menu-on');
+        } else {
+            $('#fixed-menu').removeClass('fixed-menu-on');
+        }
+    }
+
+    var htmlTop = $(document).scrollTop();
+    if (htmlTop > 0) {
+        $("#backToTop").show();
+    } else {
+        $("#backToTop").hide();
+    }
+})
+
+function sTpop(content) {
+    $('body').append("<div class='stpop_main'><div class='stpop_bg'></div><div class='stpop'> <p>" + content + "</p></div></div>");
+    setTimeout(function () {
+        $('.layer_bg,.stpop_main').remove();
+    }, 1500)
+}
+
+function isPhoneNo(phone) {
+    var pattern = /^1[3456789]\d{9}$/;
+    return pattern.test(phone);
+}
+
+
+$(function () {
+    // do something
+    // var script=document.createElement("script");
+    // script.type="text/javascript";
+    // script.src="../resources/js/WidgetV32.ashx";
+    // document.getElementsByTagName('head')[0].appendChild(script);
+    // var winw = $(window).width();
+    // var value = sessionStorage.getItem("language");
+    // document.onreadystatechange = function () {
+    //   if (document.readyState == 'complete') {
+    //     if(value==="1"){
+    //       Microsoft.Translator.Widget.Translate('zh-CHS', 'en', onProgress, onError, onComplete, onRestoreOriginal, 2000);
+    //     }
+    //   }
+    // }
+    // function onProgress(value) {
+    // }
+    // function onError(error) {
+    //   console.log(error)
+    // }
+    // function onComplete() {
+    //   if (value == '1') {
+    //     $(".laguage-box").html('中文');
+    //     $('body').addClass('body-en');
+    //   } else {
+    //     $(".laguage-box").html('EN');
+    //     $('body').removeClass('body-en');
+    //   }
+    //   if ($('#wrapper03').length > 0 && winw < 750) {
+    //     var index = $('#wrapper03 .on').index();
+    //     $('#wrapper03').navbarscroll({
+    //       defaultSelect: index
+    //     })
+    //   }
+    // }
+    // function onRestoreOriginal() {
+    // }
+
+    // $(".laguage-box").click(function(){
+    //   translate();
+    // })
+});
+
+
+function translate() {
+    var value = sessionStorage.getItem("language");
+    if (value === "1") {
+        sessionStorage.setItem("language", "0");
+    } else {
+        sessionStorage.setItem("language", "1");
+    }
+    window.location.reload();//刷新当前页面.
+}

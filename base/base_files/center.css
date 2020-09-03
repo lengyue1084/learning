@@ -1,0 +1,193 @@
+/****** header start ********/
+
+@media screen and (min-width: 750px) {
+    .siye-is-pc {
+        display: block;
+    }
+    .siye-is-m {
+        display: none;
+    }
+    .siye-header-box {
+        width: 1200px;
+        margin: 0px auto;
+        min-height: 90px;
+        font-family: "微软雅黑";
+    }
+    .siye-header-box a {
+        text-decoration: none;
+    }
+    .siye-header-box a:hover {
+        text-decoration: none;
+    }
+    .siye-header-search-box {
+        float: left;
+    }
+    .siye-header-search-left {
+        float: left;
+        background: url(./xs-pw.png) left center no-repeat;
+        padding-left: 28px;
+        margin-left: 18px;
+        color: #333;
+        font-size: 16px;
+        font-family: "微软雅黑";
+        font-weight: bold;
+        height: 35px;
+        margin-top: 30px;
+        line-height: 35px;
+    }
+    .siye-search-content-box {
+        margin-top: 30px;
+        width: 340px;
+        background: url(./sech-bh.jpg) left center no-repeat;
+        float: left;
+        margin-left: 15px;
+        border-radius: 40px;
+        border: 1px solid #e30b69;
+        position: relative;
+    }
+    .siye-search-content-box .siye-select-key {
+        width: 300px;
+        float: left;
+        margin-left: 20px;
+        background: #fff;
+        height: 33px;
+        line-height: 33px;
+        margin-top: 1px;
+    }
+    .siye-search-content-box .siye-txt-search {
+        background: #fff !important;
+        height: 32px !important;
+        line-height: 33px !important;
+        margin-top: 1px;
+        width: 220px;
+        color: #333;
+        font-size: 14px;
+        height: 35px;
+        line-height: 35px;
+        border: none !important;
+        background: none !important;
+        outline: none;
+        padding-right: 90px;
+    }
+    .siye-search-btn {
+        position: absolute !important;
+        right: -1px;
+        top: 0px;
+        z-index: 2;
+        width: 90px;
+        height: 35px;
+        color: #fff !important;
+        font-size: 14px !important;
+        border: none !important;
+        outline: none !important;
+        cursor: pointer !important;
+        border-radius: 40px !important;
+        background: #e30b69 !important;
+    }
+    .siye-hot-search-box {
+        clear: both;
+    }
+    .siye-key-hot {
+        line-height: 25px;
+        width: 340px;
+        max-height: 23px;
+        overflow: hidden;
+        margin: 0px auto 10px;
+        color: #333;
+    }
+    .siye-key-hot a {
+        color: #888;
+        font-size: 12px;
+        font-family: "微软雅黑";
+        margin-right: 10px;
+        display: inline-block;
+    }
+    .siye-header-nav {
+        float: right;
+        height: 50px;
+        position: relative;
+    }
+    .siye-header-nav dl dd {
+        float: left;
+        margin-left: 26px;
+        height: 50px;
+        margin-top: 15px;
+    }
+    .siye-header-nav dl dd.active .siye-nav-link a {
+        color: #dd0050;
+        border-bottom: 3px solid #dd0050;
+    }
+    .siye-header-nav dl dd.siye-nav-link>a:hover {
+        color: #dd0050;
+        border-bottom: 3px solid #dd0050;
+    }
+    .siye-header-nav dl dd.siye-nav-link a {
+        display: block;
+        color: #555;
+        font-size: 15px;
+        height: 67px;
+        border-bottom: 3px solid #fff;
+        line-height: 40px;
+    }
+    .siye-header-nav dl dd.siye-nav-link:hover>.siye-nav-sub {
+        display: block;
+    }
+    .siye-header-nav dl dd .siye-nav-sub {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        display: none;
+        background: rgba(0, 0, 0, 0);
+        width: 100%;
+        min-height: 200px;
+        z-index: 999;
+    }
+    .siye-header-nav dl dd.siye-nav-link .siye-sub-box {
+        margin-top: 40px;
+        color: #555;
+        background: #ffffff;
+        text-align: center;
+        font-size: 14px;
+        border-radius: 2px;
+        min-height: 200px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .08);
+        z-index: 100;
+        transform-origin: 50% 0;
+        transition: .3s ease-in-out;
+        overflow: hidden;
+        background-color: #fff;
+        width: 100%;
+    }
+    .siye-header-nav dl dd .siye-sub-box a {
+        display: inline-block;
+        min-width: 50px;
+        padding: 10px;
+    }
+    .siye-header-nav dl dd .siye-sub-box a:hover {
+        background: #e30b69;
+        color: #ffffff;
+        text-decoration: none;
+        min-width: 50px;
+    }
+    .siye-fl {
+        float: left;
+    }
+    .siye-right {
+        float: right;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 300px) {
+    .siye-is-pc {
+        display: none;
+    }
+    .siye-is-m {
+        display: block;
+    }
+}
+
+
+/* nav-box */
+
+
+/******* header end *******/

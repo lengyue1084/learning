@@ -1,0 +1,60 @@
+input {
+    outline:none !important;
+    background:transparent !important;
+    border:none !important;
+    outline:medium !important;
+}
+*:focus {
+    outline: none !important;
+    background-color: transparent !important;
+}
+::selection{background:transparent; !important;}
+::-moz-selection{background:transparent; !important;}
+/*去掉谷哥浏览器输入框获取焦点有背景颜色*/
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    outline:none;
+}
+
+
+
+.ribbon-right {
+    padding: 20px 0 20px 25px;
+    background: url(../img/jbredbg.png) repeat-y;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+    background-size: 100%;
+    position: relative;
+    top: 5px;
+    z-index: 1;
+    float: left;
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.ribbon-left {
+    padding: 20px 10px 20px 80px !important;
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+    background: url(../img/jbyellowbg.png) repeat-y;
+    background-size: 100%;
+    position: relative;
+    top: 5px;
+    z-index: 0;
+    float: left;
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*新闻列表图片*/
+.newslist .list .box img {
+    width: 96%;
+    height: 285px;
+}
+
+/*
+.newslist .list li {
+    margin-bottom: 20px;
+    border: dotted 2px #e10049;
+}*/

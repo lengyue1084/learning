@@ -1,0 +1,81 @@
+$(function () {
+    initGlobalToolbar();
+});
+
+function initGlobalToolbar() {
+
+
+
+
+
+    /*参观报名*/
+    $('#global_cgbmBtn').click(global_cgbm);
+    /*个人中心*/
+    $('#global_gerenBtn').click(global_geren);
+
+
+    /*参展商入口*/
+    $('#ccsBtn').click(goIn);
+    /*专业观众入口*/
+    $('#zygzBtn').click(goIn);
+    $('#publishSupplyAndDemandBtn').on('click', publishSupplyAndDemand);
+    /*联系客服*/
+    initContactAHref('#contactA', '3307181902');
+    /*二维码*/
+    $(document).on("click", "#global_erweimaBtn", global_erweima);
+    $('#liveShowA').on('click', liveShow);
+
+}
+
+
+/***
+ *直播
+ * */
+function liveShow() {
+    var $this = $(this);
+    // if (authcCheckAndDone()) {
+    $this.attr('href', ctx + '/sys/liveShow/front/liveShow/page');
+    // }
+}
+
+function global_cgbm() {
+    var $this = $(this);
+    if (authcCheckAndDone(true, ctx + '/sys/offlineEvents/front/front_authc_json/offlineEvents/recentEventsSignUp')) {
+        $this.attr('href', ctx + '/sys/offlineEvents/front/front_authc_json/offlineEvents/recentEventsSignUp');
+    }
+}
+
+function global_geren() {
+    var $this = $(this);
+    $this.attr('href', ctx + '/sys/userProfile/front/front_authc_json/profile/page');
+}
+
+
+function global_erweima() {
+
+    $.post(ctx + '/sys/qRCode/api/front/front_authc_json/add',
+
+        function (R) {
+            //如果是登录未超时
+            if (R && R.resultCode === "0") {
+                var content = '<img src ="' + ctx + R.data.urlPath + '"/>';
+
+                layer.open({
+                    type: 1,
+                    title: false,
+                    skin: 'layui-layer-demo', //样式类名
+                    closeBtn: 0, //不显示关闭按钮
+                    anim: 2,
+                    shadeClose: true, //开启遮罩关闭
+                    content: content
+                });
+
+                //显示信息
+            } else if (R && R.resultCode !== "0") {
+                //隐藏弹框
+                alertZ(R.resultMessage);
+            }
+
+        }, 'json');
+
+}

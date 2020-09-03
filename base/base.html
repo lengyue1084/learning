@@ -1,0 +1,698 @@
+<!-- saved from url=(0068)http://localhost/sys/userProfile/front/front_authc_json/profile/page -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="./base_files/hm.js.下载"></script>
+    <script type="text/javascript">
+        <!--
+        var ctx = '';
+
+        //-->
+        var data = {};
+    </script>
+
+    <link rel="shortcut icon" href="http://localhost/static/front/img/favicon.png">
+    <link rel="stylesheet" href="./base_files/layui.css">
+    <!-- fonts-->
+    <link rel="stylesheet" href="./base_files/zdialog.css">
+    <link rel="stylesheet" href="./base_files/font-awesome.min.css">
+    <link rel="stylesheet" href="./base_files/font-awesome.min(1).css">
+    <!-- fonts-->
+    <link rel="stylesheet" type="text/css" href="./base_files/fontawesome-webfont.woff">
+    <link rel="stylesheet" type="text/css" href="./base_files/fontawesome-webfont(1).woff">
+
+    <script src="./base_files/jquery-2.0.3.min.js.下载"></script>
+    <script src="./base_files/layui.all.js.下载"></script>
+    <link id="layuicss-laydate" rel="stylesheet" href="./base_files/laydate.css" media="all">
+    <link id="layuicss-layer" rel="stylesheet" href="./base_files/layer.css" media="all">
+    <link id="layuicss-skincodecss" rel="stylesheet" href="./base_files/code.css" media="all">
+
+    <script src="./base_files/jquery-form-3.51.0.js.下载"></script>
+
+    <script src="./base_files/myUtil.js.下载"></script>
+
+
+    <script src="./base_files/jquery.validate.min.js.下载"></script>
+    <script src="./base_files/messages_zh.js.下载"></script>
+    <script src="./base_files/jquery.validate.extension.js.下载"></script>
+
+
+
+
+    <link rel="stylesheet" href="./base_files/select2.min.css" type="text/css">
+    <script type="text/javascript" src="./base_files/select2.min.js.下载"></script>
+    <script type="text/javascript" src="./base_files/select2.full.min.js.下载"></script>
+
+
+
+    <script type="text/javascript" src="./base_files/zdialog.js.下载"></script>
+    <script type="text/javascript" src="./base_files/common.js.下载"></script>
+    <link rel="stylesheet" href="./base_files/base.css">
+    <link rel="stylesheet" href="./base_files/style.css">
+    <link rel="stylesheet" href="./base_files/myCustom.css">
+
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 300px) and (max-device-width: 750px)" href="./base_files/style-h5.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 300px) and (max-device-width: 750px)" href="./base_files/myCustom-h5.css">
+    <script type="text/javascript" src="./base_files/iscroll.js.下载"></script>
+    <script type="text/javascript" src="./base_files/navbarscroll.js.下载"></script>
+
+
+
+
+
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="applicable-device" content="mobile">
+
+
+
+    <title>基本资料</title>
+
+
+    <link href="./base_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./base_files/city-picker.css" rel="stylesheet">
+
+    <script src="./base_files/bootstrap.min.js.下载"></script>
+    <script src="./base_files/city-picker.data.js.下载"></script>
+    <script src="./base_files/city-picker.js.下载"></script>
+
+
+    <link href="./base_files/mobiscroll.css" rel="stylesheet">
+    <link href="./base_files/mobiscroll_date.css" rel="stylesheet">
+    <script src="./base_files/mobiscroll_date.js.下载" charset="gb2312"></script>
+    <script src="./base_files/mobiscroll.js.下载"></script>
+
+
+
+    <script src="./base_files/upload.js.下载"></script>
+
+    <script type="text/javascript" src="./base_files/resetScreen-h5.js.下载"></script>
+    <meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+    <link href="./base_files/center.css" rel="stylesheet">
+    <style>
+        .breadcrumb {
+            padding: 16px 0;
+            color: #666;
+            background: none;
+            margin-bottom: 0px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            outline: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- header start -->
+    <!-- pc header start -->
+    <div class="siye-header-box siye-is-pc">
+        <div class="siye-fl">
+            <a href="/"><img src="./base_files/zc_logo.jpg"></a>
+        </div>
+        <!--header-search-->
+        <div class="siye-header-search-box">
+            <div>
+                <span class="siye-header-search-left">快速查找：</span>
+                <div class="siye-search-content-box">
+                    <form onsubmit="return dosearch(this)">
+                        <div class="siye-select-key">
+                            <input name="keys" type="text" id="_keys" class="siye-txt-search" placeholder="请输入搜索">
+                        </div>
+                        <!--siye-select-key-->
+                        <input name="" type="submit" class="siye-search-btn" value="搜索">
+                    </form>
+
+                </div>
+                <div class="siye-hot-search-box">
+
+                    <div class="siye-key-hot">
+                        <span>热门关键词：</span>
+                        <a href="#" target="_blank">雷司令</a>
+                        <a href="#" target="_blank">雷司令</a>
+                        <a href="#" target="_blank">雷司令</a>
+                        <a href="#" target="_blank">雷司令</a>
+                        <a href="#" target="_blank">雷司令</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--header-search-->
+        <!--header-nav-->
+        <div class="siye-header-nav">
+            <dl>
+                <dd class="siye-nav-link active">
+                    <a href="/">首页</a>
+                </dd>
+                <dd class="siye-nav-link">
+                    <a href="#">关于展会</a>
+                    <div class="siye-nav-sub">
+                        <div class="siye-sub-box">
+                            <a href="">展会日常</a>
+                            <a href="">展会组织</a>
+                            <a href="">我的展会</a>
+                            <a href="">展会日常</a>
+                            <a href="">展会组织</a>
+                            <a href="">我的展会</a>
+                        </div>
+                    </div>
+                </dd>
+                <dd class="siye-nav-link">
+                    <a href="#"> 在线展会</a>
+                    <div class="siye-nav-sub">
+                        <div class="siye-sub-box">
+                            <a href="">展会日常</a>
+                            <a href="">展会组织</a>
+                            <a href="">我的展会</a>
+                        </div>
+                    </div>
+                </dd>
+                <dd class="siye-nav-link">
+                    <a href="#" target="_blank"> 展会资讯</a>
+                    <div class="siye-nav-sub">
+                        <div class="siye-sub-box">
+                            <a href="">展会资讯</a>
+                            <a href="">展会资讯</a>
+                            <a href="">展会资讯展会资讯</a>
+                        </div>
+                    </div>
+                </dd>
+                <dd class="siye-nav-link">
+                    <a href="#" target="_blank">登陆</a>
+                </dd>
+                <dd class="siye-nav-link">
+                    <a href="#" target="_blank">英文</a>
+                </dd>
+            </dl>
+        </div>
+        <!--header-nav-->
+    </div>
+
+    <!-- pc header end -->
+    <!-- m header start -->
+    <div class="siye-is-m">
+        sfasfaf
+    </div>
+    <!-- m header end -->
+
+
+
+
+    <script src="./base_files/header.js.下载"></script>
+
+    <div class="main" style="padding-top: 0px;">
+
+        <div class="wrap-continar" style="padding-top: 0">
+            <div class="w1200">
+                <div class="breadcrumb">
+                    <span>当前位置</span> &gt;
+                    <a href="http://localhost/index">首页</a> &gt;
+                    <a href="http://localhost/sys/userProfile/front/front_authc_json/profile/page">个人中心</a> &gt; 基本资料
+                </div>
+
+
+                <div id="fixed-menu">
+                    <div class="wrapper wrapper03" id="wrapper03">
+                        <div class="scroller">
+                            <ul class="clearfix">
+                                <li class="on"><a href="http://localhost/sys/userProfile/front/front_authc_json/profile/page">个人基本信息</a></li>
+                                <li><a href="http://localhost/sys/userProfile/front/front_authc_json/enterpriseInfo/page">企业信息</a></li>
+                                <li><a href="http://localhost/sys/userProfile/front/front_authc_json/exhibitorReport/page">申请参展</a></li>
+
+
+
+                                <li><a href="http://localhost/sys/userProfile/front/front_authc_json/supplyAndDemand/page">供求发布</a></li>
+                                <li><a href="http://localhost/sys/supplyAndDemand/front/supply/page" target="_blank">我的供求</a></li>
+
+                                <li><a href="http://localhost/sys/userProfile/front/front_authc_json/myMsg/page">我的消息</a></li>
+
+
+
+
+
+                                <li><a href="http://localhost/sys/userProfile/front/front_authc_json/editPassword/page">修改密码</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 已申请为企业用户不显示企业认证 -->
+                    <div class="btn qyrz-btn">
+                        <a href="http://localhost/sys/userProfile/front/front_authc_json/enterpriseCertification/page">企业<br>认证</a>
+                    </div>
+                </div>
+
+
+                <div class="child-continar">
+
+
+                    <div class="sider-warp">
+                        <!-- 未申请为企业用户，不显示企业相关的菜单 -->
+
+
+                        <a href="http://localhost/sys/userProfile/front/front_authc_json/profile/page" class="on">个人基本信息<span class="iconfont icon-sanjiaoleft"></span></a>
+                        <a href="http://localhost/sys/userProfile/front/front_authc_json/enterpriseInfo/page">企业信息<span class="iconfont icon-sanjiaoleft"></span></a>
+                        <a href="http://localhost/sys/userProfile/front/front_authc_json/exhibitorReport/page">申请参展<span class="iconfont icon-sanjiaoleft"></span></a>
+
+
+
+                        <a href="http://localhost/sys/userProfile/front/front_authc_json/supplyAndDemand/page">供求发布<span class="iconfont icon-sanjiaoleft"></span></a>
+                        <a href="http://localhost/sys/supplyAndDemand/front/supply/page?type=myself" target="_blank">我的供求<span class="iconfont icon-sanjiaoleft"></span></a>
+
+
+                        <a href="http://localhost/sys/userProfile/front/front_authc_json/myMsg/page">我的消息<span class="iconfont icon-sanjiaoleft"></span></a>
+
+
+
+
+
+                        <a href="http://localhost/sys/userProfile/front/front_authc_json/editPassword/page">修改密码<span class="iconfont icon-sanjiaoleft"></span></a>
+
+
+                        <!-- 已申请为企业用户不显示企业认证 -->
+                        <div class="btn">
+                            <a href="http://localhost/sys/userProfile/front/front_authc_json/enterpriseCertification/page" class="hoverable"><span class="anim"></span>企业认证</a>
+                        </div>
+                    </div>
+
+                    <div class="member-content">
+
+                        <input name="userID" id="userID" value="1785" type="hidden">
+                        <input name="headImg" id="headImg" value="" type="hidden">
+                        <div class="member-box" id="baseInfoDiv">
+                            <div class="tit">
+                                我的资料
+                                <a id="editBaseInfoBtn">修改</a>
+                            </div>
+                            <div class="child">
+                                <div class="form-continar">
+                                    <div class="form form-ulpad">
+                                        <div class="lab">头像</div>
+                                        <div class="ulpad">
+                                            <div class="img">
+                                                <img src="http://localhost/sys/userProfile/front/front_authc_json/profile/page" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form">
+                                        <div class="lab">姓名</div>
+                                        <div style="width: 100%" class="f">
+                                            陈振
+                                        </div>
+                                    </div>
+                                    <div class="form">
+                                        <div class="lab">昵称</div>
+                                        <div style="width: 100%" class="f">
+                                            三十岁
+                                        </div>
+                                    </div>
+                                    <div class="form">
+                                        <div class="lab">所在区域</div>
+                                        <div style="width: 100%" class="f">
+
+                                        </div>
+                                    </div>
+                                    <div class="form">
+                                        <div class="lab">出生日期</div>
+                                        <div style="width: 100%" class="f">
+
+                                        </div>
+                                    </div>
+                                    <div class="form">
+                                        <div class="lab">性别</div>
+                                        <div style="width: 100%" class="f">
+
+                                            男
+
+
+                                        </div>
+                                    </div>
+                                    <div class="form">
+                                        <div class="lab">自我介绍</div>
+                                        <div style="width: 100%" class="f" textarea-div="true"><br> 撒旦发射点发<br>撒旦发射点发<br>阿萨德发射点发<br> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="member-box" id="editBaseInfoDiv" style="display: none;">
+
+                            <form id="editBaseInfoForm" method="post" novalidate="novalidate">
+                                <div class="tit">我的资料</div>
+                                <div class="child">
+                                    <div class="ulpad">
+                                        <div class="img">
+                                            <div id="drop_area"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-continar">
+                                        <div class="form">
+                                            <div class="lab">姓名</div>
+                                            <div style="width: 100%">
+                                                <div class="box">
+                                                    <input type="text" id="realname" name="realname" value="陈振">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form">
+                                            <div class="lab">昵称</div>
+                                            <div style="width: 100%">
+                                                <div class="box">
+                                                    <input type="text" id="nickname" name="nickname" value="三十岁">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form">
+                                            <div class="lab">所在区域</div>
+                                            <div style="width: 100%">
+                                                <div class="form-group">
+                                                    <div style="position: relative;">
+                                                        <input id="areaStr" name="areaStr" class="form-control" readonly="" type="text" data-toggle="city-picker" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form">
+                                            <div class="lab">出生日期</div>
+                                            <div style="width: 100%">
+                                                <div class="box">
+                                                    <input type="text" name="birthDate" id="birthDate" readonly="" class="input" placeholder="请填写你的出生日期" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form">
+                                            <div class="lab">性别</div>
+                                            <div class="radio">
+
+
+                                                <label class="yd-radio">
+                                                    <input type="radio" name="gender" checked="" value="0">
+                                                    <span class="yd-radio-icon">
+                                                    <i style="width: 10px; height: 10px;"></i>
+                                                </span>
+                                                    <span class="yd-radio-text">男</span>
+                                                </label>
+                                                <label class="yd-radio">
+                                                    <input type="radio" name="gender" value="1">
+                                                    <span class="yd-radio-icon">
+                                                    <i style="width: 10px; height: 10px;"></i>
+                                                </span>
+                                                    <span class="yd-radio-text">女</span>
+                                                </label>
+
+
+
+
+                                            </div>
+                                        </div>
+                                        <div class="form">
+                                            <div class="lab">自我介绍</div>
+                                            <div style="width: 100%">
+                                                <div class="area">
+                                                    <textarea rows="5" id="selfIntroduction" name="selfIntroduction">撒旦发射点发
+撒旦发射点发
+阿萨德发射点发</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form">
+                                            <div class="lab"></div>
+                                            <div class="submit">
+                                                <a href="javascript:;" class="hoverable" id="submitBaseInfoBtn"><span class="anim"></span>保存</a>
+                                                <a href="javascript:window.location.reload();" class="hoverable"><span class="anim"></span>取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+
+                        <div class="member-box" id="contactInfoDiv">
+                            <div class="tit">
+                                联系方式
+                                <a id="editContactInfoBtn">修改</a>
+                            </div>
+                            <div class="child">
+                                <div class="form-continar">
+                                    <div class="form">
+                                        <div class="lab">手机</div>
+                                        <div style="width: 100%" class="f">
+
+                                        </div>
+                                    </div>
+                                    <div class="form">
+                                        <div class="lab">邮箱</div>
+                                        <div style="width: 100%" class="f">
+                                            7@qq.com
+                                        </div>
+                                    </div>
+                                    <div class="form">
+                                        <div class="lab">微信</div>
+                                        <div style="width: 100%" class="f">
+
+
+                                        </div>
+                                    </div>
+                                    <div class="form">
+                                        <div class="lab">QQ</div>
+                                        <div style="width: 100%" class="f">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="member-box" id="editContactInfoDiv" style="display: none;">
+                            <form id="editContactInfoForm" method="post" novalidate="novalidate">
+                                <div class="tit">联系方式</div>
+                                <div class="child">
+                                    <div class="form-continar">
+                                        <div class="form">
+                                            <div class="lab">手机</div>
+                                            <div style="width: 100%">
+                                                <div class="box">
+                                                    <input type="text" id="phone" name="phone" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form">
+                                            <div class="lab">邮箱</div>
+                                            <div style="width: 100%">
+                                                <div class="box">
+                                                    <input type="text" id="email" name="email" value="7@qq.com">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form">
+                                            <div class="lab">微信</div>
+                                            <div style="width: 100%">
+                                                <div class="box">
+                                                    <input type="text" id="wechat" name="wechat" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form">
+                                            <div class="lab">QQ</div>
+                                            <div style="width: 100%">
+                                                <div class="box">
+                                                    <input type="text" id="qq" name="qq" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form">
+                                            <div class="lab"></div>
+                                            <div class="submit">
+                                                <a href="javascript:;" class="hoverable" id="submitContactInfoBtn"><span class="anim"></span>保存</a>
+                                                <a href="javascript:window.location.reload();" class="hoverable"><span class="anim"></span>取消</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer cb">
+        <div class="top">
+            <div class="w1200">
+                <div class="logo">
+                    <img src="./base_files/3.png" alt="" style="width: 241px;">
+                </div>
+
+
+                <div class="information">
+                    <div class="tit">联系方式</div>
+
+
+                    <ul>
+                        <li><a href="javascript:void(0);">电话：010-63457516</a></li>
+                        <li><a href="javascript:void(0);">邮箱：jianguozhan@163.com</a></li>
+                        <li><a href="javascript:void(0);">地址：北京市西城区马连道南12号气象宾馆3336B室</a></li>
+                        <li><a href="javascript:void(0);">邮编：100073</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="information">
+                    <div class="tit">友情连接</div>
+                    <ul>
+                        <li><a target="_blank" href="http://www.csnc.cn/">中国食品工业协会坚果炒货专业委员会</a></li>
+                        <li><a target="_blank" href="http://www.zhongshe.cc/">安徽中设国际会展集团有限公司</a></li>
+                        <li><a target="_blank" href="http://www.samr.gov.cn/">国家市场监督管理总局</a></li>
+                        <li><a target="_blank" href="http://www.sac.gov.cn/">国家标准化管理委员会</a></li>
+                        <li><a target="_blank" href="https://www.cfsa.net.cn/">国家食品安全风险评估中心</a></li>
+                    </ul>
+                </div>
+                <div class="sj">
+                    <div class="tit">社交媒体</div>
+                    <div class="imgs clearfix">
+                        <img src="./base_files/4.jpg" alt="">
+                        <img src="./base_files/5.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bom">
+            <p>网站备案号：<a target="_blank" href="http://beian.miit.gov.cn/">京ICP备18008864</a></p>
+            <p>版权所有：中国坚果炒货展会网</p>
+        </div>
+    </div>
+
+
+
+
+
+    <link rel="stylesheet" href="./base_files/iconfont-1.css">
+    <div class="fixed-right">
+        <a href="javascript:void(0);" id="global_cgbmBtn" class="menu-box">
+            <div class="menu">
+                <span class="iconfont icon-huodong2"></span>
+                <p>参展展会</p>
+            </div>
+            <div class="child">
+                <span class="iconfont icon-huodong2"></span>
+                <div class="r">
+                    <p>参展展会</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="javascript:void(0);" id="global_erweimaBtn" class="menu-box">
+            <div class="menu">
+                <span class="iconfont icon-huodong2"></span>
+                <p>二维码</p>
+            </div>
+            <div class="child">
+                <span class="iconfont icon-huodong2"></span>
+                <div class="r">
+                    <p>二维码</p>
+                </div>
+            </div>
+        </a>
+
+
+        <a href="javascript:void(0);" id="global_gerenBtn" class="menu-box">
+            <div class="menu">
+                <span class="iconfont icon-huodong2"></span>
+                <p>个人中心</p>
+            </div>
+            <div class="child">
+                <span class="iconfont icon-huodong2"></span>
+                <div class="r">
+                    <p>个人中心</p>
+                </div>
+            </div>
+        </a>
+
+
+
+
+        <a href="http://localhost/sys/priceInfo/front/priceInfo/page" class="menu-box">
+            <div class="menu">
+                <span class="iconfont icon-jiage"></span>
+                <p>市场信息</p>
+            </div>
+            <div class="child">
+                <span class="iconfont icon-jiage"></span>
+                <div class="r">
+                    <p>市场信息</p>
+                </div>
+            </div>
+        </a>
+
+        <a class="menu-box" href="javascript:void(0);" id="publishSupplyAndDemandBtn">
+            <div class="menu">
+                <span class="iconfont icon-fabu"></span>
+                <p>发布信息</p>
+            </div>
+            <div class="child">
+                <span class="iconfont icon-fabu"></span>
+                <div class="r">
+                    <p>发布信息</p>
+                </div>
+            </div>
+        </a>
+        <a class="menu-box" href="tencent://message/?uin=3307181902&amp;Site=http://vps.shuidazhe.com&amp;Menu=yes" id="contactA">
+            <div class="menu">
+                <span class="iconfont icon-qq"></span>
+                <p>联系客服</p>
+            </div>
+            <div class="child">
+                <span class="iconfont icon-qq"></span>
+                <div class="r">
+                    <span>联系客服</span>
+                    <p id="showQQDiv">QQ：3307181902</p>
+                </div>
+            </div>
+        </a>
+
+
+        <a class="menu-box" href="javascript:void(0);" id="liveShowA">
+            <div class="menu">
+                <span class="iconfont icon-27"></span>
+                <p>看直播</p>
+            </div>
+            <div class="child">
+                <span class="iconfont icon-27"></span>
+                <div class="r">
+                    <p>看直播</p>
+                </div>
+            </div>
+        </a>
+
+
+    </div>
+
+    <div id="backToTop" style="display: none;">
+        <a href="javascript:;">
+            <span class="iconfont icon-top"></span>
+        </a>
+    </div>
+    <script src="./base_files/globalToolbar.js.下载"></script>
+    <script src="./base_files/profile.js.下载"></script>
+
+</body>
+
+</html>

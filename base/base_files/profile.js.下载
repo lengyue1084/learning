@@ -1,0 +1,145 @@
+$(function () {
+
+    initPage();
+
+    //初始化
+    initeditBaseInfoFormValidate();
+    //初始化 修改  按钮
+    $('#editBaseInfoBtn').click(initEditBaseInfoClick);
+    /*提交baseInfoForm*/
+    $('#submitBaseInfoBtn').on('click', submitBaseInfo);
+
+
+    initEditContactInfoFormValidate();
+
+    $('#editContactInfoBtn').click(editContactInfoClick);
+
+    $('#submitContactInfoBtn').on('click', submitContactInfo);
+
+});
+
+function initPage() {
+    $('#baseInfoDiv').show();
+    $('#editBaseInfoDiv').hide();
+    $('#contactInfoDiv').show();
+    $('#editContactInfoDiv').hide();
+}
+
+function initEditBaseInfoClick() {
+    $('#baseInfoDiv').hide();
+    $('#editBaseInfoDiv').show();
+    $('input[data-toggle="city-picker"]').citypicker();
+
+    initDatepicker("#birthDate");
+
+    initFileUpload("#drop_area", $('#headImg').val(), "profile", true);
+
+
+}
+
+/**
+ * 增加校验
+ */
+function initeditBaseInfoFormValidate() {
+    $("#editBaseInfoForm").validate({
+        // debug: true,
+        rules: {
+            realname: "required"
+        },
+        messages: {
+            realname: {
+                required: "(必填字段)"
+            }
+        }
+
+    });
+}
+
+function submitBaseInfo() {
+    $("#editBaseInfoForm").valid();
+
+    if ($("#editBaseInfoForm").valid()) {
+
+        postUserProfileRequest(ctx + '/sys/manager/front/front_authc_json/doSaveBaseInfo',
+            ctx + '/sys/userProfile/front/front_authc_json/profile/page',undefined,
+            $("#editBaseInfoForm").serialize());
+    }
+
+}
+
+
+function initEditContactInfoFormValidate() {
+    $("#editContactInfoForm").validate({
+        // debug: true,
+        rules: {
+            phone: {
+               // required: true,
+                isMobile: true
+            },
+            email: {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            phone: {
+             //   required: "(必填字段)",
+                isMobile: "请填写正确的手机号码"
+
+            },
+            email: {
+                required: "(必填字段)",
+                email: "请填写正确的邮箱"
+            }
+        }
+
+    });
+}
+
+
+/**
+ *
+ * */
+function submitContactInfo() {
+    if ($("#editContactInfoForm").valid()) {
+
+        postUserProfileRequest(ctx + '/sys/manager/front/front_authc_json/doSaveContactInfo',
+            ctx + '/sys/userProfile/front/front_authc_json/profile/page',undefined,
+            $("#editContactInfoForm").serialize());
+    }
+
+
+}
+
+
+function editContactInfoClick() {
+    $('#contactInfoDiv').hide();
+    $('#editContactInfoDiv').show();
+}
+
+
+/**
+ * 初始化日期控件(PC和手机端都兼容)
+ * @param id
+ */
+function initDatepicker(id) {
+    var currYear = (new Date()).getFullYear();
+    var opt = {};
+    opt.date = {preset: 'date'};
+    opt.datetime = {preset: 'datetime'};
+    opt.time = {preset: 'time'};
+    opt.default = {
+        theme: 'android-ics light', //皮肤样式
+        display: 'modal', //显示方式
+        mode: 'scroller', //日期选择模式
+        dateFormat: 'yyyy-mm-dd',
+        lang: 'zh',
+        showNow: true,
+        nowText: "今天",
+        startYear: currYear - 50, //开始年份
+        endYear: currYear + 10 //结束年份
+    };
+
+    $(id).mobiscroll($.extend(opt['date'], opt['default']));
+}
+

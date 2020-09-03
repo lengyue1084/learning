@@ -1,0 +1,191 @@
+input {
+    outline: none !important;
+    background: transparent !important;
+    border: none !important;
+    outline: medium !important;
+}
+
+/**:focus {
+    outline: none !important;
+    background-color: transparent !important;
+}*/
+
+::selection {
+    background: transparent;
+!important;
+}
+
+::-moz-selection {
+    background: transparent;
+!important;
+}
+
+/*去掉谷哥浏览器输入框获取焦点有背景颜色*/
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    outline: none;
+}
+
+.sider-contianr2 .sider-btns .b {
+    background: rgba(24, 44, 97, 0.6);
+    color: #fff;
+}
+
+.tit-box2 .select-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.haibao1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    /* flex-direction: column; */
+}
+
+/*新闻列表*/
+.newslist .list .box img {
+    width: 300px;
+    height: 180px;
+    margin: 10px;
+}
+
+/*首页展区图标样式*/
+.service-option2 li a {
+    z-index: 2;
+    -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+    -webkit-transform: translate3d(0, -2px, 0);
+    transform: translate3d(0, -2px, 0);
+
+}
+
+
+
+
+@media only screen and (min-width: 750px) {
+    .qyml-box .box li a:hover {
+        background: #e10049;
+    }
+
+    .qyml-box .box li a:hover .info {
+        color: #fff;
+    }
+
+    .service-option2 li a:hover {
+        z-index: 2;
+        -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+        -webkit-transform: translate3d(0, -2px, 0);
+        transform: translate3d(0, -2px, 0);
+        background: #e10049;
+    }
+
+    .service-option2 li a:hover p {
+        color: #fff;
+    }
+
+    .index-news-box li a:hover,
+    .index-news-box li a:hover span {
+        color: #e10049;
+    }
+}
+
+/*头部下拉菜单*/
+.header .menu .m .child {
+    position: absolute;
+    background: #fff;
+    z-index: 9;
+    top: 80px;
+    width: 200px;
+    left: 50%;
+    margin-left: -100px;
+    border: 1px solid #f1f1f1;
+    display: none;
+}
+
+/*footer的行间距*/
+.footer .information li {
+    line-height: 24px;
+    padding-bottom: 16px;
+}
+
+.supplylist .list .supply {
+    line-height: 24px;
+    color: #666;
+    margin-bottom: 15px;
+    /* text-overflow: -o-ellipsis-lastline;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 100;
+    line-clamp: 100;
+    -webkit-box-orient: vertical;
+}
+
+.supplylist .list .supply1 {
+    line-height: 24px;
+    color: #666;
+    margin-bottom: 15px;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.index-swiper-container .btns {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.index-swiper-container .swiper-slide a>div {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+    position: relative;
+    top: 80px;
+}
+
+.header .menu .m .t {
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.header .menu .m .t3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.head-search .iconfont {
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
+}
