@@ -4,14 +4,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="./base_files/hm.js.下载"></script>
-    <script type="text/javascript">
-        <!--
-        var ctx = '';
 
-        //-->
-        var data = {};
-    </script>
-
+    <!--新加的 start-->
+    <link rel='stylesheet' href='./base_files/font-awesome-4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+    <link href="./base_files/center.css" rel="stylesheet">
+    <!--新加的 end-->
     <link rel="shortcut icon" href="http://localhost/static/front/img/favicon.png">
     <link rel="stylesheet" href="./base_files/layui.css">
     <!-- fonts-->
@@ -69,7 +66,6 @@
     <meta name="applicable-device" content="mobile">
 
 
-
     <title>基本资料</title>
 
 
@@ -92,7 +88,8 @@
 
     <script type="text/javascript" src="./base_files/resetScreen-h5.js.下载"></script>
     <meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
-    <link href="./base_files/center.css" rel="stylesheet">
+
+
     <style>
         .breadcrumb {
             padding: 16px 0;
@@ -191,19 +188,100 @@
                 </dd>
                 <dd class="siye-nav-link">
                     <a href="#" target="_blank">登陆</a>
+                    <!-- 登陆后展示昵称 start -->
+                    <!-- <a href="#" target="_blank" class="siye-login-nickname">WQ</a> -->
+                    <!-- 登陆后展示昵称 end -->
                 </dd>
                 <dd class="siye-nav-link">
                     <a href="#" target="_blank">英文</a>
                 </dd>
+
             </dl>
         </div>
         <!--header-nav-->
     </div>
-
     <!-- pc header end -->
     <!-- m header start -->
     <div class="siye-is-m">
-        sfasfaf
+        <!-- nav-box start -->
+
+        <div class="siye-m-header-box">
+            <div class="siye-m-header-logo">
+                <a href="#">
+                    <img src="./base_files/logo.jpg">
+                </a>
+                <div class="siye-m-header-nav-btn">
+                    <span class="nickname">WQ</span>
+                    <i class=" nav-btn fa fa-bars fa-2x" aria-hidden="true" onclick="menu('open')"></i>
+                </div>
+            </div>
+        </div>
+        <!-- nav-box end -->
+
+        <!-- menu start -->
+        <div class="top-menu">
+            <div class="display-table">
+                <i class="fa fa-times top-menu-close fa-2x" onclick="menu('close')" aria-hidden="true"></i>
+                <div class="display-cell">
+                    <ul id="top-menu">
+                        <li>
+                            <a class="active" href="javascript:void(0);">首页</a>
+                            <div class="menu-sub">
+                                <a href="">子分类</a>
+                                <a class="active" href="">子分类</a>
+                                <a href="">子分类</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">连接客户</a>
+                            <div class="menu-sub">
+                                <a href="">子分类</a>
+                                <a class="active" href="">子分类</a>
+                                <a href="">子分类</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">连接企业</a>
+                        </li>
+                        <li>
+                            <a href="#">连接客户</a>
+                        </li>
+                        <li>
+                            <a href="#">连接企业</a>
+                        </li>
+                        <li>
+                            <a href="#">连接客户</a>
+                        </li>
+                        <li>
+                            <a href="#">连接企业钱包</a>
+                        </li>
+                        <li>
+                            <a href="#">连接企业</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $("#top-menu li").bind("click", function(obj) {
+                var o = $(this).children(".menu-sub");
+                if (o.is(":visible")) {
+                    o.hide();
+                } else {
+                    o.show();
+                }
+            })
+
+            function menu(type) {
+                if (type == 'open') {
+                    $(".top-menu").css("display", "block")
+                } else {
+                    $(".top-menu").css("display", "none")
+                }
+            }
+        </script>
+        <!-- menu end -->
     </div>
     <!-- m header end -->
 
@@ -212,7 +290,7 @@
 
     <script src="./base_files/header.js.下载"></script>
 
-    <div class="main" style="padding-top: 0px;">
+    <div class="main" style="padding-top: 60px;">
 
         <div class="wrap-continar" style="padding-top: 0">
             <div class="w1200">
@@ -227,22 +305,28 @@
                     <div class="wrapper wrapper03" id="wrapper03">
                         <div class="scroller">
                             <ul class="clearfix">
-                                <li class="on"><a href="http://localhost/sys/userProfile/front/front_authc_json/profile/page">个人基本信息</a></li>
-                                <li><a href="http://localhost/sys/userProfile/front/front_authc_json/enterpriseInfo/page">企业信息</a></li>
-                                <li><a href="http://localhost/sys/userProfile/front/front_authc_json/exhibitorReport/page">申请参展</a></li>
+                                <li class="on"><a href="http://localhost/sys/userProfile/front/front_authc_json/profile/page">个人基本信息</a>
+                                </li>
+                                <li><a href="http://localhost/sys/userProfile/front/front_authc_json/enterpriseInfo/page">企业信息</a>
+                                </li>
+                                <li><a href="http://localhost/sys/userProfile/front/front_authc_json/exhibitorReport/page">申请参展</a>
+                                </li>
 
 
 
-                                <li><a href="http://localhost/sys/userProfile/front/front_authc_json/supplyAndDemand/page">供求发布</a></li>
+                                <li><a href="http://localhost/sys/userProfile/front/front_authc_json/supplyAndDemand/page">供求发布</a>
+                                </li>
                                 <li><a href="http://localhost/sys/supplyAndDemand/front/supply/page" target="_blank">我的供求</a></li>
 
-                                <li><a href="http://localhost/sys/userProfile/front/front_authc_json/myMsg/page">我的消息</a></li>
+                                <li><a href="http://localhost/sys/userProfile/front/front_authc_json/myMsg/page">我的消息</a>
+                                </li>
 
 
 
 
 
-                                <li><a href="http://localhost/sys/userProfile/front/front_authc_json/editPassword/page">修改密码</a></li>
+                                <li><a href="http://localhost/sys/userProfile/front/front_authc_json/editPassword/page">修改密码</a>
+                                </li>
 
                             </ul>
                         </div>
@@ -262,22 +346,27 @@
 
 
                         <a href="http://localhost/sys/userProfile/front/front_authc_json/profile/page" class="on">个人基本信息<span class="iconfont icon-sanjiaoleft"></span></a>
-                        <a href="http://localhost/sys/userProfile/front/front_authc_json/enterpriseInfo/page">企业信息<span class="iconfont icon-sanjiaoleft"></span></a>
-                        <a href="http://localhost/sys/userProfile/front/front_authc_json/exhibitorReport/page">申请参展<span class="iconfont icon-sanjiaoleft"></span></a>
+                        <a href="http://localhost/sys/userProfile/front/front_authc_json/enterpriseInfo/page">企业信息<span
+                                class="iconfont icon-sanjiaoleft"></span></a>
+                        <a href="http://localhost/sys/userProfile/front/front_authc_json/exhibitorReport/page">申请参展<span
+                                class="iconfont icon-sanjiaoleft"></span></a>
 
 
 
-                        <a href="http://localhost/sys/userProfile/front/front_authc_json/supplyAndDemand/page">供求发布<span class="iconfont icon-sanjiaoleft"></span></a>
+                        <a href="http://localhost/sys/userProfile/front/front_authc_json/supplyAndDemand/page">供求发布<span
+                                class="iconfont icon-sanjiaoleft"></span></a>
                         <a href="http://localhost/sys/supplyAndDemand/front/supply/page?type=myself" target="_blank">我的供求<span class="iconfont icon-sanjiaoleft"></span></a>
 
 
-                        <a href="http://localhost/sys/userProfile/front/front_authc_json/myMsg/page">我的消息<span class="iconfont icon-sanjiaoleft"></span></a>
+                        <a href="http://localhost/sys/userProfile/front/front_authc_json/myMsg/page">我的消息<span
+                                class="iconfont icon-sanjiaoleft"></span></a>
 
 
 
 
 
-                        <a href="http://localhost/sys/userProfile/front/front_authc_json/editPassword/page">修改密码<span class="iconfont icon-sanjiaoleft"></span></a>
+                        <a href="http://localhost/sys/userProfile/front/front_authc_json/editPassword/page">修改密码<span
+                                class="iconfont icon-sanjiaoleft"></span></a>
 
 
                         <!-- 已申请为企业用户不显示企业认证 -->
@@ -340,7 +429,8 @@
                                     </div>
                                     <div class="form">
                                         <div class="lab">自我介绍</div>
-                                        <div style="width: 100%" class="f" textarea-div="true"><br> 撒旦发射点发<br>撒旦发射点发<br>阿萨德发射点发<br> </div>
+                                        <div style="width: 100%" class="f" textarea-div="true"><br> 撒旦发射点发
+                                            <br>撒旦发射点发<br>阿萨德发射点发<br> </div>
                                     </div>
                                 </div>
                             </div>
@@ -400,15 +490,15 @@
                                                 <label class="yd-radio">
                                                     <input type="radio" name="gender" checked="" value="0">
                                                     <span class="yd-radio-icon">
-                                                    <i style="width: 10px; height: 10px;"></i>
-                                                </span>
+                                                        <i style="width: 10px; height: 10px;"></i>
+                                                    </span>
                                                     <span class="yd-radio-text">男</span>
                                                 </label>
                                                 <label class="yd-radio">
                                                     <input type="radio" name="gender" value="1">
                                                     <span class="yd-radio-icon">
-                                                    <i style="width: 10px; height: 10px;"></i>
-                                                </span>
+                                                        <i style="width: 10px; height: 10px;"></i>
+                                                    </span>
                                                     <span class="yd-radio-text">女</span>
                                                 </label>
 
@@ -430,8 +520,10 @@
                                         <div class="form">
                                             <div class="lab"></div>
                                             <div class="submit">
-                                                <a href="javascript:;" class="hoverable" id="submitBaseInfoBtn"><span class="anim"></span>保存</a>
-                                                <a href="javascript:window.location.reload();" class="hoverable"><span class="anim"></span>取消</a>
+                                                <a href="javascript:;" class="hoverable" id="submitBaseInfoBtn"><span
+                                                        class="anim"></span>保存</a>
+                                                <a href="javascript:window.location.reload();" class="hoverable"><span
+                                                        class="anim"></span>取消</a>
                                             </div>
                                         </div>
                                     </div>
@@ -518,8 +610,10 @@
                                         <div class="form">
                                             <div class="lab"></div>
                                             <div class="submit">
-                                                <a href="javascript:;" class="hoverable" id="submitContactInfoBtn"><span class="anim"></span>保存</a>
-                                                <a href="javascript:window.location.reload();" class="hoverable"><span class="anim"></span>取消</a>
+                                                <a href="javascript:;" class="hoverable" id="submitContactInfoBtn"><span
+                                                        class="anim"></span>保存</a>
+                                                <a href="javascript:window.location.reload();" class="hoverable"><span
+                                                        class="anim"></span>取消</a>
                                             </div>
                                         </div>
                                     </div>
@@ -534,54 +628,98 @@
         </div>
     </div>
 
-    <div class="footer cb">
-        <div class="top">
+    <!-- pc footer start -->
+    <div class="siye-is-pc">
+        <!-- footer start -->
+        <div class="footer-box bg " style="clear: both;">
             <div class="w1200">
-                <div class="logo">
-                    <img src="./base_files/3.png" alt="" style="width: 241px;">
+                <div class="footer-left fl">
+                    <img src="./base_files/footer-01.png" alt="">
                 </div>
-
-
-                <div class="information">
-                    <div class="tit">联系方式</div>
-
-
-                    <ul>
-                        <li><a href="javascript:void(0);">电话：010-63457516</a></li>
-                        <li><a href="javascript:void(0);">邮箱：jianguozhan@163.com</a></li>
-                        <li><a href="javascript:void(0);">地址：北京市西城区马连道南12号气象宾馆3336B室</a></li>
-                        <li><a href="javascript:void(0);">邮编：100073</a></li>
-                    </ul>
-
+                <div class="footer-center fl">
+                    <div class="footer-center-left fl">
+                        <div>联系方式</div>
+                        <div>电话：010-666666</div>
+                        <div>邮箱：110@qq.com</div>
+                        <div>地址：北京上海</div>
+                        <div>邮编：100073</div>
+                    </div>
+                    <div class="footer-center-left fr">
+                        <div>友情链接</div>
+                        <div>
+                            <a href="#">国家市场监督管理总局</a>
+                        </div>
+                        <div>
+                            <a href="#">国家市场监督管理总局</a>
+                        </div>
+                        <div>
+                            <a href="#">国家市场监督管理总局</a>
+                        </div>
+                        <div>
+                            <a href="#">国家市场监督管理总局</a>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="information">
-                    <div class="tit">友情连接</div>
-                    <ul>
-                        <li><a target="_blank" href="http://www.csnc.cn/">中国食品工业协会坚果炒货专业委员会</a></li>
-                        <li><a target="_blank" href="http://www.zhongshe.cc/">安徽中设国际会展集团有限公司</a></li>
-                        <li><a target="_blank" href="http://www.samr.gov.cn/">国家市场监督管理总局</a></li>
-                        <li><a target="_blank" href="http://www.sac.gov.cn/">国家标准化管理委员会</a></li>
-                        <li><a target="_blank" href="https://www.cfsa.net.cn/">国家食品安全风险评估中心</a></li>
-                    </ul>
-                </div>
-                <div class="sj">
-                    <div class="tit">社交媒体</div>
-                    <div class="imgs clearfix">
-                        <img src="./base_files/4.jpg" alt="">
-                        <img src="./base_files/5.jpg" alt="">
+                <div class="footer-right fr">
+                    <div class="footer-righ-title">社交媒体</div>
+                    <div>
+                        <img src="./base_files/qr01.png" alt="">
+                        <img src="./base_files/qr01.png" alt="">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="bom">
-            <p>网站备案号：<a target="_blank" href="http://beian.miit.gov.cn/">京ICP备18008864</a></p>
-            <p>版权所有：中国坚果炒货展会网</p>
+        <!-- footer end -->
+    </div>
+    <!-- pc footer end -->
+
+    <!-- m footer start -->
+    <div class="siye-is-m">
+        <div style="margin: 0px 10px;">
+            <!-- footer start -->
+            <div class="footer-box">
+                <div class="footer-logo-box">
+                    <div class="footer-logo-left">
+                        <img src="./base_files/footer-01.png" alt="">
+                    </div>
+                    <div class="footer-logo-right">
+                        <img src="./base_files/qr01.png" alt="">
+                        <img src="./base_files/qr01.png" alt="">
+                    </div>
+                </div>
+                <div class="footer-second-box">
+                    <h2>联系方式</h2>
+                    <p>电话：010-888888</p>
+                    <div class="footer-second-two-box">
+                        <span>邮箱：110@qq.com</span>
+                        <span>邮编：888888</span>
+                    </div>
+                    <p>地址：北京上海南京北京上海南京北京上海南京北京上海南京</p>
+                </div>
+                <div class="links-box">
+                    <h2>友情链接</h2>
+                    <div class="links-box-content">
+                        <div class="links-box-item">
+                            <a href="">国家市场监督管理总局</a>
+                            <a href="">国家市场监督管理总局</a>
+                            <a href="">国家市场监督管理总局</a>
+                            <a href="">国家市场监督管理总局</a>
+                            <a href="">国家市场监督管理总局</a>
+                        </div>
+                        <div class="links-box-item">
+                            <a href="">国家市场监督管理总局</a>
+                            <a href="">国家市场监督管理总局</a>
+                            <a href="">国家市场监督管理总局</a>
+                            <a href="">国家市场监督管理总局</a>
+                            <a href="">国家市场监督管理总局</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer end -->
         </div>
     </div>
-
-
-
+    <!-- m footer end -->
 
 
     <link rel="stylesheet" href="./base_files/iconfont-1.css">
